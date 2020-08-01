@@ -2,13 +2,12 @@
     "compilerOptions" : {
         "paths": {
             "@components/shared": ["src/app/components/shared/index"],
-            "@i18next": ["src/i18next"],
+            "@locale": ["src/locale/i18next"],
             "@configs/*": ["src/app/configs/*"],
             "@components/hooks": ["src/app/components/hooks/index"],
             "@components/elements": ["src/app/components/elements/index"],
             "@components/views": ["src/app/components/views/index"],
             "@redux/actions/*": ["src/app/redux/actions/*"],
-            "@redux/helpers": ["src/app/redux/helpers"],
             "@utils/*": ["src/app/utils/*"],
             "@routes/app": ["src/app/configs/app.routes"],
             "@routes/api": ["src/app/configs/api.routes"],
