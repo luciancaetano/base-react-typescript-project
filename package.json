@@ -2,6 +2,14 @@
   "name": "drawing-app",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
+    "eject": "react-app-rewired eject",
+    "lint": "eslint ./src --ext .tsx --ext .ts",
+    "lint:fix": "eslint --fix ./src --ext .tsx --ext .ts"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -9,20 +17,33 @@
     "@types/jest": "^24.0.0",
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.0",
-    "@types/react-dom": "^16.9.0",
+    "@types/react-dom": "^16.9.8",
+    "lodash": "^4.17.19",
     "react": "^16.13.1",
+    "react-app-rewired": "^2.1.6",
     "react-dom": "^16.13.1",
+    "react-redux": "^7.2.1",
     "react-scripts": "3.4.1",
-    "typescript": "~3.7.2"
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
+    "seamless-immutable": "^7.1.4",
+    "typescript": "^3.9.7",
+    "uuid": "^8.3.0"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
+  "devDependencies": {
+    "@types/lodash": "^4.14.158",
+    "@types/react-redux": "^7.1.9",
+    "@types/seamless-immutable": "^7.1.13",
+    "@types/uuid": "^8.0.0",
+    "@typescript-eslint/eslint-plugin": "^3.7.1",
+    "@typescript-eslint/parser": "^3.7.1",
+    "customize-cra": "^1.0.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.5",
+    "eslint-plugin-react-hooks": "^4.0.8",
+    "react-app-rewire-alias": "^0.1.6"
   },
   "browserslist": {
     "production": [
