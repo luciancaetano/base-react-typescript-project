@@ -15,12 +15,16 @@ Esta é a raiz do projeto nela se localizam 2 arquivos importantes o primeiro é
 
 ### src/styles
 Preferencialmente este projeto faz o uso do sass porém pode-se utilizar o css simples, a finalidade desta pasta é conter os estilos globais como resets, temas, variáveis de configurações do sass, aqui não guardamos estilos reservados a componentes, estes iremos ver mais em frente.
+
 Seu alias é `@styles/*`.
+
 Ex: `import '@styles/vars.scss'`
 
 ### src/media
 Aqui ficam os arquivos de mídia como ícones, imagens, svg etc.
+
 Seu alias é `@media/*`.
+
 Ex: `import logo from '@media/logo.svg'`
 
 ### src/locale
@@ -41,6 +45,7 @@ Nesta pasta se localizam os elementos básicos da interface da aplicação como 
 - Todos os componentes devem ser exportados no index.ts
 
 Seu alias é `@components/elements`.
+
 Ex: `import { Button } from '@components/elements`
 
 #### src/app/components/shared
@@ -49,6 +54,7 @@ Nesta pasta se localizam componentes compostos e criados com uma finalidade mais
 - Todos os componentes devem ser exportados no index.ts
 
 Seu alias é `@components/shared`.
+
 Ex: `import { MobileHeader, TabletHeader, WebHeader } from '@components/shared`
 
 #### src/app/components/views
@@ -57,6 +63,7 @@ Alguns projetos utilizam de containers porém com a vinda dos react-hooks este p
 - Todos os componentes devem ser exportados no index.ts
 
 Seu alias é `@components/views`.
+
 Ex: `import { AppView } from '@components/views`
 
 
@@ -66,12 +73,14 @@ Com a vinda dos react-hooks tornou-se a necessidade de se criar alguns hooks cus
 - Todos os componentes devem ser exportados no index.ts
 
 Seu alias é `@components/hooks`.
+
 Ex: `import { useDevice } from '@components/hooks`
 
 ### src/app/config
 Aqui ficam as configurações gerais da aplicação como rotas de api ou rotas do próprio router dentre outras configurações.
 
 Seu alias é `@config/*`.
+
 Ex: `import themeColors from '@config/theme'`
 
 
@@ -83,6 +92,7 @@ Na aplicação principalmente com o redux precisamos organizar a tipagem bem com
 - Todos os tipos deve ser exportados no index.ts
 
 Seu alias é `@types`.
+
 Ex: `import { IAppState } from '@types`
 
 ### src/app/redux/actions
@@ -91,10 +101,12 @@ Todos os arquivos de actions devem terminar com `.actions.ts`
 - Note que as actions creators são agrupadas em um objeto e assim exportadas isolando o contexto e assim evitando conflitos de nomeclatura bem como a simplificação das mesmas.
 
 Seu alias é `@redux/actions/*`.
+
 Ex: `import { todoActions } from '@redux/actions/todo.actions`
 
 ### src/app/redux/reducers
 Aqui são definidos os reducers.
 No arquivo `index.ts` são mapeados os reducers.
+
 Todos os arquivos de reducers devem terminar com `.reducer.ts`
 
