@@ -1,4 +1,3 @@
-
 import { ITodoState } from './state';
 
 export * from './state';
