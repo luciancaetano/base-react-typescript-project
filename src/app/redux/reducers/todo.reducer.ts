@@ -24,4 +24,4 @@ export const todoReducer = createReducer<IAppAction, typeof initialState>(initia
       checked: !get(state.todos, [action.payload, 'checked'], false),
     },
   }),
-});
+}, 'keep-on-clear-store', 'keep-on-state-reload');
