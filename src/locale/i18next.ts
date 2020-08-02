@@ -13,9 +13,9 @@ const i18nInstance = i18n
       lookupLocalStorage: 'lang',
     },
     resources: languages,
-    lng: 'pt-br',
-    fallbackLng: 'pt-br',
-    ns: Object.keys(languages['pt-br']),
+    lng: 'en',
+    fallbackLng: 'en',
+    ns: Object.keys(languages.en), // Map namespaces based on main language
     defaultNS: 'global',
     lowerCaseLng: true,
     supportedLngs: Object.keys(languages), // https://www.metamodpro.com/browser-language-codes

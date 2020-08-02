@@ -1,13 +1,13 @@
 # React Basic Typescript Redux Starter
 
 ## Apresentação
-Este projeto é uma coleção de toda a experiência praticada com com react e outros frameworks como angular, agora venho trazer a comunidade esta experiência para que ela ajude as pessoas a organizarem seus projetos pessoais ou profissionais também ficarei grato a evolução do mesmo, logo estou disponibilizando sobre uma licença livre [CC0](https://creativecommons.org/publicdomain/zero/1.0/deed.pt_BR)
+Este projeto é uma coleção de toda a experiência praticada com react e outros frameworks como angular, agora venho trazer a comunidade esta experiência para que ela ajude as pessoas a organizarem seus projetos pessoais ou profissionais também ficarei grato a evolução do mesmo, logo estou disponibilizando sobre uma licença livre [CC0](https://creativecommons.org/publicdomain/zero/1.0/deed.pt_BR)
 
 ## Definições e Conceitos
-- Alias: Alias é um mapeamento para um aquivo ou diretório do código fonte da aplicação suas configures ficam no arquivo `tsconfig.paths.json` para saber mais veja em https://www.typescriptlang.org/docs/handbook/module-resolution.html
+- Alias: Alias é um mapeamento para um aquivo ou diretório do código fonte da aplicação suas configures ficam no arquivo `tsconfig.paths.json` para saber mais veja em https://www.typescriptlang.org/docs/handbook/module-resolution.html, note que alias terminados com `/*` indicam um diretório logo este deve ser importado com o nome do arquivo desejado e alias simples importam o aquivo index.ts do diretório.
 
 ## Organização
-Fazemos grande uso do eslint para organizar nosso código bem como a estrutura do projeto.
+Faz-se grande uso do eslint para organizar o código bem como a estrutura do projeto.
 Abaixo serão apresentadas as organizações por diretório e seus alias para serem importados.
 
 ### SRC
@@ -16,7 +16,7 @@ Esta é a raiz do projeto nela se localizam 2 arquivos importantes o primeiro é
 ### src/styles
 Preferencialmente este projeto faz o uso do sass porém pode-se utilizar o css simples, a finalidade desta pasta é conter os estilos globais como resets, temas, variáveis de configurações do sass, aqui não guardamos estilos reservados a componentes, estes iremos ver mais em frente.
 Seu alias é `@styles/*`.
-Ex: `import logo from '@styles/logo.svg'`
+Ex: `import '@styles/vars.scss'`
 
 ### src/media
 Aqui ficam os arquivos de mídia como ícones, imagens, svg etc.
@@ -24,7 +24,8 @@ Seu alias é `@media/*`.
 Ex: `import logo from '@media/logo.svg'`
 
 ### src/locale
-Aqui se localizam as configurações da biblioteca [i18next](https://www.i18next.com/) a qual nos ajuda a implementar o suporte a multiplas linguagens no react.
+Aqui se localizam as configurações e dicionários da biblioteca [i18next](https://www.i18next.com/) a qual nos ajuda a implementar o suporte a multiplas linguagens no react.
+Suas estrutura é bastante simples na pasta languages ficam os dicionários separados por namespaces os quais são importados, organizados e exportados no aquivo index.ts de cada pasta de sua linguagem.
 Este diretório não possui alias.
 
 ### src/app
