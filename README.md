@@ -1,129 +1,127 @@
 # React Basic Typescript Redux Starter
 
 # package.json scripts
-- `start:dev` inicia o servidor com ambiente de desenvolvimento
-- `start:prod` inicia o servidor com ambiente de produção
-- `build:dev` compila a aplicação com ambiente de desenvolvimento
-- `build:prod` compila a aplicação com ambiente de produção
-- `lint`  testa o código utilizando eslint
-- `lint:fix` tenta corrigir erros dos lint
+- `start: dev` starts the server with a development environment
+- `start: prod` starts the server with a production environment
+- `build: dev` compiles the application with a development environment
+- `build: prod` compiles the application with a production environment
+- `lint` tests the code using eslint
+- `lint: fix` tries to correct lint errors
 
-## Apresentação
-Este projeto é uma coleção de toda a experiência praticada com react e outros frameworks como angular, agora venho trazer a comunidade esta experiência para que ela ajude as pessoas a organizarem seus projetos pessoais ou profissionais também ficarei grato a evolução do mesmo, logo estou disponibilizando sobre uma licença livre MIT
+## Presentation
+This project is a collection of all the experience practiced with react and other frameworks like angular, now I come to bring the community this experience so that it helps people to organize their personal or professional projects. I will also be grateful for the evolution of it, so I am making available about a free MIT license
 
-## Definições
-- Alias: Alias é um mapeamento para um aquivo ou diretório do código fonte da aplicação suas configures ficam no arquivo `tsconfig.paths.json` para saber mais veja em https://www.typescriptlang.org/docs/handbook/module-resolution.html, note que alias terminados com `/*` indicam um diretório logo este deve ser importado com o nome do arquivo desejado e alias simples importam o aquivo index.ts do diretório.
+## Definitions
+- Alias: Alias ​​is a mapping to a file or directory of the application's source code. Its settings are in the file `tsconfig.paths.json` to learn more see https://www.typescriptlang.org/docs/handbook/module- resolution.html, note that aliases ending with `/ *` indicate a directory so it must be imported with the desired file name and simple aliases import the file index.ts from the directory.
 
-## Organização
-Faz-se grande uso do eslint para organizar o código bem como a estrutura do projeto.
-Abaixo serão apresentadas as organizações por diretório e seus alias para serem importados.
+## Organization
+Great use is made of eslint to organize the code as well as the structure of the project.
+Below are listed the organizations by directory and their alias to be imported.
 
 ### SRC
-Esta é a raiz do projeto nela se localizam 2 arquivos importantes o primeiro é o ponto de entrada da aplicação `index.tsx` onde é inicializado o react e importado o estilo principal, O segundo é o arquivo `react-app-env.d.ts` aqui localizam-se os tipos customizados e é iportado os estilos do react-scripts
+This is the root of the project. 2 important files are located there, the first is the entry point of the `index.tsx` application where react is started and the main style is imported, the second is the` react-app-env.d file. .ts` here the custom types are located and the styles of react-scripts are ported
 
-### src/styles
-Preferencialmente este projeto faz o uso do sass porém pode-se utilizar o css simples, a finalidade desta pasta é conter os estilos globais como resets, temas, variáveis de configurações do sass, aqui não guardamos estilos reservados a componentes, estes iremos ver mais em frente.
-Você pode importar as variáveis dentro de aquivos sass
-Seu alias é `@styles/*`.
+### src / styles
+Preferably this project makes use of sass but you can use simple css, the purpose of this folder is to contain global styles such as resets, themes, sass configuration variables, here we do not keep styles reserved for components, these we will see more in front.
+You can import variables into sass files
+Its alias is `@ styles / *`.
 
-Ex: `@import "@styles/vars.scss";`
+Ex: `@import" @ styles / vars.scss ";`
 
-### src/media
-Aqui ficam os arquivos de mídia como ícones, imagens, svg etc.
+### src / media
+Here are the media files such as icons, images, svg etc.
 
-Seu alias é `@media/*`.
+Its alias is `@ media / *`.
 
-Ex: `import logo from '@media/logo.svg'`
+Ex: `import logo from '@ media / logo.svg'`
+### src / locale
+Here are located the settings and dictionaries of the library [i18next] (https://www.i18next.com/) which helps us to implement support for multiple languages ​​in react.
+Their structure is quite simple in the languages ​​folder, the dictionaries are separated by namespaces which are imported, organized and exported in the index.ts file of each language folder.
+This directory does not contain an alias.
 
-### src/locale
-Aqui se localizam as configurações e dicionários da biblioteca [i18next](https://www.i18next.com/) a qual nos ajuda a implementar o suporte a multiplas linguagens no react.
-Suas estrutura é bastante simples na pasta languages ficam os dicionários separados por namespaces os quais são importados, organizados e exportados no aquivo index.ts de cada pasta de sua linguagem.
-Este diretório não contém alias.
+### src / app
+Here the application itself is located.
 
-### src/app
-Aqui se localiza a aplicação em si.
+### src / app / components
+To better organize the project, the components and their uses in react were categorized.
+- All elements, views and partials are exported as default then they are exported with a nomenclature by the index.ts of the respective folders.
 
-### src/app/components
-Para melhor organizar o projeto foram categorizados os componentes e seus usos no react.
-- Todos elementos, views e partials são exportados como default em seguida são exportados com uma nomeclatura pelo index.ts das respectivas pastas.
+#### src / app / components / elements
+In this folder are located the basic elements of the application interface such as buttons, links inputs etc.
+- Note that each component is located in a folder with the same name followed by its own css.
+- All components must be exported on index.ts
 
-#### src/app/components/elements
-Nesta pasta se localizam os elementos básicos da interface da aplicação como botões, links inputs etc.
-- Note que cada componente se localiza em uma pasta com o seu mesmo nome seguido do seu css próprio.
-- Todos os componentes devem ser exportados no index.ts
+Its alias is `@ components / elements`.
 
-Seu alias é `@components/elements`.
+Ex: `import {Button} from '@ components / elements`
 
-Ex: `import { Button } from '@components/elements`
+#### src / app / components / partials
+In this folder are located components composed and created with a more specific purpose, we can put here menus and layout items among others.
+- Note that each component is located in a folder with the same name followed by its own css.
+- All components must be exported on index.ts
 
-#### src/app/components/partials
-Nesta pasta se localizam componentes compostos e criados com uma finalidade mais específica,podemos colocar aqui menus e itens de layout entre outros.
-- Note que cada componente se localiza em uma pasta com o seu mesmo nome seguido do seu css próprio.
-- Todos os componentes devem ser exportados no index.ts
+Its alias is `@ components / partials`.
 
-Seu alias é `@components/partials`.
+Ex: `import {MobileHeader, TabletHeader, WebHeader} from '@ components / partials`
 
-Ex: `import { MobileHeader, TabletHeader, WebHeader } from '@components/partials`
+#### src / app / components / views
+In this folder are located the components presented in the application depending on the application they can be presented alongside other views or routed using the react-router.
+Some projects use containers but with the arrival of react-hooks they lose their sense of use, logos dispatch's in redux are made directly in views.
+- All components must be exported on index.ts
 
-#### src/app/components/views
-Nesta pasta se localizam os componentes apresentados na aplicação dependendo da aplicação elas podem ser apresentadas ao lado de outras views ou roteadas utilizando-se do react-router.
-Alguns projetos utilizam de containers porém com a vinda dos react-hooks estes perdem o sentido do uso, logos dispatch's no redux são feitos direto nas views.
-- Todos os componentes devem ser exportados no index.ts
+Its alias is `@ components / views`.
 
-Seu alias é `@components/views`.
-
-Ex: `import { AppView } from '@components/views`
-
-
-#### src/app/components/hooks
-Com a vinda dos react-hooks tornou-se a necessidade de se criar alguns hooks customizados conforme a necessidade surge durante o desenvolvimento da aplicação, então aqui ficam os hooks customizados.
-- Todos os hooks devem ser exportados no index.ts
-- Todos os hoks devem ser exportados no index.ts
-
-Seu alias é `@components/hooks`.
-
-Ex: `import { useDevice } from '@components/hooks`
-
-### src/app/config
-Aqui ficam as configurações gerais da aplicação como rotas de api ou rotas do próprio router dentre outras configurações.
-
-Seu alias é `@config/*`.
-
-Ex: `import themeColors from '@config/theme'`
+Ex: `import {AppView} from '@ components / views`
 
 
-### src/app/utils
-Nesta pasta ficam as funções, constantes e outras ferramentas reutilizáveis pela aplicação.
+#### src / app / components / hooks
+With the arrival of react-hooks, it became necessary to create some customized hooks as the need arises during the development of the application, so here are the customized hooks.
+- All hooks must be exported to index.ts
+- All hoks must be exported on index.ts
 
-### src/app/types
-Na aplicação principalmente com o redux precisamos organizar a tipagem bem como outras utilidades, logo nesta pasta ficam os tipos globais da aplicação como o `IAppState` que mapeia todo o estado da aplicação no redux.
-- Todos os tipos deve ser exportados no index.ts
+Its alias is `@ components / hooks`.
 
-Seu alias é `@types`.
+Ex: `import {useDevice} from '@ components / hooks`
 
-Ex: `import { IAppState } from '@types`
+### src / app / config
+Here are the general settings of the application such as api routes or routes of the router itself, among other configurations.
 
-### src/app/redux/actions
-Aqui são definidas todas as action creators e as constantes do redux.
-Todos os arquivos de actions devem terminar com `.actions.ts`
-- Note que as actions creators são agrupadas em um objeto e assim exportadas isolando o contexto e assim evitando conflitos de nomeclatura bem como a simplificação das mesmas.
+Its alias is `@ config / *`.
 
-Seu alias é `@redux/actions/*`.
+Ex: `import themeColors from '@ config / theme'`
 
-Ex: `import { todoActions } from '@redux/actions/todo.actions`
+### src / app / utils
+In this folder are the functions, constants and other tools reusable by the application.
 
-### src/app/redux/reducers
-Aqui são definidos os reducers.
-No arquivo `index.ts` são mapeados os reducers.
+### src / app / types
+In the application mainly with redux we need to organize the typing as well as other utilities, then in this folder are the global types of the application such as `IAppState` which maps the entire state of the application in redux.
+- All types must be exported on index.ts
 
-Todos os arquivos de reducers devem terminar com `.reducer.ts`
+Its alias is `@ types`.
 
-Preste muita atenção pois os reducers mapeados aqui devem ser mapeados na interface `IAppState`.
+Ex: `import {IAppState} from '@ types`
 
-## Conceitos
-Use e abuse de tipos.
-Ao utilizar um estado do redux mapeie utilizando da interface `IAppState`
+### src / app / redux / actions
+Here, all action creators and redux constants are defined.
+All action files must end with `.actions.ts`
+- Note that the actions creators are grouped into an object and thus exported isolating the context and thus avoiding naming conflicts as well as their simplification.
 
-EX: `const todosState = useSelector((state: IAppState) => state.todos.todos);`
+Its alias is `@ redux / actions / *`.
 
-Isto ajuda a evitar erros de nomeclatura bem como erros de tipos ou ao tentar acessar um atributo de algo nulo ou undefined.
+Ex: `import {todoActions} from '@ redux / actions / todo.actions`
+
+### src / app / redux / reducers
+Reducers are defined here.
+Reducers are mapped in the `index.ts` file.
+
+All reducer files must end with `.reducer.ts`
+
+Pay close attention as the reducers mapped here must be mapped in the `IAppState` interface.
+
+## Concepts
+Use and abuse types.
+When using a redux state map using the `IAppState` interface
+
+EX: `const todosState = useSelector ((state: IAppState) => state.todos.todos);`
+
+This helps to avoid naming errors as well as type errors or when trying to access a null or undefined attribute.
