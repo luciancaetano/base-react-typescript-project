@@ -1,9 +1,13 @@
 import React from 'react';
 import './NotFoundView.scss';
+import { AppLink } from '@components/elements';
 
 const NotFoundView = () => (
   <div id="notFoundView">
-    Not Found
+    Page Not Found
+    <AppLink to="todoList">
+      Go to TodoList
+    </AppLink>
   </div>
 );
 

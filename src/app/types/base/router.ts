@@ -1,5 +1,7 @@
 import React from 'react';
+import { appRoutes } from '@config/app.routes';
 
+export type TAppRouteName = keyof typeof appRoutes | '/';
 export interface IApiRouteConfig {
   [name: string]: string;
 }

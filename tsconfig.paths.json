@@ -5,7 +5,6 @@
             "@config/*": ["src/app/config/*"],
             "@app.routes": ["src/app/config/app.routes"],
             "@api.routes": ["src/app/config/api.routes"],
-            "@core.config/*": ["src/app/config/core/*"],
             "@media/*": ["src/media/*"],
             "@styles/*": ["src/styles/*"],
             "@components/hooks": ["src/app/components/hooks/index"],

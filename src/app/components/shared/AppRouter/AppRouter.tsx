@@ -1,7 +1,10 @@
 import React, { useMemo } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { map } from 'lodash';
-import { appRoutes, TAppRouteName, getAppRoute } from '@app.routes';
+import { appRoutes } from '@app.routes';
+import { TAppRouteName } from '@types';
+import { getAppRoute } from '@utils/router';
+import { NotFoundView } from '@components/views';
 
 const renderRedirect = (from: string, to: TAppRouteName) => () => <Redirect from={from} to={getAppRoute(to)} />;
 
@@ -13,7 +16,7 @@ const AppRouter = () => {
       <Route exact path="/" render={renderRedirect('/', 'todoList')} />
       {routes}
       {/* Default route aka not found */}
-      { /* <Route component={NotFoundView} /> */ }
+      <Route component={NotFoundView} />
     </Switch>
   );
 };

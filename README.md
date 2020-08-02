@@ -21,10 +21,10 @@ Esta é a raiz do projeto nela se localizam 2 arquivos importantes o primeiro é
 
 ### src/styles
 Preferencialmente este projeto faz o uso do sass porém pode-se utilizar o css simples, a finalidade desta pasta é conter os estilos globais como resets, temas, variáveis de configurações do sass, aqui não guardamos estilos reservados a componentes, estes iremos ver mais em frente.
-
+Você pode importar as variáveis dentro de aquivos sass
 Seu alias é `@styles/*`.
 
-Ex: `import '@styles/vars.scss'`
+Ex: `@import "@styles/vars.scss";`
 
 ### src/media
 Aqui ficam os arquivos de mídia como ícones, imagens, svg etc.
