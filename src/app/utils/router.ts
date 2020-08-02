@@ -40,14 +40,6 @@ export const getAppRoute = (name: TAppRouteName, params?: IAppRouteParams) => {
 };
 
 /**
- * Redux action creator for push route
- */
-export const pushRoute = (name: TAppRouteName, params?: IAppRouteParams) => ({
-  type: 'router::PUSH',
-  payload: name === '/' ? '/' : getAppRoute(name, params),
-} as any);
-
-/**
  * Check if route matches
  */
 export const matchRoute = (names: TAppRouteName | TAppRouteName[], path: string, props: RouteProps = {}) => {

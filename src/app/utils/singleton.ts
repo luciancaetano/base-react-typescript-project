@@ -17,6 +17,8 @@ export class AppSingleton {
   // Private vars
   private translator: TFunction | null = null;
 
+  private pushRouteFn: ((path: string) => void) | null = null;
+
   // Public functions
 
   /** Stores i18next translator function */
@@ -27,4 +29,19 @@ export class AppSingleton {
 
   /** get i18next translator function */
   public getI18nInstance = () => this.translator;
+
+  public setPushRouteFn = (pushRouteFn: ((path: string) => void) | null) => {
+    this.pushRouteFn = pushRouteFn;
+  };
+
+  /**
+   * Push router
+   * Warning prefer os useHistory hook this methos is used only in router middleware
+   */
+  public pushRoute = (path: string) => {
+    if (this.pushRouteFn) {
+      this.pushRouteFn(path);
+    }
+    return this;
+  };
 }
