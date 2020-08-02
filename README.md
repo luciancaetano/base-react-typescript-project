@@ -14,7 +14,7 @@
 This project is a collection of all the experience practiced with react and other frameworks like angular, now I come to bring the community this experience so that it helps people to organize their personal or professional projects. I will also be grateful for the evolution of it, so I am making available about a free MIT license
 
 ## Definitions
-- Alias: Alias ​​is a mapping to a file or directory of the application's source code. Its settings are in the file `tsconfig.paths.json` to learn more see https://www.typescriptlang.org/docs/handbook/module- resolution.html, note that aliases ending with `/*` indicate a directory so it must be imported with the desired file name and simple aliases import the file index.ts from the directory.
+- Alias: Alias ​​is a mapping to a file or directory of the application's source code. Its settings are in the file `tsconfig.paths.json` to learn more see https://www.typescriptlang.org/docs/handbook/module-resolution.html, note that aliases ending with `/*` indicate a directory so it must be imported with the desired file name and simple aliases import the file index.ts from the directory.
 
 ## Organization
 Great use is made of eslint to organize the code as well as the structure of the project.
