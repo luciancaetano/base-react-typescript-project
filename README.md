@@ -7,7 +7,7 @@
 - `build:prod` compila a aplicação com ambiente de produção
 
 ## Apresentação
-Este projeto é uma coleção de toda a experiência praticada com react e outros frameworks como angular, agora venho trazer a comunidade esta experiência para que ela ajude as pessoas a organizarem seus projetos pessoais ou profissionais também ficarei grato a evolução do mesmo, logo estou disponibilizando sobre uma licença livre [CC0](https://creativecommons.org/publicdomain/zero/1.0/deed.pt_BR)
+Este projeto é uma coleção de toda a experiência praticada com react e outros frameworks como angular, agora venho trazer a comunidade esta experiência para que ela ajude as pessoas a organizarem seus projetos pessoais ou profissionais também ficarei grato a evolução do mesmo, logo estou disponibilizando sobre uma licença livre MIT
 
 ## Definições
 - Alias: Alias é um mapeamento para um aquivo ou diretório do código fonte da aplicação suas configures ficam no arquivo `tsconfig.paths.json` para saber mais veja em https://www.typescriptlang.org/docs/handbook/module-resolution.html, note que alias terminados com `/*` indicam um diretório logo este deve ser importado com o nome do arquivo desejado e alias simples importam o aquivo index.ts do diretório.
