@@ -17,7 +17,7 @@ Faz-se grande uso do eslint para organizar o código bem como a estrutura do pro
 Abaixo serão apresentadas as organizações por diretório e seus alias para serem importados.
 
 ### SRC
-Esta é a raiz do projeto nela se localizam 2 arquivos importantes o primeiro é o ponto de entrada da aplicação `index.tsx` onde é inicializado o react e importado o estilo principal.
+Esta é a raiz do projeto nela se localizam 2 arquivos importantes o primeiro é o ponto de entrada da aplicação `index.tsx` onde é inicializado o react e importado o estilo principal, O segundo é o arquivo `react-app-env.d.ts` aqui localizam-se os tipos customizados e é iportado os estilos do react-scripts
 
 ### src/styles
 Preferencialmente este projeto faz o uso do sass porém pode-se utilizar o css simples, a finalidade desta pasta é conter os estilos globais como resets, temas, variáveis de configurações do sass, aqui não guardamos estilos reservados a componentes, estes iremos ver mais em frente.
