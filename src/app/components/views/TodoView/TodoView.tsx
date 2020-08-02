@@ -23,7 +23,7 @@ const TodoView = () => {
   (window as any).i18n = i18n;
 
   return (
-    <div>
+    <div id="todoView">
       <button onClick={handleAddTodo}>{_('action/add_todo')}</button>
       <ul className="todoList">
         {map(todosState, (item, id) => (

@@ -1,11 +1,17 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { TodoView } from '@components/views';
+import { BrowserRouter as Router } from 'react-router-dom';
+
+import { AppRouter, AppLayout } from '@components/shared';
 import store from './redux/configurestore';
 
 const App = () => (
   <Provider store={store}>
-    <TodoView />
+    <Router>
+      <AppLayout>
+        <AppRouter />
+      </AppLayout>
+    </Router>
   </Provider>
 );
 

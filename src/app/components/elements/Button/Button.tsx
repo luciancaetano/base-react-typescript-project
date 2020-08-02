@@ -1,4 +1,5 @@
 import React from 'react';
+import './Button.scss';
 
 interface IProps {
   onClick?: () => void;
