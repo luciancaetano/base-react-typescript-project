@@ -24,6 +24,9 @@ interface IFixedPersistConfig extends PersistConfig<any, any, any> {
   deserialize: Function;
 }
 
+/**
+ * Featured version of persistReducer
+ */
 export const configureReducerPeristence = ({
   name, reducer, version, ...conf
 }: IHelperPersistConfig) => {
@@ -56,7 +59,7 @@ export const configureReducerPeristence = ({
 };
 
 /**
- * Create a simplified reducer
+ * Create a simplified reducer and handles APP_STORAGE_CLEAR, APP_STATE_RELOAD actions types
  */
 export function createReducer<A extends IAppAction, S extends {}>(
   initialState: S, reducer: Record<string, (s: S, a: A) => S>,
