@@ -45,7 +45,7 @@ Aqui se localiza a aplicação em si.
 
 ### src/app/components
 Para melhor organizar o projeto foram categorizados os componentes e seus usos no react.
-- Todos elementos, views e shared são exportados como default em seguida são exportados com uma nomeclatura pelo index.ts das respectivas pastas.
+- Todos elementos, views e partials são exportados como default em seguida são exportados com uma nomeclatura pelo index.ts das respectivas pastas.
 
 #### src/app/components/elements
 Nesta pasta se localizam os elementos básicos da interface da aplicação como botões, links inputs etc.
@@ -56,14 +56,14 @@ Seu alias é `@components/elements`.
 
 Ex: `import { Button } from '@components/elements`
 
-#### src/app/components/shared
+#### src/app/components/partials
 Nesta pasta se localizam componentes compostos e criados com uma finalidade mais específica,podemos colocar aqui menus e itens de layout entre outros.
 - Note que cada componente se localiza em uma pasta com o seu mesmo nome seguido do seu css próprio.
 - Todos os componentes devem ser exportados no index.ts
 
-Seu alias é `@components/shared`.
+Seu alias é `@components/partials`.
 
-Ex: `import { MobileHeader, TabletHeader, WebHeader } from '@components/shared`
+Ex: `import { MobileHeader, TabletHeader, WebHeader } from '@components/partials`
 
 #### src/app/components/views
 Nesta pasta se localizam os componentes apresentados na aplicação dependendo da aplicação elas podem ser apresentadas ao lado de outras views ou roteadas utilizando-se do react-router.

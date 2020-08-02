@@ -1,7 +1,7 @@
 {
     "compilerOptions" : {
         "paths": {
-            "@components/shared": ["src/app/components/shared/index"],
+            "@components/partials": ["src/app/components/partials/index"],
             "@config/*": ["src/app/config/*"],
             "@app.routes": ["src/app/config/app.routes"],
             "@api.routes": ["src/app/config/api.routes"],
