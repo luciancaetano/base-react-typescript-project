@@ -4,8 +4,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import { IAppState } from '@types';
 import { map } from 'lodash';
 import { todoActions } from '@redux/actions/todo.actions';
+import { useTranslation } from 'react-i18next';
 
 const TodoView = () => {
+  const [_, i18n] = useTranslation('global');
   const dispatch = useDispatch();
   const todosState = useSelector((state: IAppState) => state.todos.todos);
 
@@ -18,9 +20,11 @@ const TodoView = () => {
     dispatch(todoActions.toggleTodo(id));
   }, [dispatch]);
 
+  (window as any).i18n = i18n;
+
   return (
     <div>
-      <button onClick={handleAddTodo}>Add</button>
+      <button onClick={handleAddTodo}>{_('action/add_todo')}</button>
       <ul className="todoList">
         {map(todosState, (item, id) => (
           <li

@@ -1,3 +1,3 @@
 export default {
-  'action/add_todo': 'Add TODO',
+  'action/add_todo': 'Add an item',
 };
