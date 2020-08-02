@@ -1,0 +1,14 @@
+
+ul.todoList {
+    list-style: none;
+    padding-left: 10px;
+    li.todoItem {
+        cursor: pointer;
+        user-select: none;
+        width: 400px;
+        max-width: 50vw;
+
+        &:nth-child(even) {background: #FFF}
+        &:nth-child(odd) {background: #EEE}
+    }
+}

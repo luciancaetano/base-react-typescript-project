@@ -16,7 +16,6 @@ export const todoReducer = createReducer<IAppAction, typeof initialState>(initia
       title: action.payload,
       checked: false,
     },
-
   }),
   [TOGGLE_TODO]: (state, action) => state.setIn(['todos'], {
     ...state.todos,

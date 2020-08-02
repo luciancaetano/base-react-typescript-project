@@ -3,14 +3,12 @@
         "paths": {
             "@components/shared": ["src/app/components/shared/index"],
             "@locale": ["src/locale/i18next"],
-            "@configs/*": ["src/app/configs/*"],
+            "@config/*": ["src/app/config/*"],
             "@components/hooks": ["src/app/components/hooks/index"],
             "@components/elements": ["src/app/components/elements/index"],
             "@components/views": ["src/app/components/views/index"],
             "@redux/actions/*": ["src/app/redux/actions/*"],
             "@utils/*": ["src/app/utils/*"],
-            "@routes/app": ["src/app/configs/app.routes"],
-            "@routes/api": ["src/app/configs/api.routes"],
             "@types": ["src/app/types/index"]
         }
     }

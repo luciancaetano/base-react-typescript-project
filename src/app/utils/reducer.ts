@@ -1,5 +1,8 @@
 import { IAppAction } from '@types';
 
+/**
+ * Create a simplified reducer
+ */
 export function createReducer<A extends IAppAction, S extends {}>(
   initialState: S, reducer: Record<string, (s: S, a: A) => S>,
 ) {

@@ -1,20 +1,20 @@
-import { TAppDispatch } from '@types';
+import { TAppDispatch, IAppAction } from '@types';
 
 export const ADD_TODO = 'todo.ADD_TODO';
 export const SET_VISIBILITY_FILTER = 'todo.SET_VISIBILITY_FILTER';
 export const TOGGLE_TODO = 'todo.TOGGLE_TODO';
 
-const addTodo = (text: string) => (dispatch: TAppDispatch) => {
+const addTodo = (text: string) => (dispatch: TAppDispatch<IAppAction<string>>) => {
   dispatch({
     type: ADD_TODO,
-    playload: text,
+    payload: text,
   });
 };
 
-const toggleTodo = (id: string) => (dispatch: TAppDispatch) => {
+const toggleTodo = (id: string) => (dispatch: TAppDispatch<IAppAction<string>>) => {
   dispatch({
     type: TOGGLE_TODO,
-    playload: id,
+    payload: id,
   });
 };
 
