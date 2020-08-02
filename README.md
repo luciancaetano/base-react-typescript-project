@@ -3,7 +3,7 @@
 ## Apresentação
 Este projeto é uma coleção de toda a experiência praticada com react e outros frameworks como angular, agora venho trazer a comunidade esta experiência para que ela ajude as pessoas a organizarem seus projetos pessoais ou profissionais também ficarei grato a evolução do mesmo, logo estou disponibilizando sobre uma licença livre [CC0](https://creativecommons.org/publicdomain/zero/1.0/deed.pt_BR)
 
-## Definições e Conceitos
+## Definições
 - Alias: Alias é um mapeamento para um aquivo ou diretório do código fonte da aplicação suas configures ficam no arquivo `tsconfig.paths.json` para saber mais veja em https://www.typescriptlang.org/docs/handbook/module-resolution.html, note que alias terminados com `/*` indicam um diretório logo este deve ser importado com o nome do arquivo desejado e alias simples importam o aquivo index.ts do diretório.
 
 ## Organização
@@ -59,7 +59,7 @@ Ex: `import { MobileHeader, TabletHeader, WebHeader } from '@components/shared`
 
 #### src/app/components/views
 Nesta pasta se localizam os componentes apresentados na aplicação dependendo da aplicação elas podem ser apresentadas ao lado de outras views ou roteadas utilizando-se do react-router.
-Alguns projetos utilizam de containers porém com a vinda dos react-hooks este perdem o sentido do uso, logos dispatch's no redux são feitos direto nas views.
+Alguns projetos utilizam de containers porém com a vinda dos react-hooks estes perdem o sentido do uso, logos dispatch's no redux são feitos direto nas views.
 - Todos os componentes devem ser exportados no index.ts
 
 Seu alias é `@components/views`.
@@ -70,7 +70,7 @@ Ex: `import { AppView } from '@components/views`
 #### src/app/components/hooks
 Com a vinda dos react-hooks tornou-se a necessidade de se criar alguns hooks customizados conforme a necessidade surge durante o desenvolvimento da aplicação, então aqui ficam os hooks customizados.
 - Todos os hooks devem ser exportados no index.ts
-- Todos os componentes devem ser exportados no index.ts
+- Todos os hoks devem ser exportados no index.ts
 
 Seu alias é `@components/hooks`.
 
@@ -85,7 +85,7 @@ Ex: `import themeColors from '@config/theme'`
 
 
 ### src/app/utils
-Nesta pasta ficam as funções, constantes entre outras ferramentas reutilizáveis pela aplicação.
+Nesta pasta ficam as funções, constantes e outras ferramentas reutilizáveis pela aplicação.
 
 ### src/app/types
 Na aplicação principalmente com o redux precisamos organizar a tipagem bem como outras utilidades, logo nesta pasta ficam os tipos globais da aplicação como o `IAppState` que mapeia todo o estado da aplicação no redux.
@@ -110,3 +110,12 @@ No arquivo `index.ts` são mapeados os reducers.
 
 Todos os arquivos de reducers devem terminar com `.reducer.ts`
 
+Preste muita atenção pois os reducers mapeados aqui devem ser mapeados na interface `IAppState`.
+
+## Conceitos
+Use e abuse de tipos.
+Ao utilizar um estado do redux mapeie utilizando da interface `IAppState`
+
+EX: `const todosState = useSelector((state: IAppState) => state.todos.todos);`
+
+Isto ajuda a evitar erros de nomeclatura bem como erros de tipos ou ao tentar pega um atributo de algo nulo ou undefined.
