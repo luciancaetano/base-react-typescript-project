@@ -118,4 +118,4 @@ Ao utilizar um estado do redux mapeie utilizando da interface `IAppState`
 
 EX: `const todosState = useSelector((state: IAppState) => state.todos.todos);`
 
-Isto ajuda a evitar erros de nomeclatura bem como erros de tipos ou ao tentar pega um atributo de algo nulo ou undefined.
+Isto ajuda a evitar erros de nomeclatura bem como erros de tipos ou ao tentar acessar um atributo de algo nulo ou undefined.
