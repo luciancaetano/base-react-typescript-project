@@ -1,6 +1,6 @@
 # React Basic Typescript Redux Starter
 
-[Documentação em portugês-BR](README.pt.md)
+[Documentação em portugês-BR](README.pt-br.md)
 
 # package.json scripts
 - `start: dev` starts the server with a development environment
