@@ -5,6 +5,8 @@
 - `start:prod` inicia o servidor com ambiente de produção
 - `build:dev` compila a aplicação com ambiente de desenvolvimento
 - `build:prod` compila a aplicação com ambiente de produção
+- `lint`  testa o código utilizando eslint
+- `lint:fix` tenta corrigir erros dos lint
 
 ## Apresentação
 Este projeto é uma coleção de toda a experiência praticada com react e outros frameworks como angular, agora venho trazer a comunidade esta experiência para que ela ajude as pessoas a organizarem seus projetos pessoais ou profissionais também ficarei grato a evolução do mesmo, logo estou disponibilizando sobre uma licença livre MIT
