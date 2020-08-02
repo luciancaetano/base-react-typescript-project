@@ -1,5 +1,7 @@
 # React Basic Typescript Redux Starter
 
+[Documentação em portugês-BR](README.pt.md)
+
 # package.json scripts
 - `start: dev` starts the server with a development environment
 - `start: prod` starts the server with a production environment
