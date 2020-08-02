@@ -1,28 +1,28 @@
 import localForage from 'localforage';
 import { first, omit } from 'lodash';
 import { Reducer } from 'redux';
-import { createTransform, persistReducer as persistReducer2, PersistConfig } from 'redux-persist';
+import {
+  createTransform, persistReducer as persistReducer2, PersistConfig, StateReconciler,
+} from 'redux-persist';
 import immutable from 'seamless-immutable';
 import presistenceConfig from '@config/persistence';
 import { IAppAction } from '@types';
 import { APP_STATE_RELOAD, APP_STORAGE_CLEAR } from '@redux/actions/app.actions';
+import hardSet from 'redux-persist/lib/stateReconciler/hardSet';
+import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
 
 interface IHelperPersistConfig {
   name: string;
   blacklist?: string[];
   version?: number;
   reducer: Reducer;
+  stateReconciler?: false | StateReconciler<any> | 'hardSet' | 'autoMergeLevel2';
 }
 
 const immutableTransform = createTransform(
   (inboundState: any) => inboundState && inboundState.asMutable ? inboundState.asMutable({ deep: true }) : inboundState,
   (outboundState) => immutable(outboundState),
 );
-
-// Handle bug
-interface IFixedPersistConfig extends PersistConfig<any, any, any> {
-  deserialize: Function;
-}
 
 /**
  * Featured version of persistReducer
@@ -33,6 +33,8 @@ export const configureReducerPeristence = ({
   const blacklist = conf.blacklist ? [...conf.blacklist, ...presistenceConfig.blacklistedAttrs] : presistenceConfig.blacklistedAttrs;
   return persistReducer2(
     {
+      // eslint-disable-next-line
+      stateReconciler: conf.stateReconciler === 'autoMergeLevel2' ? autoMergeLevel2 : (conf.stateReconciler === 'hardSet' ? hardSet : conf.stateReconciler),
       blacklist,
       key: name,
       version: version || 1,
@@ -53,7 +55,7 @@ export const configureReducerPeristence = ({
         return inboundState;
       })],
       deserialize: (v: Record<string, any>) => v,
-    } as IFixedPersistConfig,
+    } as PersistConfig<any, any, any>,
     (s, a) => reducer(immutable(s || {}), a).asMutable({ deep: true }),
   );
 };
