@@ -2,8 +2,9 @@
     "compilerOptions" : {
         "paths": {
             "@components/shared": ["src/app/components/shared/index"],
-            "@locale": ["src/locale/i18next"],
             "@config/*": ["src/app/config/*"],
+            "@media/*": ["src/media/*"],
+            "@styles/*": ["src/styles/*"],
             "@components/hooks": ["src/app/components/hooks/index"],
             "@components/elements": ["src/app/components/elements/index"],
             "@components/views": ["src/app/components/views/index"],
