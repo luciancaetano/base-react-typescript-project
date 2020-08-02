@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { configureReducerPeristence } from '@utils/reducer';
+import { configureReducerPeristence } from '@utils/redux';
 import { todoReducer } from './todo.reducer';
 
 export default combineReducers({

@@ -1,7 +1,7 @@
 import { ITodoState, IAppAction } from '@types';
 import { ADD_TODO, TOGGLE_TODO } from '@redux/actions/todo.actions';
 import immutable from 'seamless-immutable';
-import { createReducer } from '@utils/reducer';
+import { createReducer } from '@utils/redux';
 import { v4 as uuidv4 } from 'uuid';
 import { get } from 'lodash';
 
