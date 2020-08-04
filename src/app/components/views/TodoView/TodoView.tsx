@@ -1,36 +1,52 @@
+/* eslint-disable no-alert */
 import React, { useCallback } from 'react';
 import './TodoView.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import { IAppState } from '@types';
-import { map } from 'lodash';
+import { map, get } from 'lodash';
 import { todoActions } from '@redux/actions/todo.actions';
 import { useTranslation } from 'react-i18next';
 
 const TodoView = () => {
-  const [_, i18n] = useTranslation('global');
+  const [_] = useTranslation('global');
   const dispatch = useDispatch();
   const todosState = useSelector((state: IAppState) => state.todos.todos);
 
   const handleAddTodo = useCallback(() => {
-    // eslint-disable-next-line
-    dispatch(todoActions.addTodo(prompt('Conteúdo') as string));
+    const text:string | null = prompt('Text');
+
+    if (!!text && String(text).trim().length > 0) {
+      dispatch(todoActions.addTodo(text));
+    }
   }, [dispatch]);
 
-  const handleToggleTodo = useCallback((id: string) => () => {
+  const handleUpdateItem = useCallback((id: string) => () => {
+    const text:string | null = prompt('Text', get(todosState, [id, 'title'], ''));
+
+    if (!!text && String(text).trim().length > 0) {
+      dispatch(todoActions.updateTodo(id, text));
+    }
+  }, [dispatch, todosState]);
+
+  const handleToggleItem = useCallback((id: string) => () => {
     dispatch(todoActions.toggleTodo(id));
   }, [dispatch]);
 
-  (window as any).i18n = i18n;
+  const handleDeleteItem = useCallback((id: string) => () => {
+    dispatch(todoActions.deleteTodo(id));
+  }, [dispatch]);
 
   return (
     <div id="todoView">
-      <button onClick={handleAddTodo}>{_('action/add_todo')}</button>
+      <button onClick={handleAddTodo}>{_('action/TODO_ADD_ITEM')}</button>
       <ul className="todoList">
         {map(todosState, (item, id) => (
           <li
             className="todoItem"
-            onClick={handleToggleTodo(id)}
-          >{item.checked ? '☑' : '☐'}&nbsp;{item.title}
+          >
+            <div className="check" onClick={handleToggleItem(id)}>{item.checked ? '☑' : '☐'}</div>
+            <div className="title" onClick={handleUpdateItem(id)}>{item.title}</div>
+            <span className="trash" role="img" aria-label="trash" onClick={handleDeleteItem(id)}>🗑️</span>
           </li>
         ))}
       </ul>
