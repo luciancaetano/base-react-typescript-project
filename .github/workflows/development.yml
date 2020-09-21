@@ -25,9 +25,10 @@ jobs:
         yarn build:prod
     - name: Deploy to gh-pages
       if: success()
-      uses: crazy-max/ghaction-github-pages@v2
+      uses: crazy-max/ghaction-github-pages@v2.1.2
       with:
-        target_branch: gh-pages
-        build_dir: ./build
+          repo: https://github.com/luciancaetano/luciancaetano.github.io
+          target_branch: master
+          build_dir: ./build
       env:
         GITHUB_TOKEN: ${{ secrets.ACTIONS_DEPLOY_KEY }}
