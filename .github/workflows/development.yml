@@ -24,7 +24,7 @@ jobs:
       run: |
         yarn build:prod
     - name: Deploy to Gh-Pages
-    uses: peaceiris/actions-gh-pages@v3
-    with:
+      uses: peaceiris/actions-gh-pages@v3
+      with:
         github_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
         publish_dir: ./build
