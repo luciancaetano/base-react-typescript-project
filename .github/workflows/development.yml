@@ -52,4 +52,4 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.ACTIONS_DEPLOY_KEY }}
       with:
-        path: results/results.txt
+        path: build.zip
