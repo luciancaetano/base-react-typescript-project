@@ -1,10 +1,11 @@
 
 on:
-    push:
-      branches:
-        - master
     pull_request:
-        branches: *
+        types: 
+            - synchronize
+    push:
+        branches: 
+            - master
 
 env:
     NODE_VERSION: '12.x'
