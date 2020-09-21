@@ -1,8 +1,11 @@
 
 on:
+    pull_request:
+        types: 
+            - synchronize
     push:
-      branches:
-        - master
+        branches: 
+            - master
 
 env:
     NODE_VERSION: '12.x'
