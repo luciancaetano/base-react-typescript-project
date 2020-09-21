@@ -3,6 +3,8 @@ on:
     push:
       branches:
         - master
+    pull_request:
+        branches: *
 
 env:
     NODE_VERSION: '12.x'
