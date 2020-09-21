@@ -24,7 +24,10 @@ jobs:
       run: |
         yarn build:prod
     - name: Deploy to gh-pages
-      uses: peaceiris/actions-gh-pages@v3
+      if: success()
+      uses: crazy-max/ghaction-github-pages@v2
       with:
-        github_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-        publish_dir: ./build
+        target_branch: gh-pages
+        build_dir: ./build
+      env:
+        GITHUB_TOKEN: ${{ secrets.ACTIONS_DEPLOY_KEY }}
