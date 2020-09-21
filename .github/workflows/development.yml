@@ -43,13 +43,3 @@ jobs:
       with:
         name: build
         path: ./build
-    - uses: actions/download-artifact@v1
-      if: success()
-      with:
-        name: build
-    - name: Comment PR
-      uses: machine-learning-apps/pr-comment@master
-      env:
-        GITHUB_TOKEN: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-      with:
-        path: build.zip
