@@ -19,21 +19,21 @@ const DeviceProvider = ({ children }: React.PropsWithChildren<{}>) => {
   const [orientation, setOrientation] = useState<TDeviceOrientation>(window.innerHeight > window.innerWidth ? 'portrait' : 'landscape');
   const [online, setOnline] = useState<boolean>(window.navigator.onLine);
 
-  const [handleWindowResize] = useDebouncedCallback(() => {
+  const { callback: handleWindowResize } = useDebouncedCallback(() => {
     setWidth(window.innerWidth);
     setHeight(window.innerHeight);
     setOrientation(window.innerHeight > window.innerWidth ? 'portrait' : 'landscape');
   }, DEBOUNC_CALLBACK_TIME);
 
-  const [handleOnline] = useDebouncedCallback(() => {
+  const { callback: handleOnline } = useDebouncedCallback(() => {
     setOnline(true);
   }, DEBOUNC_CALLBACK_TIME);
 
-  const [handleOffLine] = useDebouncedCallback(() => {
+  const { callback: handleOffLine } = useDebouncedCallback(() => {
     setOnline(false);
   }, DEBOUNC_CALLBACK_TIME);
 
-  const [handleOrientation] = useDebouncedCallback(() => {
+  const { callback: handleOrientation } = useDebouncedCallback(() => {
     setOrientation(window.innerHeight > window.innerWidth ? 'portrait' : 'landscape');
   }, DEBOUNC_CALLBACK_TIME);
 

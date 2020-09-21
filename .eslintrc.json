@@ -62,6 +62,7 @@
           "extendDefaults": false
         }
       ],
+      "no-use-before-define": "off",
       "import/no-relative-parent-imports": "error",
       "jsx-a11y/tabindex-no-positive": "off",
       "react/require-default-props": "off",
