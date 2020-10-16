@@ -87,4 +87,5 @@ platforms/*
 # Ignore due to use of yarn
 package-lock.json
 
-__tests-results__/
+cypress/videos
+cypress/screenshots

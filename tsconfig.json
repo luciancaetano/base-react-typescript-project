@@ -23,7 +23,6 @@
     ],
     "baseUrl": ".",
     "types": [
-      "cypress",
       "node"
     ],
     "allowJs": true,
@@ -31,8 +30,8 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
-    "isolatedModules": false,
-    "noEmit": true
+    "noEmit": true,
+    "isolatedModules": true
   },
   "awesomeTypescriptLoaderOptions": {
     "useCache": true
@@ -41,8 +40,6 @@
     "node_modules"
   ],
   "include": [
-    "src",
-    "./node_modules/cypress",
-    "cypress/*/*.ts"
+    "src"
   ]
 }
