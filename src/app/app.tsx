@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Provider } from 'react-redux';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { HashRouter as Router } from 'react-router-dom';
 import { AppRouter, AppLayout } from '@components/partials';
 import { DeviceProvider } from '@components/elements';
 import { PersistGate } from 'redux-persist/integration/react';

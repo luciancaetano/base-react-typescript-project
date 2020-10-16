@@ -15,7 +15,6 @@
     "strictNullChecks": true,
     "preserveConstEnums": true,
     "skipLibCheck": true,
-    "sourceMap": true,
     "lib": [
       "es2015",
       "es2016",
@@ -24,6 +23,7 @@
     ],
     "baseUrl": ".",
     "types": [
+      "cypress",
       "node"
     ],
     "allowJs": true,
@@ -31,7 +31,7 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
-    "isolatedModules": true,
+    "isolatedModules": false,
     "noEmit": true
   },
   "awesomeTypescriptLoaderOptions": {
@@ -41,6 +41,8 @@
     "node_modules"
   ],
   "include": [
-    "src"
+    "src",
+    "./node_modules/cypress",
+    "cypress/*/*.ts"
   ]
 }

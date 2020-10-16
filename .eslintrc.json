@@ -174,7 +174,8 @@
       "LocalFileSystem": true,
       "fetchMock": true,
       "page": true,
-      "browser": true
+      "browser": true,
+      "cy": true
     },
     "settings": {
       "react": {
