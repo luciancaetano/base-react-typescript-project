@@ -38,6 +38,9 @@ jobs:
     - name: Build
       run: |
         yarn build:prod
+    - name: E2E Test
+      run: |
+        yarn test
     - uses: actions/upload-artifact@v2
       if: success()
       with:
