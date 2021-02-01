@@ -2,6 +2,15 @@
   "name": "base-react-typescript-project",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
+  "author": {
+    "name": "Lucian Caetano",
+    "url": "https://github.com/luciancaetano"
+  },
+  "repository": {
+    "type": "GIT",
+    "url": "https://github.com/luciancaetano/base-react-typescript-project"
+  },
   "scripts": {
     "start:dev": "cross-env SKIP_PREFLIGHT_CHECK=true NODE_ENV=development react-app-rewired start",
     "start:prod": "cross-env SKIP_PREFLIGHT_CHECK=true NODE_ENV=production react-app-rewired start",
