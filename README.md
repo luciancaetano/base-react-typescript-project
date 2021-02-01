@@ -128,4 +128,5 @@ When using a redux state map using the `IAppState` interface
 
 EX: `const todosState = useSelector ((state: IAppState) => state.todos.todos);`
 
+
 This helps to avoid naming errors as well as type errors or when trying to access a null or undefined attribute.
