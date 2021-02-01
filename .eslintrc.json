@@ -169,8 +169,6 @@
       ]
     },
     "globals": {
-      "PROJECT": true,
-      "cordova": true,
       "LocalFileSystem": true,
       "fetchMock": true,
       "page": true,

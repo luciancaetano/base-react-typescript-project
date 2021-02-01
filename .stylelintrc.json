@@ -1,11 +1,15 @@
 {
   "extends": "stylelint-config-airbnb",
   "plugins": [
-    "stylelint-selector-bem-pattern"
+    "@namics/stylelint-bem"
   ],
   "rules": {
     "max-nesting-depth": 20,
     "selector-max-id": 8,
-    "number-leading-zero": "never"
+    "number-leading-zero": "never",
+    "plugin/stylelint-bem-namics": {
+      "patternPrefixes": [],
+      "helperPrefixes": ["is", "has"]
+    }
   }
 }

@@ -4,6 +4,7 @@ import {
 import { matchPath, RouteProps } from 'react-router-dom';
 import { IRouterConfigEntry, TAppRouteName } from '@types';
 import { appRoutes } from '@app.routes';
+import { FunctionComponent } from 'react';
 
 /**
  * Create an route template string
@@ -15,7 +16,7 @@ const createRouteTemplate = (tpl: string) => (params: { [key: string]: string | 
 };
 
 interface ICreateRouteParams {
-  component: React.FunctionComponent;
+  component: FunctionComponent;
 }
 /**
  * Use create route enforcing type and beautifull syntax

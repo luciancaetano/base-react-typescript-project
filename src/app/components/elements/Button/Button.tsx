@@ -6,7 +6,7 @@ interface IProps {
 }
 
 const Button = ({ onClick, children }: React.PropsWithChildren<IProps>) => (
-  <button className="buttonElement" onClick={onClick}>
+  <button className="button" onClick={onClick}>
     {children}
   </button>
 );

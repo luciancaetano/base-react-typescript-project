@@ -3,7 +3,7 @@ import './AppLayout.scss';
 import { AppHeader } from '@components/partials';
 
 const AppLayout = ({ children }: PropsWithChildren<{}>) => (
-  <div className="appLayout">
+  <div className="applayout">
     <AppHeader />
     {children}
   </div>

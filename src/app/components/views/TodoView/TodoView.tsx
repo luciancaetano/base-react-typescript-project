@@ -39,14 +39,14 @@ const TodoView = () => {
   return (
     <div id="todoView">
       <button onClick={handleAddTodo}>{_('action/TODO_ADD_ITEM')}</button>
-      <ul className="todoList">
+      <ul className="todolist">
         {map(todosState, (item, id) => (
           <li
-            className="todoItem"
+            className="todolist__item"
           >
-            <div className="check" onClick={handleToggleItem(id)}>{item.checked ? '☑' : '☐'}</div>
-            <div className="title" onClick={handleUpdateItem(id)}>{item.title}</div>
-            <span className="trash" role="img" aria-label="trash" onClick={handleDeleteItem(id)}>🗑️</span>
+            <div className="todolist__item__check" onClick={handleToggleItem(id)}>{item.checked ? '☑' : '☐'}</div>
+            <div className="todolist__item__title" onClick={handleUpdateItem(id)}>{item.title}</div>
+            <span className="todolist__item__trash" role="img" aria-label="trash" onClick={handleDeleteItem(id)}>🗑️</span>
           </li>
         ))}
       </ul>

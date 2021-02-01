@@ -1,0 +1,7 @@
+{
+    "workbench.colorCustomizations": {
+        "css.validate": false,
+        "less.validate": false,
+        "scss.validate": false
+    }
+}

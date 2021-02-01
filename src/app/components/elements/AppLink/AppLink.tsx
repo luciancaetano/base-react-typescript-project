@@ -26,7 +26,7 @@ const AppLink = ({
   );
 
   return (
-    <a onClick={pushPath(to)} className={classNames('appLinkElement', className)}>
+    <a onClick={pushPath(to)} className={classNames('applink', className)}>
       {React.Children.toArray(children)}
     </a>
   );
