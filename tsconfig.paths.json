@@ -1,5 +1,6 @@
 {
     "compilerOptions" : {
+        "baseUrl": ".",
         "paths": {
             "@components/partials": ["src/app/components/partials/index"],
             "@config/*": ["src/app/config/*"],

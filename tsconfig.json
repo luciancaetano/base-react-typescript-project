@@ -1,40 +1,25 @@
 {
-  "compileOnSave": false,
   "extends": "./tsconfig.paths.json",
   "compilerOptions": {
-    "allowSyntheticDefaultImports": true,
-    "experimentalDecorators": false,
-    "target": "es6",
-    "module": "esnext",
-    "jsx": "react",
-    "moduleResolution": "node",
-    "noImplicitAny": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "removeComments": true,
-    "strictNullChecks": true,
-    "preserveConstEnums": true,
-    "skipLibCheck": true,
+    "target": "es5",
     "lib": [
-      "es2015",
-      "es2016",
       "dom",
-      "esnext.asynciterable"
-    ],
-    "baseUrl": ".",
-    "types": [
-      "node"
+      "dom.iterable",
+      "esnext"
     ],
     "allowJs": true,
+    "skipLibCheck": true,
     "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext",
+    "moduleResolution": "node",
     "resolveJsonModule": true,
+    "isolatedModules": true,
     "noEmit": true,
-    "isolatedModules": true
-  },
-  "awesomeTypescriptLoaderOptions": {
-    "useCache": true
+    "jsx": "react-jsx"
   },
   "exclude": [
     "node_modules"
