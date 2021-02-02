@@ -43,6 +43,7 @@ const TodoView = () => {
         {map(todosState, (item, id) => (
           <li
             className="todolist__item"
+            key={id}
           >
             <div className="todolist__item__check" onClick={handleToggleItem(id)}>{item.checked ? '☑' : '☐'}</div>
             <div className="todolist__item__title" onClick={handleUpdateItem(id)}>{item.title}</div>
