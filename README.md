@@ -1,7 +1,5 @@
 # React Basic Typescript Redux Starter
 
-[Documentação em portugês-BR](README.pt-br.md)
-
 [Recommended Libraries](recommended-libraries.md)
 
 # package.json scripts
