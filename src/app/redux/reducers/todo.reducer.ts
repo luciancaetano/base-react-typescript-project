@@ -3,13 +3,13 @@ import immutable from 'seamless-immutable';
 import { createReducer } from '@utils/redux';
 import { v4 as uuidv4 } from 'uuid';
 import { get, omit } from 'lodash';
-import { TodoActionsEnum, TodoActionType } from '@redux/actions/todoActions';
+import { TodoActionsEnum, TodoActionsType } from '@redux/actions/todoActions';
 
 const initialState = immutable<ITodoState>({
   todos: {},
 });
 
-export const todoReducer = createReducer<TodoActionType, typeof initialState>(initialState, (state, action) => {
+export const todoReducer = createReducer<TodoActionsType, typeof initialState>(initialState, (state, action) => {
   switch (action.type) {
     case TodoActionsEnum.TODO_ADD_ITEM: {
       return state.setIn(['todos'], {
