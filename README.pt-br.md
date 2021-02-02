@@ -110,7 +110,7 @@ Todos os arquivos de actions devem terminar com `.actions.ts`
 
 Seu alias é `@redux/actions/*`.
 
-Ex: `import { todoActions } from '@redux/actions/todo.actions`
+Ex: `import { todoActions } from '@redux/actions/todoActions`
 
 ### src/app/redux/reducers
 Aqui são definidos os reducers.

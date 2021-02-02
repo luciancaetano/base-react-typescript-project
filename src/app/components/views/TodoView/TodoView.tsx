@@ -4,7 +4,7 @@ import './TodoView.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import { IAppState } from '@types';
 import { map, get } from 'lodash';
-import { todoActions } from '@redux/actions/todo.actions';
+import { todoActions } from '@redux/actions/todoActions';
 import { useTranslation } from 'react-i18next';
 
 const TodoView = () => {
