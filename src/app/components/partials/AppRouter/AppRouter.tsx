@@ -2,12 +2,12 @@ import React, { useMemo } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { map } from 'lodash';
 import { appRoutes } from '@app.routes';
-import { TAppRouteName } from '@types';
+import { AppRouteNameType } from '@types';
 import { getAppRoute } from '@utils/router';
 import { NotFoundView } from '@components/views';
 import HandleSingletonRouter from './HandleSingletonRouter';
 
-const renderRedirect = (from: string, to: TAppRouteName) => () => <Redirect from={from} to={getAppRoute(to)} />;
+const renderRedirect = (from: string, to: AppRouteNameType) => () => <Redirect from={from} to={getAppRoute(to)} />;
 
 const AppRouter = () => {
   const routes = useMemo(() => map(appRoutes, (route, key) => <Route path={route.path} component={route.component as any} key={`${key}`} />), []);

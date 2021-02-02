@@ -1,22 +1,14 @@
-import { ThunkDispatch } from 'redux-thunk';
 import { IAppState } from '@types';
+import { ThunkAction } from 'redux-thunk';
 
 export interface IAppAction<T = any | undefined> {
   type: string;
-  payload: T;
+  payload?: T;
 }
 
-  type TThunkAction<R, S, E, A extends IAppAction> = (
-    dispatch: ThunkDispatch<S, E, A>,
-    getState: () => S,
-    extraArgument: E
-  ) => R;
+export type ReducerType<A extends IAppAction, S extends {}> = (
+  state: S,
+  action: A
+) => S;
 
-interface IThunkDispatch<S, E, A extends IAppAction> {
-  <T extends A>(action: T): T;
-  <R>(asyncAction: TThunkAction<R, S, E, A>): R;
-}
-
-export type TAppDispatch<A = IAppAction> = ((value: A) => void)
-| IThunkDispatch<IAppState, void, IAppAction> | ((a: A) => any)
-| ((dispatch: A) => Promise<void>);
+export type ThunkActionType<A extends IAppAction, S = IAppState> = ThunkAction<void, S, unknown, A>;

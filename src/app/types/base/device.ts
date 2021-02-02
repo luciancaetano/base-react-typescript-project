@@ -1,7 +1,7 @@
-export type TDeviceOrientation = 'portrait' | 'landscape';
-export type TDeviceOS = 'android' | 'ios' | false;
+export type DeviceOrientationType = 'portrait' | 'landscape';
+export type DeviceOSType = 'android' | 'ios' | false;
 
-export type TStyleIntent = 'none' | 'primary' | 'secondary' | 'danger' | 'warning' | 'success';
+export type StyleIntentType = 'none' | 'primary' | 'secondary' | 'danger' | 'warning' | 'success';
 
 export interface IDeviceWindow {
   width: number;
@@ -10,17 +10,17 @@ export interface IDeviceWindow {
 
 export interface IDeviceContext {
   windowSize: IDeviceWindow;
-  orientation: TDeviceOrientation;
+  orientation: DeviceOrientationType;
   online: boolean;
 }
 
 export interface IDevice {
   windowSize: IDeviceWindow;
-  orientation: TDeviceOrientation;
+  orientation: DeviceOrientationType;
   isPhone: boolean;
   isTablet: boolean;
   isDesktop: boolean;
   cordova: boolean;
-  os: TDeviceOS;
+  os: DeviceOSType;
   online: boolean;
 }

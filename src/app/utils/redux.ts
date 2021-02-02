@@ -1,15 +1,15 @@
 import localForage from 'localforage';
 import { first, omit } from 'lodash';
-import { Reducer } from 'redux';
 import {
   createTransform, persistReducer as persistReducer2, PersistConfig, StateReconciler,
 } from 'redux-persist';
 import immutable from 'seamless-immutable';
 import presistenceConfig from '@config/persistence';
-import { IAppAction } from '@types';
-import { APP_STATE_RELOAD, APP_STORAGE_CLEAR } from '@redux/actions/app.actions';
+import { IAppAction, ReducerType } from '@types';
+import { AppActionEnum } from '@redux/actions/app.actions';
 import hardSet from 'redux-persist/lib/stateReconciler/hardSet';
 import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
+import { Reducer } from 'redux';
 
 interface IHelperPersistConfig {
   name: string;
@@ -60,22 +60,18 @@ export const configureReducerPeristence = ({
   );
 };
 
-/**
- * Create a simplified reducer and handles APP_STORAGE_CLEAR, APP_STATE_RELOAD actions types
- */
 export function createReducer<A extends IAppAction, S extends {}>(
-  initialState: S, reducer: Record<string, (s: S, a: A) => S>,
+  initialState: S, reducer: ReducerType<A, S>,
   clearStorageBehavior: 'reset-on-clear-store' | 'keep-on-clear-store', appStateReloadBehavior: 'keep-on-state-reload' | 'reset-on-state-reload',
 ): Reducer {
   return ((state: S = initialState, action: A) => {
-    if (action.type === APP_STORAGE_CLEAR && clearStorageBehavior === 'reset-on-clear-store') {
+    if (action.type === AppActionEnum.APP_STORAGE_CLEAR && clearStorageBehavior === 'reset-on-clear-store') {
       return initialState;
     }
-    if (action.type === APP_STATE_RELOAD && appStateReloadBehavior === 'reset-on-state-reload') {
+    if (action.type === AppActionEnum.APP_STATE_RELOAD && appStateReloadBehavior === 'reset-on-state-reload') {
       return initialState;
     }
-    return reducer[action.type]
-      ? reducer[action.type]((state || initialState), action) || (state || initialState)
-      : (state || initialState);
+
+    return reducer(state, action);
   }) as Reducer;
 }

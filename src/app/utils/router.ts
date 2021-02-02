@@ -2,7 +2,7 @@ import {
   get, isArray, forEach, toString,
 } from 'lodash';
 import { matchPath, RouteProps } from 'react-router-dom';
-import { IRouterConfigEntry, TAppRouteName } from '@types';
+import { IRouterConfigEntry, AppRouteNameType } from '@types';
 import { appRoutes } from '@app.routes';
 import { FunctionComponent } from 'react';
 
@@ -35,7 +35,7 @@ export interface IAppRouteParams {
 /**
  * Get app route with params
  */
-export const getAppRoute = (name: TAppRouteName, params?: IAppRouteParams) => {
+export const getAppRoute = (name: AppRouteNameType, params?: IAppRouteParams) => {
   const route = get(appRoutes || params, [name, 'template'], `/unknown-route/${name}`);
   return createRouteTemplate(route)(params || {});
 };
@@ -43,7 +43,7 @@ export const getAppRoute = (name: TAppRouteName, params?: IAppRouteParams) => {
 /**
  * Check if route matches
  */
-export const matchRoute = (names: TAppRouteName | TAppRouteName[], path: string, props: RouteProps = {}) => {
+export const matchRoute = (names: AppRouteNameType | AppRouteNameType[], path: string, props: RouteProps = {}) => {
   const namesArray = isArray(names) ? names : [names];
   let matches = 0;
   forEach(namesArray, (name: string) => {

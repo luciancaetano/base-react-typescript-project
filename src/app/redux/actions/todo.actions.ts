@@ -1,34 +1,42 @@
-import { TAppDispatch, IAppAction } from '@types';
+import {
+  ThunkActionType,
+} from '@types';
 
-export const TODO_ADD_ITEM = 'todo.TODO_ADD_ITEM';
-export const TODO_DELETE_ITEM = 'todo.TODO_DELETE_ITEM';
-export const TODO_UPDATE_ITEM = 'todo.TODO_UPDATE_ITEM';
-export const TODO_TOGGLE_ITEM = 'todo.TODO_TOGGLE_ITEM';
+export enum TodoActionsEnum {
+  TODO_ADD_ITEM = 'todo.TODO_ADD_ITEM',
+  TODO_DELETE_ITEM = 'todo.TODO_DELETE_ITEM',
+  TODO_UPDATE_ITEM = 'todo.TODO_UPDATE_ITEM',
+  TODO_TOGGLE_ITEM = 'todo.TODO_TOGGLE_ITEM',
+}
 
-const addTodo = (text: string) => (dispatch: TAppDispatch<IAppAction<string>>) => {
+export type TodoActionType =
+  | { readonly type: TodoActionsEnum.TODO_ADD_ITEM; readonly payload: { text: string } }
+  | { readonly type: TodoActionsEnum.TODO_DELETE_ITEM; readonly payload: { id: string } }
+  | { readonly type: TodoActionsEnum.TODO_TOGGLE_ITEM; readonly payload: { id: string } }
+  | { readonly type: TodoActionsEnum.TODO_UPDATE_ITEM; readonly payload: { id: string; text: string } };
+
+const addTodo = (text: string): TodoActionType => ({
+  type: TodoActionsEnum.TODO_ADD_ITEM,
+  payload: { text },
+});
+
+const toggleTodo = (id: string):ThunkActionType<TodoActionType> => (dispatch) => {
   dispatch({
-    type: TODO_ADD_ITEM,
-    payload: text,
+    type: TodoActionsEnum.TODO_TOGGLE_ITEM,
+    payload: { id },
   });
 };
 
-const toggleTodo = (id: string) => (dispatch: TAppDispatch<IAppAction<string>>) => {
+const deleteTodo = (id: string): ThunkActionType<TodoActionType> => (dispatch) => {
   dispatch({
-    type: TODO_TOGGLE_ITEM,
-    payload: id,
+    type: TodoActionsEnum.TODO_DELETE_ITEM,
+    payload: { id },
   });
 };
 
-const deleteTodo = (id: string) => (dispatch: TAppDispatch<IAppAction<string>>) => {
+const updateTodo = (id: string, text: string): ThunkActionType<TodoActionType> => (dispatch) => {
   dispatch({
-    type: TODO_DELETE_ITEM,
-    payload: id,
-  });
-};
-
-const updateTodo = (id: string, text: string) => (dispatch: TAppDispatch<IAppAction<{id: string; text: string}>>) => {
-  dispatch({
-    type: TODO_UPDATE_ITEM,
+    type: TodoActionsEnum.TODO_UPDATE_ITEM,
     payload: { id, text },
   });
 };

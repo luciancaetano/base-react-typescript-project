@@ -47,7 +47,16 @@
           ],
           "leadingUnderscore": "forbid",
           "trailingUnderscore": "forbid",
-          "prefix": ["T"]
+          "suffix": ["Type"]
+        },
+        {
+          "selector": "enum",
+          "format": [
+            "PascalCase"
+          ],
+          "leadingUnderscore": "forbid",
+          "trailingUnderscore": "forbid",
+          "suffix": ["Enum"]
         }
       ],
       "@typescript-eslint/ban-types": [
@@ -62,6 +71,7 @@
           "extendDefaults": false
         }
       ],
+      "no-shadow":"off",
       "no-use-before-define": "off",
       "import/no-relative-parent-imports": "error",
       "jsx-a11y/tabindex-no-positive": "off",

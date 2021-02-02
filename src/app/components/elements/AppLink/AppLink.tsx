@@ -3,12 +3,12 @@ import React, { useCallback, MouseEvent } from 'react';
 import { useHistory } from 'react-router-dom';
 import classNames from 'classnames';
 import { getAppRoute } from '@utils/router';
-import { TAppRouteName } from '@types';
+import { AppRouteNameType } from '@types';
 import './AppLink.scss';
 
 interface IProps {
   className?: string;
-  to: TAppRouteName;
+  to: AppRouteNameType;
   params?: { [key: string]: string | number | null | undefined };
 }
 
@@ -18,7 +18,7 @@ const AppLink = ({
   const history = useHistory();
 
   const pushPath = useCallback(
-    (path: TAppRouteName) => (e: MouseEvent<HTMLAnchorElement>) => {
+    (path: AppRouteNameType) => (e: MouseEvent<HTMLAnchorElement>) => {
       e.preventDefault();
       history.push(getAppRoute(path, params));
     },

@@ -1,20 +1,26 @@
 import { IAppAction } from '@types';
 
-export const APP_STORAGE_CLEAR = 'APP::APP_STORAGE_CLEAR';
-export const APP_STATE_RELOAD = 'APP::APP_STATE_RELOAD';
+/**
+ * This actions affects only reducers wrapper by createReducer
+ */
+
+export enum AppActionEnum {
+  APP_STORAGE_CLEAR = 'APP::APP_STORAGE_CLEAR',
+  APP_STATE_RELOAD = 'APP::APP_STATE_RELOAD',
+}
 
 /**
  * Reset app app storage, ex: Logout
  */
 const appResetStore = () => ({
-  type: APP_STORAGE_CLEAR,
+  type: AppActionEnum.APP_STORAGE_CLEAR,
 } as IAppAction);
 
 /**
  * Reload application store, reload and refetch all basic persisted informations
  */
 const appReloadStore = () => ({
-  type: APP_STATE_RELOAD,
+  type: AppActionEnum.APP_STATE_RELOAD,
 } as IAppAction);
 
 export const appActions = { appResetStore, appReloadStore };

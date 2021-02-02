@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { IDeviceContext, TDeviceOrientation } from '@types';
+import { IDeviceContext, DeviceOrientationType } from '@types';
 import { useDebouncedCallback } from 'use-debounce';
 
 export const DeviceContext = React.createContext<IDeviceContext>({
@@ -16,7 +16,7 @@ const DEBOUNC_CALLBACK_TIME = 100;
 const DeviceProvider = ({ children }: React.PropsWithChildren<{}>) => {
   const [width, setWidth] = useState(window.innerWidth);
   const [height, setHeight] = useState(window.innerHeight);
-  const [orientation, setOrientation] = useState<TDeviceOrientation>(window.innerHeight > window.innerWidth ? 'portrait' : 'landscape');
+  const [orientation, setOrientation] = useState<DeviceOrientationType>(window.innerHeight > window.innerWidth ? 'portrait' : 'landscape');
   const [online, setOnline] = useState<boolean>(window.navigator.onLine);
 
   const { callback: handleWindowResize } = useDebouncedCallback(() => {
