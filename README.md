@@ -1,7 +1,5 @@
 # React Basic Typescript Redux Starter
 
-[Recommended Libraries](recommended-libraries.md)
-
 # package.json scripts
 - `start: dev` starts the server with a development environment
 - `start: prod` starts the server with a production environment
@@ -81,9 +79,9 @@ With the arrival of react-hooks, it became necessary to create some customized h
 - All hooks must be exported to index.ts
 - All hoks must be exported on index.ts
 
-Its alias is `@components/hooks`.
+Its alias is `@hooks`.
 
-Ex: `import {useDevice} from '@components/hooks`
+Ex: `import {useDevice} from '@hooks`
 
 ### src/app/config
 Here are the general settings of the application such as api routes or routes of the router itself, among other configurations.

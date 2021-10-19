@@ -1,12 +1,9 @@
 import React from 'react';
-import './Button.scss';
+import styles from './Button.module.scss';
+import { IButtonProps } from './Button.types';
 
-interface IProps {
-  onClick?: () => void;
-}
-
-const Button = ({ onClick, children }: React.PropsWithChildren<IProps>) => (
-  <button className="button" onClick={onClick}>
+const Button: React.FC<IButtonProps> = ({ onClick, children }) => (
+  <button className={styles.button} onClick={onClick}>
     {children}
   </button>
 );

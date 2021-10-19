@@ -8,7 +8,7 @@
             "@api.routes": ["src/app/config/api.routes"],
             "@media/*": ["src/media/*"],
             "@styles/*": ["src/styles/*"],
-            "@components/hooks": ["src/app/components/hooks/index"],
+            "@hooks": ["src/app/hooks/index"],
             "@components/elements": ["src/app/components/elements/index"],
             "@components/views": ["src/app/components/views/index"],
             "@redux/actions/*": ["src/app/redux/actions/*"],

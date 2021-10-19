@@ -1,18 +1,31 @@
 /* eslint-disable */
-const CracoAlias = require("craco-alias");
+const CracoAlias = require('craco-alias');
+const getLocalIdent = require('./getBemCssLocalIdent');
 
 module.exports = {
   eslint: {
-    enable: false
+    enable: false,
   },
-   plugins: [
-     {
-        plugin: CracoAlias,
-        options: {
-           source: "tsconfig",
-           baseUrl: ".",
-           tsConfigPath: "./tsconfig.paths.json"
-        }
-     }
-  ]
+  style: {
+    css: {
+      loaderOptions: ((cssLoaderOptions) => ({
+        ...cssLoaderOptions,
+        modules: {
+          auto: true,
+          exportLocalsConvention: 'camelCase',
+          getLocalIdent,
+        },
+      })),
+    },
+  },
+  plugins: [
+    {
+      plugin: CracoAlias,
+      options: {
+        source: 'tsconfig',
+        baseUrl: '.',
+        tsConfigPath: './tsconfig.paths.json',
+      },
+    },
+  ],
 };
