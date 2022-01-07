@@ -1,7 +1,7 @@
 # React Basic Typescript Redux Starter
 
 # package.json scripts
-- `start: dev` starts the server with a development environment
+- `start` starts the server with a development environment
 - `start: prod` starts the server with a production environment
 - `build: dev` compiles the application with a development environment
 - `build: prod` compiles the application with a production environment

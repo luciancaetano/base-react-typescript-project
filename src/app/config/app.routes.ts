@@ -2,7 +2,10 @@ import { createRoute } from '@utils/router';
 import * as views from '@components/views';
 
 export const appRoutes = {
-  todoList: createRoute('/todos')({
-    component: views.TodoView,
+  notasList: createRoute('/notas')({
+    component: views.NotaListView,
+  }),
+  notaDetails: createRoute('/duplicatas/:id')({
+    component: views.ViewNotaDetails,
   }),
 };

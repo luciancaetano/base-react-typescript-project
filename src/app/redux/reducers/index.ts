@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
 import { configureReducerPeristence } from '@utils/redux';
-import { todoReducer } from './todo.reducer';
+import { notasReducer } from './notas.reducer';
 
 export default combineReducers({
-  todos: configureReducerPeristence({
-    name: 'todos',
-    blacklist: [],
-    reducer: todoReducer,
+  notas: configureReducerPeristence({
+    name: 'notas',
+    blacklist: ['isListing', 'loadingIds', 'isUploading'],
+    reducer: notasReducer,
   }),
 });

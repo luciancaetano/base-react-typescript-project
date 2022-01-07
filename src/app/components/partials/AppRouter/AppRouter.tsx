@@ -17,7 +17,7 @@ const AppRouter = () => {
       <Switch>
 
         {/* Redirect Default route */}
-        <Route exact path="/" render={renderRedirect('/', 'todoList')} />
+        <Route exact path="/" render={renderRedirect('/', 'notasList')} />
         {routes}
         {/* Default route aka not found */}
         <Route component={NotFoundView} />
