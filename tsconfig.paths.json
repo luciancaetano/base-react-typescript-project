@@ -1,19 +1,34 @@
 {
-    "compilerOptions" : {
+    "compilerOptions": {
         "baseUrl": ".",
         "paths": {
-            "@components/partials": ["src/app/components/partials/index"],
-            "@config/*": ["src/app/config/*"],
-            "@app.routes": ["src/app/config/app.routes"],
-            "@api.routes": ["src/app/config/api.routes"],
-            "@media/*": ["src/media/*"],
-            "@styles/*": ["src/styles/*"],
-            "@hooks": ["src/app/hooks/index"],
-            "@components/elements": ["src/app/components/elements/index"],
-            "@components/views": ["src/app/components/views/index"],
-            "@redux/actions/*": ["src/app/redux/actions/*"],
-            "@utils/*": ["src/app/utils/*"],
-            "@types": ["src/app/types/index"]
+            "@components/partials/*": [
+                "src/app/components/partials/*"
+            ],
+            "@config/*": [
+                "src/app/config/*"
+            ],
+            "@media/*": [
+                "src/media/*"
+            ],
+            "@styles/*": [
+                "src/styles/*"
+            ],
+            "@hooks/*": [
+                "src/app/hooks/*"
+            ],
+            "@components/elements/*": [
+                "src/app/components/elements/*"
+            ],
+            "@components/views/*": [
+                "src/app/components/views/*"
+            ],
+            "@redux/actions/*": [
+                "src/app/redux/actions/*"
+            ],
+            "@utils/*": [
+                "src/app/utils/*"
+            ]
         }
     }
 }

@@ -1,15 +1,22 @@
 {
-  "extends": "stylelint-config-airbnb",
-  "plugins": [
-    "@namics/stylelint-bem"
-  ],
+  "extends": ["stylelint-config-standard-scss"],
+  "plugins": [],
   "rules": {
     "max-nesting-depth": 20,
-    "selector-max-id": 8,
+    "number-max-precision": null,
     "number-leading-zero": "never",
-    "plugin/stylelint-bem-namics": {
-      "patternPrefixes": [],
-      "helperPrefixes": ["is", "has"]
+    "no-descending-specificity": null,
+    "scss/no-global-function-names": null,
+    "string-quotes": "single",
+    "no-duplicate-selectors": null,
+    "property-no-unknown": null,
+    "declaration-block-no-redundant-longhand-properties": null,
+    "max-line-length": null,
+    "custom-property-pattern": null
+  },
+  "overrides": [
+    {
+      "files": ["**/*.scss"]
     }
-  }
+  ]
 }

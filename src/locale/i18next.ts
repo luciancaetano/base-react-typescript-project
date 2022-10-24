@@ -1,6 +1,5 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import { AppSingleton } from '@utils/singleton';
 import languages from './languages';
 
 const i18nInstance = i18n
@@ -32,9 +31,5 @@ const i18nInstance = i18n
       useSuspense: false,
     },
   });
-
-i18nInstance.then((tFunction) => {
-  AppSingleton.getInstance().setTranslator(tFunction);
-});
 
 export default i18nInstance;

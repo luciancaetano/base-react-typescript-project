@@ -1,15 +1,12 @@
 import React from 'react';
-import './NotFoundView.scss';
-import { AppLink } from '@components/elements';
+import styles from './NotFoundView.module.scss';
 
-const NotFoundView = () => (
-  <div id="notFoundView">
-    Page Not Found
-    <br />
-    <AppLink to="todoList">
-      Go to TodoList
-    </AppLink>
-  </div>
-);
+function NotFoundView() {
+  return (
+    <div className={styles.notFoundView}>
+      Page Not Found
+    </div>
+  );
+}
 
 export default React.memo(NotFoundView);

@@ -84,8 +84,5 @@ bin/*
 plugins/*
 platforms/*
 
-# Ignore due to use of yarn
-package-lock.json
-
 cypress/videos
 cypress/screenshots
