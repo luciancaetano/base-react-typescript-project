@@ -1,16 +1,20 @@
 import { useCallback } from 'react';
+import useStore from './BasicButton.store';
 import { BasicButtonProps } from './BasicButton.types';
 
-function useBasicButtonViewModel(props: BasicButtonProps) {
+function useViewModel(props: BasicButtonProps) {
+  const { counter, increase } = useStore();
   const { onClick } = props;
 
   const handleClick = useCallback(() => {
+    increase();
     onClick?.();
-  }, [onClick]);
+  }, [increase, onClick]);
 
   return {
     handleClick,
+    counter,
   };
 }
 
-export default useBasicButtonViewModel;
+export default useViewModel;
