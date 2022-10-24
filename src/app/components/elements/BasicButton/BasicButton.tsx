@@ -1,5 +1,6 @@
+import React from 'react';
 import clsx from 'clsx';
-import useBasicButtonViewModel from './BasicButtonViewModel';
+import useBasicButtonViewModel from './BasicButton.ViewModel';
 import { BasicButtonProps } from './BasicButton.types';
 import styles from './BasicButton.module.scss';
 
@@ -16,4 +17,4 @@ function BasicButton(props: BasicButtonProps) {
   );
 }
 
-export default BasicButton;
+export default React.memo(BasicButton);
