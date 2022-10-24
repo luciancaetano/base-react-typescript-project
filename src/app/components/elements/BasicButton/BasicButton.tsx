@@ -1,13 +1,12 @@
-import React from 'react';
 import clsx from 'clsx';
-import useViewModel from './BasicButton.model';
+import useBasicButtonViewModel from './BasicButtonViewModel';
 import { BasicButtonProps } from './BasicButton.types';
 import styles from './BasicButton.module.scss';
 
 function BasicButton(props: BasicButtonProps) {
   const { children, classNames } = props;
 
-  const { handleClick, counter } = useViewModel(props);
+  const { handleClick, counter } = useBasicButtonViewModel(props);
 
   return (
     <button onClick={handleClick} className={clsx(styles.basicButton, classNames)}>

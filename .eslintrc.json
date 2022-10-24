@@ -29,18 +29,24 @@
   },
   "rules": {
     "import/no-unresolved": "off",
+    "react/react-in-jsx-scope": "off",
     "@typescript-eslint/naming-convention": [
       "error",
+      {
+        "selector": "interface",
+        "format": [
+          "PascalCase"
+        ],
+        "leadingUnderscore": "forbid",
+        "trailingUnderscore": "forbid"
+      },
       {
         "selector": "typeAlias",
         "format": [
           "PascalCase"
         ],
         "leadingUnderscore": "forbid",
-        "trailingUnderscore": "forbid",
-        "suffix": [
-          "Type"
-        ]
+        "trailingUnderscore": "forbid"
       },
       {
         "selector": "enum",
