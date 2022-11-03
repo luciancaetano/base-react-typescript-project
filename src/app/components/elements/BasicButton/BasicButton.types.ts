@@ -5,7 +5,7 @@ export interface BasicButtonProps extends React.PropsWithChildren<{}> {
   onClick?: () => void;
 }
 
-export interface BasicStore {
+export interface BasicButtonStore {
   count: number;
   increment: () => void;
   decrement: () => void;

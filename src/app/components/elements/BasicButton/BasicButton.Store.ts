@@ -1,7 +1,7 @@
 import createLocal from '@utils/zustand';
-import { BasicStore } from './BasicButton.types';
+import { BasicButtonStore } from './BasicButton.types';
 
-const useStand = createLocal<BasicStore>((set) => ({
+const useStore = createLocal<BasicButtonStore>((set) => ({
   count: 0,
   increment() {
     set((state) => ({
@@ -19,4 +19,4 @@ const useStand = createLocal<BasicStore>((set) => ({
   },
 }));
 
-export default useStand;
+export default useStore;
