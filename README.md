@@ -11,6 +11,7 @@
 This project is a collection of all the experience practiced with react and other frameworks like angular, vue, etc.
 
 ## Paths and alias
+The paths and alias are configured in the `tsconfig.json` file.
 
 | Path |  Alias | Description  |
 |---|---|---|
