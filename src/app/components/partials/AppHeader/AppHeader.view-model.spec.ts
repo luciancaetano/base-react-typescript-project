@@ -1,11 +1,11 @@
 /* eslint-disable node/no-unpublished-import */
 /* eslint-disable import/no-extraneous-dependencies */
 import { renderHook } from '@testing-library/react';
-import <%=componentUseViewModelHookName%> from './<%=componentName%>.ViewModel';
+import useAppHeaderViewModel from './AppHeader.view-model';
 
-describe('<%=componentName%> ViewModel', () => {
+describe('AppHeader ViewModel', () => {
   it('should render', () => {
-    const { result } = renderHook(() => <%=componentUseViewModelHookName%>({}));
+    const { result } = renderHook(() => useAppHeaderViewModel({}));
     expect(result.current).toBeTruthy();
   });
 });

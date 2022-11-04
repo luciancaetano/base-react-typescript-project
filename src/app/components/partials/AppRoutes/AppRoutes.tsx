@@ -1,3 +1,4 @@
+import React from 'react';
 import { useRoutes } from 'react-router';
 import routes from '@config/app.routes';
 
@@ -7,4 +8,4 @@ function AppRoutes() {
   return router;
 }
 
-export default AppRoutes;
+export default React.memo(AppRoutes);

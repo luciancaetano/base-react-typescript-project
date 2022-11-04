@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import { Button, Row, Col } from 'lens-ui';
 import { HomeViewProps } from './HomeView.types';
 import styles from './HomeView.module.scss';
-import useHomeViewViewModel from './HomeView.ViewModel';
+import useHomeViewViewModel from './HomeView.view-model';
 
 function HomeView(props: HomeViewProps) {
   const { className, testingID } = props;

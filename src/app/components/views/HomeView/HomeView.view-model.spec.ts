@@ -1,7 +1,7 @@
 /* eslint-disable node/no-unpublished-import */
 /* eslint-disable import/no-extraneous-dependencies */
 import { act, renderHook } from '@testing-library/react';
-import useHomeViewViewModel from './HomeView.ViewModel';
+import useHomeViewViewModel from './HomeView.view-model';
 
 describe('HomeView ViewModel', () => {
   it('should render', () => {

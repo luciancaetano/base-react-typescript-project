@@ -1,17 +1,16 @@
-import { useCallback } from 'react';
-import useStore from './HomeView.Store';
+import { useCallback, useState } from 'react';
 import { HomeViewProps } from './HomeView.types';
 
 function useHomeViewViewModel({ }: HomeViewProps) {
-  const { count, increment, decrement } = useStore();
+  const [count, setCount] = useState(0);
 
   const handleIncrementClick = useCallback(() => {
-    increment();
-  }, [increment]);
+    setCount((c) => c + 1);
+  }, []);
 
   const handleDecrementClick = useCallback(() => {
-    decrement();
-  }, [decrement]);
+    setCount((c) => c - 1);
+  }, []);
 
   return {
     count,

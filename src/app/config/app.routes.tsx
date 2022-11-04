@@ -1,6 +1,6 @@
 import React from 'react';
 import { RouteObject } from 'react-router';
-import AppLayout from '@components/partials/AppLayout';
+import AppLayout from '@components/layouts/AppLayout';
 import NotFoundView from '@components/views/NotFoundView/NotFoundView';
 import HomeView from '@components/views/HomeView';
 

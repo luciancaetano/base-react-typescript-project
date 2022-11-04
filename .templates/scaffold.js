@@ -8,14 +8,13 @@ program
     .argument("<type>", "Type of component to create [element, partial, view, layout]")
     .argument("<name>", "Name of component to create")
     .description("Create a new component")
-    .option("-s, --simple", "Create a simple component without store")
+    .option('-d, --dir <dir>', 'Directory to create component in')
     .name(isWindows ? 'codegen' : './codegen')
     .action((location, name, options) => {
         const cwd = path.resolve(path.join(process.cwd(), '.templates', 'component'));
-        const isSimple = options.simple;
-        const srcRoot = path.resolve(process.cwd(), 'src');
+        const srcRoot = options.dir ? path.resolve(options.dir) : path.resolve(process.cwd(), 'src');
 
-        createComponent(cwd, srcRoot, isSimple, location, name);
+        createComponent(cwd, srcRoot, location, name);
     });
 
 program.parse(process.argv);

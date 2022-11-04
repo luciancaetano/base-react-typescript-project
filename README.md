@@ -44,12 +44,12 @@ Usage: codegen [options] <type> <name>
 Create a new component
 
 Arguments:
-  type          Type of component to create [element, partial, view, layout]
-  name          Name of component to create
+  type             Type of component to create [element, partial, view, layout]
+  name             Name of component to create
 
 Options:
-  -s, --simple  Create a simple component without store
-  -h, --help    display help for command
+  -d, --dir <dir>  Directory to create component in
+  -h, --help       display help for command
 ```
 ### Generated Component Code Structure
 
@@ -59,17 +59,19 @@ Options:
 │   │   ├── [type]
 │   │   │   ├── [name]
 │   │   │   │   ├── [name].tsx
-│   │   │   │   ├── [name].Module.scss
-│   │   │   │   ├── [name].Store.ts
-│   │   │   │   ├── [name].Types.ts
-│   │   │   │   ├── [name].ViewModel.ts
+│   │   │   │   ├── [name].spec.tsx
+│   │   │   │   ├── [name].module.scss
+│   │   │   │   ├── [name].types.ts
+│   │   │   │   ├── [name].view-model.ts
+│   │   │   │   ├── [name].view-model.spec.ts
 │   │   │   │   └── index.ts
 ```
 - `[type]` is the type of component, it can be `element`, `partial`, `view` or `layout`.
 - `[name]` is the name of the component.
 - `[name].tsx` is the component file, or component view.
-- `[name].Module.scss` is the component styles file.
-- `[name].Store.ts` is the component store file (*NOTE: when paramter --simple is present or the component is a element the component does not have an store*).
-- `[name].Types.ts` is the component types file.
-- `[name].ViewModel.ts` is the component view model file.
+- `[name].spec.tsx` is the component test file.
+- `[name].module.scss` is the component styles file.
+- `[name].types.ts` is the component types file.
+- `[name].view-model.ts` is the component view model file.
+- `[name].view-model.spec.ts ` is the component view model test file.
 - `index.ts` is the component index file, the component is exported as default and the component types are exported as named export.

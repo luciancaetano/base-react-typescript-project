@@ -1,22 +1,22 @@
 /* eslint-disable node/no-unpublished-import */
 /* eslint-disable import/no-extraneous-dependencies */
 import { render } from '@testing-library/react';
-import <%=componentName%> from './<%=componentName%>';
+import AppHeader from './AppHeader';
 
-describe('<%=componentName%> Component', () => {
+describe('AppHeader Component', () => {
   it('should render', () => {
-    const { container } = render(<<%=componentName%> />);
+    const { container } = render(<AppHeader />);
     expect(container).toBeTruthy();
   });
 
   it('should render with children', () => {
-    const { getByText } = render(<<%=componentName%>><div>Test</div></<%=componentName%>>);
+    const { getByText } = render(<AppHeader><div>Test</div></AppHeader>);
 
     expect(getByText('Test')).toBeTruthy();
   });
 
   it('should render with children and className', () => {
-    const { container } = render(<<%=componentName%> className="test">Test</<%=componentName%>>);
+    const { container } = render(<AppHeader className="test">Test</AppHeader>);
 
     expect(container.querySelector('.test')).toBeTruthy();
   });
