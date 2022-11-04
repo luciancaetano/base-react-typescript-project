@@ -1,7 +1,7 @@
 import createLocal from '@utils/zustand';
-import { BasicButtonStore } from './BasicButton.Types';
+import { HomeViewStore } from './HomeView.types';
 
-const useStore = createLocal<BasicButtonStore>((set) => ({
+const useHomeViewStore = createLocal<HomeViewStore>((set) => ({
   count: 0,
   increment() {
     set((state) => ({
@@ -19,4 +19,4 @@ const useStore = createLocal<BasicButtonStore>((set) => ({
   },
 }));
 
-export default useStore;
+export default useHomeViewStore;

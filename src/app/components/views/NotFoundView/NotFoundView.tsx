@@ -1,13 +1,14 @@
-import BasicButton from '@components/elements/BasicButton';
 import React from 'react';
+import clsx from 'clsx';
+import { NotFoundViewProps } from './NotFoundView.types';
 import styles from './NotFoundView.module.scss';
 
-function NotFoundView() {
+function NotFoundView(props: NotFoundViewProps) {
+  const { className } = props;
+
   return (
-    <div className={styles.notFoundView}>
-      Page Not Found
-      <BasicButton>Basic Button</BasicButton>
-      <BasicButton>Basic Button</BasicButton>
+    <div className={clsx('notFoundView', styles.notFoundView, className)}>
+      Not Found Page
     </div>
   );
 }

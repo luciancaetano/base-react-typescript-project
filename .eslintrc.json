@@ -29,6 +29,7 @@
     }
   },
   "rules": {
+    "no-empty-pattern": "off",
     "node/no-missing-import": "off",
     "import/no-unresolved": "off",
     "react/react-in-jsx-scope": "off",

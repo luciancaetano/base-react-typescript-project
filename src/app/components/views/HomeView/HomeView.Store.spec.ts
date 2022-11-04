@@ -1,16 +1,16 @@
 /* eslint-disable node/no-unpublished-import */
 /* eslint-disable import/no-extraneous-dependencies */
 import { renderHook, act } from '@testing-library/react';
-import useBasicButtonStore from './BasicButton.Store';
+import useHomeViewStore from './HomeView.Store';
 
-describe('BasicButton Store', () => {
+describe('HomeView Store', () => {
   it('should render', () => {
-    const { result } = renderHook(() => useBasicButtonStore());
+    const { result } = renderHook(() => useHomeViewStore());
     expect(result.current).toBeTruthy();
   });
 
   it('should increment', () => {
-    const { result } = renderHook(() => useBasicButtonStore());
+    const { result } = renderHook(() => useHomeViewStore());
     act(() => {
       result.current.increment();
     });
@@ -18,7 +18,7 @@ describe('BasicButton Store', () => {
   });
 
   it('should decrement', () => {
-    const { result } = renderHook(() => useBasicButtonStore());
+    const { result } = renderHook(() => useHomeViewStore());
     act(() => {
       result.current.decrement();
     });
@@ -26,7 +26,7 @@ describe('BasicButton Store', () => {
   });
 
   it('should increment by 5', () => {
-    const { result } = renderHook(() => useBasicButtonStore());
+    const { result } = renderHook(() => useHomeViewStore());
     act(() => {
       result.current.incBy(5);
     });
@@ -34,7 +34,7 @@ describe('BasicButton Store', () => {
   });
 
   it('should decrement by 5', () => {
-    const { result } = renderHook(() => useBasicButtonStore());
+    const { result } = renderHook(() => useHomeViewStore());
     act(() => {
       result.current.decBy(5);
     });

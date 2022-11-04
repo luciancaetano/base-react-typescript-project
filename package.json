@@ -110,16 +110,5 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
-  },
-  "lint-staged": {
-    "src/**/*.ts?(x)": [
-      "eslint --fix"
-    ],
-    "src/**/*.scss": [
-      "stylelint --syntax scss --fix"
-    ],
-    "src/**/*.css": [
-      "stylelint --fix"
-    ]
   }
 }

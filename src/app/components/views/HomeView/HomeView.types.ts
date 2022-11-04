@@ -1,11 +1,12 @@
+import { ITestableProps } from 'lens-ui';
 import React from 'react';
 
-export interface BasicButtonProps extends React.PropsWithChildren<{}> {
+export interface HomeViewProps extends React.PropsWithChildren<{}>, ITestableProps {
   className?: string;
-  onClick?: () => void;
+  styles?: React.CSSProperties;
 }
 
-export interface BasicButtonStore {
+export interface HomeViewStore {
   count: number;
   increment: () => void;
   decrement: () => void;

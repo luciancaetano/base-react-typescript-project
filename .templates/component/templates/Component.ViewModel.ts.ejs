@@ -2,13 +2,12 @@ import { useCallback } from 'react';
 <% if (useStore) { %>import useStore from './<%=componentName%>.Store';<% } %>
 import { <%=componentPropsName%> } from './<%=componentName%>.types';
 
-function <%=componentUseViewModelHookName%>({ onClick }: <%=componentPropsName%>) {
+function <%=componentUseViewModelHookName%>({ }: <%=componentPropsName%>) {
   <% if (useStore) { %>const { count, increment } = useStore();<% } %>
 
   const handleClick = useCallback(() => {
     <% if (useStore) { %>increment();<% } %>
-    onClick?.();
-  }, [<% if (useStore) { %>increment, <% } %>onClick]);
+  }, [<% if (useStore) { %>increment<% } %>]);
 
   return {
     handleClick<% if (useStore) { %>,

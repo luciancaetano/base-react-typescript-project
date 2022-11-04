@@ -63,7 +63,9 @@ async function runStylelintFixOnPaths(paths) {
  * @param {string} name - name of component to create
  * @returns {void}
  */
-function createComponent(cwd, srcRoot, simple, location, name) {
+function createComponent(cwd, srcRoot, simple, location, _name) {
+    
+    const name = location === 'element' || location === 'partial' ? _name : _name + '-' + location; // add suffix to view and layout names
 
     const alowedTypes = ['element', 'partial', 'view', 'layout'];
 

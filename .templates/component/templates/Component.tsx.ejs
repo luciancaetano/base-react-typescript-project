@@ -1,19 +1,17 @@
 import React from 'react';
 import clsx from 'clsx';
-import <%=componentUseViewModelHookName%> from './<%=componentName%>.ViewModel';
 import { <%=componentPropsName%> } from './<%=componentName%>.types';
 import styles from './<%=componentName%>.module.scss';
 
 function <%=componentName%>(props: <%=componentPropsName%>) {
-  const { children, className } = props;
+  const { children, className, testingID } = props;
 
-  const { handleClick<% if (useStore) { %>, counter<% } %> } = <%=componentUseViewModelHookName%>(props);
+  // const {  } = <%=componentUseViewModelHookName%>(props);
 
   return (
-    <button onClick={handleClick} className={clsx(styles.<%=componentClassNamePropName%>, className)}>
-      <% if (useStore) { %>Clicked {counter} times<% } %>
+    <div className={clsx('<%=componentClassNamePropName%>', styles.<%=componentClassNamePropName%>, className)} data-testid={testingID}>
       {children}
-    </button>
+    </div>
   );
 }
 

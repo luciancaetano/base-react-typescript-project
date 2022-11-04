@@ -1,0 +1,12 @@
+{
+    "src/**/*.ts?(x)": [
+        "eslint --fix",
+        "jest --findRelatedTests"
+    ],
+    "src/**/*.scss": [
+        "stylelint --syntax scss --fix"
+    ],
+    "src/**/*.css": [
+        "stylelint --fix"
+    ]
+}

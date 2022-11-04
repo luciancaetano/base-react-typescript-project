@@ -20,16 +20,4 @@ describe('<%=componentName%> Component', () => {
 
     expect(container.querySelector('.test')).toBeTruthy();
   });
-
-  it('should render with children and onClick', () => {
-    const onClickFn = jest.fn();
-    const { container } = render(<<%=componentName%> onClick={onClickFn}>Test</<%=componentName%>>);
-
-    expect(container).toBeTruthy();
-    expect(onClickFn).not.toHaveBeenCalled();
-
-    fireEvent.click(container.querySelector('button') as Element);
-
-    expect(onClickFn).toHaveBeenCalled();
-  });
 });
