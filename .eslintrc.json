@@ -1,6 +1,7 @@
 {
   "parser": "@typescript-eslint/parser",
   "extends": [
+    "stylelint",
     "plugin:@typescript-eslint/recommended",
     "eslint:recommended",
     "plugin:react/recommended",
@@ -28,6 +29,7 @@
     }
   },
   "rules": {
+    "node/no-missing-import": "off",
     "import/no-unresolved": "off",
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/naming-convention": [
@@ -131,7 +133,9 @@
       {
         "extensions": [
           ".ts",
-          ".tsx"
+          ".tsx",
+          ".js",
+          ".scss"
         ]
       }
     ],

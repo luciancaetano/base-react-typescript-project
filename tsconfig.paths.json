@@ -20,11 +20,11 @@
             "@components/elements/*": [
                 "src/app/components/elements/*"
             ],
+            "@components/layouts/*": [
+                "src/app/components/layouts/*"
+            ],
             "@components/views/*": [
                 "src/app/components/views/*"
-            ],
-            "@redux/actions/*": [
-                "src/app/redux/actions/*"
             ],
             "@utils/*": [
                 "src/app/utils/*"

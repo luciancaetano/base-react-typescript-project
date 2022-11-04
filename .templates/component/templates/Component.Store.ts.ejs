@@ -1,7 +1,7 @@
 import createLocal from '@utils/zustand';
-import { BasicButtonStore } from './BasicButton.Types';
+import { <%=componentStoreInterfaceName%> } from './<%=componentName%>.types';
 
-const useStore = createLocal<BasicButtonStore>((set) => ({
+const <%=componentUseStoreHookName%> = createLocal<<%=componentStoreInterfaceName%>>((set) => ({
   count: 0,
   increment() {
     set((state) => ({
@@ -19,4 +19,4 @@ const useStore = createLocal<BasicButtonStore>((set) => ({
   },
 }));
 
-export default useStore;
+export default <%=componentUseStoreHookName%>;

@@ -1,0 +1,35 @@
+/* eslint-disable node/no-unpublished-import */
+/* eslint-disable import/no-extraneous-dependencies */
+import { render, fireEvent } from '@testing-library/react';
+import <%=componentName%> from './<%=componentName%>';
+
+describe('<%=componentName%> Component', () => {
+  it('should render', () => {
+    const { container } = render(<<%=componentName%> />);
+    expect(container).toBeTruthy();
+  });
+
+  it('should render with children', () => {
+    const { getByText } = render(<<%=componentName%>><div>Test</div></<%=componentName%>>);
+
+    expect(getByText('Test')).toBeTruthy();
+  });
+
+  it('should render with children and className', () => {
+    const { container } = render(<<%=componentName%> className="test">Test</<%=componentName%>>);
+
+    expect(container.querySelector('.test')).toBeTruthy();
+  });
+
+  it('should render with children and onClick', () => {
+    const onClickFn = jest.fn();
+    const { container } = render(<<%=componentName%> onClick={onClickFn}>Test</<%=componentName%>>);
+
+    expect(container).toBeTruthy();
+    expect(onClickFn).not.toHaveBeenCalled();
+
+    fireEvent.click(container.querySelector('button') as Element);
+
+    expect(onClickFn).toHaveBeenCalled();
+  });
+});

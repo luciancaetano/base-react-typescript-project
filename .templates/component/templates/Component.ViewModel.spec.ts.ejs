@@ -1,0 +1,24 @@
+/* eslint-disable node/no-unpublished-import */
+/* eslint-disable import/no-extraneous-dependencies */
+import { renderHook, act } from '@testing-library/react';
+import <%=componentUseViewModelHookName%> from './<%=componentName%>.ViewModel';
+
+describe('<%=componentName%> ViewModel', () => {
+  it('should render', () => {
+    const { result } = renderHook(() => <%=componentUseViewModelHookName%>({
+      onClick: jest.fn(),
+    }));
+    expect(result.current).toBeTruthy();
+  });
+
+  it('should call onClick', () => {
+    const onClick = jest.fn();
+    const { result } = renderHook(() => <%=componentUseViewModelHookName%>({
+      onClick,
+    }));
+    act(() => {
+      result.current.handleClick();
+    });
+    expect(onClick).toHaveBeenCalled();
+  });
+});

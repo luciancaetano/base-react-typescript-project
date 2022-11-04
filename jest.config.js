@@ -1,5 +1,6 @@
+/* eslint-disable no-undef */
 /* eslint-disable @typescript-eslint/no-var-requires */
-const { pathsToModuleNameMapper } = require('ts-jest/utils');
+const { pathsToModuleNameMapper } = require('ts-jest');
 const { compilerOptions } = require('./tsconfig.paths.json');
 
 module.exports = {
@@ -20,6 +21,7 @@ module.exports = {
     '\\.(jpg|ico|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
       'identity-obj-proxy',
     '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
+    // eslint-disable-next-line node/no-unsupported-features/es-syntax
     ...(pathsToModuleNameMapper(compilerOptions.paths, { prefix: '<rootDir>/' }) || {}),
   },
   resolver: 'jest-pnp-resolver',

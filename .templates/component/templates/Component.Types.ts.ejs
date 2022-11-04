@@ -1,14 +1,15 @@
 import React from 'react';
 
-export interface BasicButtonProps extends React.PropsWithChildren<{}> {
+export interface <%=componentPropsName%> extends React.PropsWithChildren<{}> {
   className?: string;
   onClick?: () => void;
 }
-
-export interface BasicButtonStore {
+<% if (useStore) { %>
+export interface <%=componentStoreInterfaceName%> {
   count: number;
   increment: () => void;
   decrement: () => void;
   incBy: (amount: number) => void;
   decBy: (amount: number) => void;
 }
+<% } %>

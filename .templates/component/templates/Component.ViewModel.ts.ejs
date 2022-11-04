@@ -1,0 +1,19 @@
+import { useCallback } from 'react';
+<% if (useStore) { %>import useStore from './<%=componentName%>.Store';<% } %>
+import { <%=componentPropsName%> } from './<%=componentName%>.types';
+
+function <%=componentUseViewModelHookName%>({ onClick }: <%=componentPropsName%>) {
+  <% if (useStore) { %>const { count, increment } = useStore();<% } %>
+
+  const handleClick = useCallback(() => {
+    <% if (useStore) { %>increment();<% } %>
+    onClick?.();
+  }, [<% if (useStore) { %>increment, <% } %>onClick]);
+
+  return {
+    handleClick<% if (useStore) { %>,
+    counter: count,<% } %>
+  };
+}
+
+export default <%=componentUseViewModelHookName%>;

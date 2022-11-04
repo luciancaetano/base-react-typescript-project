@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 import useStore from './BasicButton.Store';
-import { BasicButtonProps } from './BasicButton.types';
+import { BasicButtonProps } from './BasicButton.Types';
 
 function useBasicButtonViewModel({ onClick }: BasicButtonProps) {
   const { count, increment } = useStore();
