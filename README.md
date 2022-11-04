@@ -1,4 +1,9 @@
-# React Basic Typescript Starter
+# Fast and scalable React Typescript Starter
+## Features
+- [x] React
+- [x] Typescript
+- [x] zustand
+- [x] scalable
 
 # important package.json scripts
 - `start` starts the development server
