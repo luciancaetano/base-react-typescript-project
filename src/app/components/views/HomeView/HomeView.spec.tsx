@@ -14,8 +14,6 @@ describe('HomeView Component', () => {
     expect(container.querySelector('.test')).toBeTruthy();
   });
 
-  // test increment and decrement
-
   it('should increment count', () => {
     const { getByTestId } = render(<HomeView />);
     const incrementButton = getByTestId('inc');
