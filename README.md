@@ -32,7 +32,19 @@ Just run the command for more information
 ./codegen -h # for *nix
 codegen -h # for windows
 ```
+```sh
+Usage: codegen [options] <type> <name>
 
+Create a new component
+
+Arguments:
+  type          Type of component to create [element, partial, view, layout]
+  name          Name of component to create
+
+Options:
+  -s, --simple  Create a simple component without store
+  -h, --help    display help for command
+```
 ### Generated Component Code Structure
 
 ```bash

@@ -2,11 +2,14 @@ const {program} = require('commander');
 const path = require('path');
 const createComponent = require('./component/index');
 
+const isWindows = process.platform === 'win32';
+
 program
     .argument("<type>", "Type of component to create [element, partial, view, layout]")
     .argument("<name>", "Name of component to create")
     .description("Create a new component")
     .option("-s, --simple", "Create a simple component without store")
+    .name(isWindows ? 'codegen' : './codegen')
     .action((location, name, options) => {
         const cwd = path.resolve(path.join(process.cwd(), '.templates', 'component'));
         const isSimple = options.simple;
