@@ -2,7 +2,6 @@
 ## Features
 - [x] React
 - [x] Typescript
-- [x] zustand
 - [x] scalable
 
 # important package.json scripts
