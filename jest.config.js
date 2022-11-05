@@ -5,11 +5,13 @@ const { compilerOptions } = require('./tsconfig.paths.json');
 
 module.exports = {
   roots: ['src'],
+  reporters: ['jest-silent-reporter', 'summary'],
   testEnvironment: 'jsdom',
   setupFilesAfterEnv: [
     '@testing-library/jest-dom/extend-expect',
     './jest.setup.ts',
   ],
+  silent: true,
   moduleFileExtensions: ['ts', 'tsx', 'js'],
   testPathIgnorePatterns: ['node_modules/'],
   transform: {
@@ -25,28 +27,28 @@ module.exports = {
     ...(pathsToModuleNameMapper(compilerOptions.paths, { prefix: '<rootDir>/' }) || {}),
   },
   resolver: 'jest-pnp-resolver',
-  // collectCoverage: true,
-  // collectCoverageFrom: [
-  //   'src/components/elements/**/*.{ts,tsx}',
-  //   'src/hooks/**/*.{ts,tsx}',
-  //   'src/utils/**/*.{ts,tsx}',
-  //   '!src/*/src/components/elements/Select/Select.tsx',
-  //   '!src/*/src/components/elements/Select/Select.types.tsx',
-  // ],
-  // coverageThreshold: {
-  //   global: {
-  //     branches: 75,
-  //     functions: 80,
-  //     lines: 90,
-  //     statements: 90,
-  //   },
-  // },
-  // coverageReporters: [
-  //   'json',
-  //   'lcov',
-  //   'text',
-  //   'clover',
-  // ],
+  collectCoverage: true,
+  collectCoverageFrom: [
+    'src/app/components/**/*.{ts,tsx}',
+    '!src/app/components/**/index.ts', // ignore barel files
+    'src/app/hooks/**/*.{ts,tsx}',
+    'src/app/utils/**/*.{ts,tsx}',
+    '!src/app/utils/constants.ts', // ignore constants only file
+  ],
+  coverageThreshold: {
+    global: {
+      branches: 80,
+      functions: 80,
+      lines: 90,
+      statements: 90,
+    },
+  },
+  coverageReporters: [
+    'json',
+    'lcov',
+    'text',
+    'clover',
+  ],
   // coveragePathIgnorePatterns: [
   //   'node_modules',
   // ],
