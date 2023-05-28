@@ -16,7 +16,7 @@
     "build": "cross-env NODE_ENV=production DISABLE_ESLINT_PLUGIN=true SKIP_PREFLIGHT_CHECK=true craco build",
     "eject": "craco eject",
     "lint": "eslint --fix ./src --ext .tsx --ext .ts",
-    "stylelint": "stylelint \"src/**/*.scss\" --syntax scss --fix",
+    "stylelint": "stylelint \"src/**/*.scss\" --fix",
     "test": "jest --coverage"
   },
   "dependencies": {
