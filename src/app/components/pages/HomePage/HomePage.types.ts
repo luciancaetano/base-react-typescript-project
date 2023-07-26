@@ -1,12 +1,12 @@
-import { ITestableProps } from 'lens-ui';
+import { ITestableProps } from '@app/types/testing';
 import React from 'react';
 
-export interface HomeViewProps extends React.PropsWithChildren<{}>, ITestableProps {
+export interface HomePageProps extends React.PropsWithChildren<{}>, ITestableProps {
   className?: string;
   styles?: React.CSSProperties;
 }
 
-export interface HomeViewStore {
+export interface HomePageStore {
   count: number;
   increment: () => void;
   decrement: () => void;

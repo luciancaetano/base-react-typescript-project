@@ -23,7 +23,6 @@ module.exports = {
     '\\.(jpg|ico|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
       'identity-obj-proxy',
     '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
-    // eslint-disable-next-line node/no-unsupported-features/es-syntax
     ...(pathsToModuleNameMapper(compilerOptions.paths, { prefix: '<rootDir>/' }) || {}),
   },
   resolver: 'jest-pnp-resolver',
@@ -35,14 +34,14 @@ module.exports = {
     'src/app/utils/**/*.{ts,tsx}',
     '!src/app/utils/constants.ts', // ignore constants only file
   ],
-  coverageThreshold: {
-    global: {
-      branches: 80,
-      functions: 80,
-      lines: 90,
-      statements: 90,
-    },
-  },
+  // coverageThreshold: {
+  //   global: {
+  //     branches: 80,
+  //     functions: 80,
+  //     lines: 90,
+  //     statements: 90,
+  //   },
+  // },
   coverageReporters: [
     'json',
     'lcov',

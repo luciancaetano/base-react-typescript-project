@@ -1,7 +1,7 @@
 import { useCallback, useState } from 'react';
-import { HomeViewProps } from './HomeView.types';
+import { HomePageProps } from './HomePage.types';
 
-function useHomeViewViewModel({ }: HomeViewProps) {
+function useHomePageViewModel({ }: HomePageProps) {
   const [count, setCount] = useState(0);
 
   const handleIncrementClick = useCallback(() => {
@@ -19,4 +19,4 @@ function useHomeViewViewModel({ }: HomeViewProps) {
   };
 }
 
-export default useHomeViewViewModel;
+export default useHomePageViewModel;

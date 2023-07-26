@@ -2,11 +2,10 @@
 ## Features
 - [x] React
 - [x] Typescript
-- [x] zustand
 - [x] scalable
 
 # important package.json scripts
-- `start` starts the development server
+- `dev` starts the development server
 - `build` compiles the application
 - `lint` runs the linter
 - `stylelint` runs the style linter
@@ -23,13 +22,14 @@ The paths and alias are configured in the `tsconfig.json` file.
 | `src/app`  | -  | Application entry point  |
 | `src/locale`  | - | Internationalization files  |
 | `src/styles`  | `@styles/*`  | Global styles  |
-| `src/components/elements`  | `@components/elements/*`  | Generic and simple components like buttons, inputs, etc.  |
-| `src/components/partials`  | `@components/partials/*`  | More Complex ui related components  |
-| `src/components/views`  | `@components/views/*`  | View or Screens  |
-| `src/components/layouts`  | `@components/layouts/*`  | Components used to organize the application's layout  |
-| `src/hooks`  | `@hooks/*`  | Custom hooks  |
-| `src/utils`  | `@utils/*`  | Custom utilities  |
-| `src/config`  | `@config/*`  | Configuration files for the application  |
+| `src/app/components/elements`  | `@components/elements/*`  | Generic and simple components like buttons, inputs, etc.  |
+| `src/app/components/partials`  | `@components/partials/*`  | More Complex ui related components  |
+| `src/app/components/views`  | `@components/views/*`  | View or Screens  |
+| `src/app/components/layouts`  | `@components/layouts/*`  | Components used to organize the application's layout  |
+| `src/app/types`  | `@app/types/*`  | Global types  |
+| `src/app/hooks`  | `@hooks/*`  | Custom hooks  |
+| `src/app/utils`  | `@utils/*`  | Custom utilities  |
+| `src/app/config`  | `@config/*`  | Configuration files for the application  |
 | `src/media`  | `@media/*`  | Media files such as images, videos, etc.  |
 
 # Codegen
@@ -63,7 +63,6 @@ Options:
 │   │   │   │   ├── [name].module.scss
 │   │   │   │   ├── [name].types.ts
 │   │   │   │   ├── [name].view-model.ts
-│   │   │   │   ├── [name].view-model.spec.ts
 │   │   │   │   └── index.ts
 ```
 - `[type]` is the type of component, it can be `element`, `partial`, `view` or `layout`.
@@ -73,5 +72,4 @@ Options:
 - `[name].module.scss` is the component styles file.
 - `[name].types.ts` is the component types file.
 - `[name].view-model.ts` is the component view model file.
-- `[name].view-model.spec.ts ` is the component view model test file.
 - `index.ts` is the component index file, the component is exported as default and the component types are exported as named export.

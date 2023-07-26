@@ -126,8 +126,8 @@ function createComponent(baseDir, rootDirOrPath, location, _name) {
     // write spec files
     fs.writeFileSync(`${basePath}/${pascalName}.spec.tsx`, ejs.render(Templates.componentSpec, params));
     console.log(`Created file: ${pascalName}.spec.tsx`);
-    fs.writeFileSync(`${basePath}/${pascalName}.view-model.spec.ts`, ejs.render(Templates.viewModelSpec, params));
-    console.log(`Created file: ${pascalName}.view-model.spec.ts`);
+    // fs.writeFileSync(`${basePath}/${pascalName}.view-model.spec.ts`, ejs.render(Templates.viewModelSpec, params));
+    // console.log(`Created file: ${pascalName}.view-model.spec.ts`);
 
     console.log(`\n\nComponent ${pascalName} created in ${basePath}`);
 

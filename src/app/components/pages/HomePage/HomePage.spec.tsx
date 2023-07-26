@@ -1,21 +1,19 @@
-/* eslint-disable node/no-unpublished-import */
-/* eslint-disable import/no-extraneous-dependencies */
 import { render, fireEvent } from '@testing-library/react';
-import HomeView from './HomeView';
+import HomePage from './HomePage';
 
-describe('HomeView Component', () => {
+describe('HomePage Component', () => {
   it('should render', () => {
-    const { container } = render(<HomeView />);
+    const { container } = render(<HomePage />);
     expect(container).toBeTruthy();
   });
   it('should render with className', () => {
-    const { container } = render(<HomeView className="test">Test</HomeView>);
+    const { container } = render(<HomePage className="test">Test</HomePage>);
 
     expect(container.querySelector('.test')).toBeTruthy();
   });
 
   it('should increment count', () => {
-    const { getByTestId } = render(<HomeView />);
+    const { getByTestId } = render(<HomePage />);
     const incrementButton = getByTestId('inc');
     const count = getByTestId('counter');
 
@@ -25,7 +23,7 @@ describe('HomeView Component', () => {
   });
 
   it('should decrement count', () => {
-    const { getByTestId } = render(<HomeView />);
+    const { getByTestId } = render(<HomePage />);
     const decrementButton = getByTestId('dec');
     const count = getByTestId('counter');
 

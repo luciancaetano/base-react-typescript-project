@@ -1,4 +1,4 @@
-import { ITestableProps } from 'lens-ui';
+import { ITestableProps } from '@app/types/testing';
 import React from 'react';
 
 export interface AppLayoutProps extends React.PropsWithChildren<{}>, ITestableProps {

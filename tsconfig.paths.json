@@ -8,6 +8,9 @@
             "@config/*": [
                 "src/app/config/*"
             ],
+            "@app/types/*": [
+                "src/app/types/*"
+            ],
             "@media/*": [
                 "src/media/*"
             ],
@@ -23,8 +26,8 @@
             "@components/layouts/*": [
                 "src/app/components/layouts/*"
             ],
-            "@components/views/*": [
-                "src/app/components/views/*"
+            "@components/pages/*": [
+                "src/app/components/pages/*"
             ],
             "@utils/*": [
                 "src/app/utils/*"

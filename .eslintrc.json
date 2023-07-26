@@ -31,6 +31,7 @@
   "rules": {
     "no-empty-pattern": "off",
     "node/no-missing-import": "off",
+    "n/no-missing-import": "off",
     "import/no-unresolved": "off",
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/naming-convention": [
@@ -97,7 +98,18 @@
       2
     ],
     "linebreak-style": "off",
-    "import/no-extraneous-dependencies": "error",
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "**/*.stories.*",
+          "**/.storybook/**/*.*",
+          "**/*.test.*",
+          "**/*.spec.*"
+        ],
+        "peerDependencies": true
+      }
+    ],
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "no-template-curly-in-string": "off",

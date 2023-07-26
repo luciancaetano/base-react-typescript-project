@@ -1,19 +1,19 @@
 import React from 'react';
 import clsx from 'clsx';
 import {
-  Button, Row, Col, Icon,
+  Button, Row, Col, Icon, Layout,
 } from 'lens-ui';
-import { HomeViewProps } from './HomeView.types';
-import styles from './HomeView.module.scss';
-import useHomeViewViewModel from './HomeView.view-model';
+import { HomePageProps } from './HomePage.types';
+import styles from './HomePage.module.scss';
+import useHomePageViewModel from './HomePage.view-model';
 
-function HomeView(props: HomeViewProps) {
+function HomePage(props: HomePageProps) {
   const { className, testingID } = props;
 
-  const { count, handleDecrementClick, handleIncrementClick } = useHomeViewViewModel(props);
+  const { count, handleDecrementClick, handleIncrementClick } = useHomePageViewModel(props);
 
   return (
-    <div className={clsx('homeView', styles.homeView, className)} data-testid={testingID}>
+    <Layout.Content className={clsx('HomePage', styles.HomePage, className)} data-testid={testingID}>
       <Row>
         <Col>
           <Button onClick={handleDecrementClick} testingID="dec" size="small">
@@ -27,8 +27,8 @@ function HomeView(props: HomeViewProps) {
           </Button>
         </Col>
       </Row>
-    </div>
+    </Layout.Content>
   );
 }
 
-export default React.memo(HomeView);
+export default React.memo(HomePage);
