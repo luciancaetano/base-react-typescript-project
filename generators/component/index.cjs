@@ -57,6 +57,12 @@ module.exports = {
       default: true,
     },
     {
+      type: 'confirm',
+      name: 'wantI18n',
+      message: 'Do you want i18n?',
+      default: true,
+    },
+    {
       type: 'list',
       name: 'feature',
       message: 'Select Feature',
@@ -71,6 +77,8 @@ module.exports = {
         : `'src/app/features/{{feature}}/components/${componentTypePathsMap[result.componentType]}`;
 
     const useStyles = result.componentType === 'element' || result.componentType === 'layout' || result.componentType === 'page';
+
+    const wantI18n = result.wantI18n;
 
     const actions = [
       {
@@ -113,6 +121,27 @@ module.exports = {
         type: 'add',
         path: basePath + '/{{kebabCase name}}/{{kebabCase name}}.module.scss',
         templateFile: 'generators/component/Component.module.scss.hbs',
+      });
+    }
+
+    if (wantI18n) {
+      actions.push({
+        type: 'add',
+        path: basePath + '/{{kebabCase name}}/translations/index.ts',
+        templateFile: 'generators/component/translations/index.ts.hbs',
+      });
+
+
+      actions.push({
+        type: 'add',
+        path: basePath + '/{{kebabCase name}}/translations/en/index.ts',
+        templateFile: 'generators/component/translations/en/index.ts.hbs',
+      });
+
+      actions.push({
+        type: 'add',
+        path: basePath + '/{{kebabCase name}}/translations/pt-BR/index.ts',
+        templateFile: 'generators/component/translations/pt-BR/index.ts.hbs',
       });
     }
 
