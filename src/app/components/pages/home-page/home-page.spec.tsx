@@ -20,19 +20,8 @@ describe('HomePage Component', () => {
         expect(container).toBeTruthy();
     });
 
-    it('should render with children', () => {
-        const { getByText } = render(
-            <HomePage>
-                <div>Test</div>
-            </HomePage>,
-            { wrapper },
-        );
-
-        expect(getByText('Test')).toBeInTheDocument();
-    });
-
     it('should render with children and className', () => {
-        const { container } = render(<HomePage className="test">Test</HomePage>, { wrapper });
+        const { container } = render(<HomePage className="test"></HomePage>, { wrapper });
 
         expect(container.querySelector('.test')).toBeTruthy();
     });

@@ -1,6 +1,7 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 
 import { useAuth } from '@components/providers/auth-provider';
+import { useTranslation } from '@lib/i18n';
 
 import { HomePageProps, TodoItem } from './home-page.types';
 
@@ -8,6 +9,10 @@ function useHomePageViewModel({ }: HomePageProps) {
     const { isAuthenticated, authenticate, signout } = useAuth();
     const [todoItems, setTodoItems] = useState<TodoItem[]>([]);
     const [todoText, setTodoText] = useState<string>('');
+
+    const { t, i18n } = useTranslation();
+
+    const language = useMemo(() => i18n.language, [i18n.language]);
 
     const addTodo = useCallback(() => {
         setTodoItems((items) => [...items, {
@@ -42,6 +47,10 @@ function useHomePageViewModel({ }: HomePageProps) {
         authenticate('test');
     }, [authenticate]);
 
+    const changeLanguage = useCallback((language: string) => () => {
+        i18n.changeLanguage(language);
+    }, [i18n]);
+
     return {
         todoItems,
         todoText,
@@ -52,6 +61,9 @@ function useHomePageViewModel({ }: HomePageProps) {
         handleLogin,
         isAuthenticated,
         signout,
+        t,
+        language,
+        changeLanguage,
     };
 }
 

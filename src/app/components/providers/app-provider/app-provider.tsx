@@ -3,6 +3,7 @@ import { ErrorBoundary } from 'react-error-boundary';
 import { HelmetProvider } from 'react-helmet-async';
 import { HashRouter as Router } from 'react-router-dom';
 
+import Loader from '@components/elements/loader';
 import AuthProvider from '@components/providers/auth-provider';
 
 
@@ -15,7 +16,7 @@ function AppProvider(props: AppProviderProps) {
   return (
     <React.Suspense
       fallback={
-        <div className="flex items-center justify-center w-screen h-screen">Loading...</div>
+        <Loader />
       }
     >
       <ErrorBoundary FallbackComponent={ErrorFallback}>

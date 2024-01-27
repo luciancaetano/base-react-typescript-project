@@ -3,7 +3,7 @@ import React from 'react';
 import { ITestableProps } from '@app/types/testing';
 
 
-export interface HomePageProps extends React.PropsWithChildren<object>, ITestableProps {
+export interface HomePageProps extends ITestableProps {
     className?: string;
     styles?: React.CSSProperties;
 }

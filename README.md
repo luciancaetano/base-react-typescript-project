@@ -24,6 +24,7 @@ This is an opinionated starter for react projects with typescript.
 - [ESLint](https://eslint.org/)
 - [Prettier](https://prettier.io/)
 - [Husky](https://typicode.github.io/husky/#/)
+- [i18next](https://www.i18next.com/)
 
 # Additional Documentation
 - [🚀 Getting Started](./docs/getting-started.md)

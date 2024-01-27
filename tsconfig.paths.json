@@ -15,7 +15,7 @@
         "./src/app/hooks/*"
       ],
       "@lib/*": [
-        "./src/app/lib/*"
+        "./src/lib/*"
       ],
       "@store/*": [
         "./src/app/store/*"
