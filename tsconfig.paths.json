@@ -11,9 +11,6 @@
       "@config/*": [
         "./src/app/config/*"
       ],
-      "@features/*": [
-        "./src/app/features/*"
-      ],
       "@hooks/*": [
         "./src/app/hooks/*"
       ],
@@ -32,6 +29,9 @@
       "@utils/*": [
         "./src/app/utils/*"
       ],
+      "@assets/*": [
+        "./src/assets/*"
+      ]
     }
   }
 }

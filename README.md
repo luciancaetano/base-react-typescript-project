@@ -10,8 +10,21 @@ This is an opinionated starter for react projects with typescript.
 - `cy:run` runs the cypress tests
 - `generate` runs the code generator
 
-## Presentation
-This project is a collection of all the experience practiced with react and other frameworks like angular, vue, etc.
+# Typescript Path Aliases
+This project uses typescript path aliases to make the imports more readable and to avoid the use of relative paths.
+
+| Alias                | Real Path                      | Description                            |
+|----------------------|--------------------------------|----------------------------------------|
+| `@feature/*`         | `./src/app/features/*`         | Path for feature modules               |
+| `@components/*`      | `./src/app/components/*`      | Path for reusable components            |
+| `@config/*`          | `./src/app/config/*`           | Path for configuration files           |
+| `@hooks/*`           | `./src/app/hooks/*`            | Path for custom React hooks            |
+| `@lib/*`             | `./src/app/lib/*`              | Path for shared utility libraries      |
+| `@providers/*`       | `./src/app/providers/*`        | Path for provider modules              |
+| `@store/*`           | `./src/app/store/*`            | Path for store                         |
+| `@app/types/*`       | `./src/app/types/*`            | Path for TypeScript types/interfaces   |
+| `@utils/*`           | `./src/app/utils/*`            | Path for utility functions             |
+| `@assets/*`          | `./src/assets/*`               | Path for static assets                 |
 
 # Code Generation
 Just run the following command to generate a component or a feature:
