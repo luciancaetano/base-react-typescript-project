@@ -1,16 +1,17 @@
-import React from 'react';
+/// <reference types="vite/client" />
+import * as React from 'react';
 import { createRoot } from 'react-dom/client';
-import App from './app/app';
-import './locale/i18next';
-import 'lens-ui/dist/index.css';
-import './styles/index.scss';
 
-const container = document.getElementById('root') as HTMLElement;
+import './index.css';
+import App from './app';
+import reportWebVitals from './reportWebVitals';
 
-const root = createRoot(container);
+const root = createRoot(document.getElementById('root') as HTMLElement);
 
 root.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
 );
+
+reportWebVitals();

@@ -1,116 +1,157 @@
 {
-  "name": "base-react-typescript-project",
+  "name": "lk-base-react-typescript-project-react-with-vite",
   "version": "0.1.0",
   "private": true,
-  "license": "MIT",
-  "author": {
-    "name": "Lucian Caetano",
-    "url": "https://github.com/luciancaetano"
-  },
-  "repository": {
-    "type": "GIT",
-    "url": "https://github.com/luciancaetano/base-react-typescript-project"
-  },
+  "type": "module",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development DISABLE_ESLINT_PLUGIN=true SKIP_PREFLIGHT_CHECK=true craco start",
-    "build": "cross-env NODE_ENV=production DISABLE_ESLINT_PLUGIN=true SKIP_PREFLIGHT_CHECK=true craco build",
-    "eject": "craco eject",
-    "lint": "eslint --fix ./src --ext .tsx --ext .ts",
-    "stylelint": "stylelint \"src/**/*.scss\" --fix",
-    "test": "jest --coverage"
+    "start": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "is-ci \"test:coverage\" \"test:jest\"",
+    "test:jest": "jest",
+    "test:coverage": "CI=1 yarn test:jest -- --coverage",
+    "postinstall": "husky install",
+    "cy:run": "cypress run",
+    "cy:install": "cypress install",
+    "cy:open": "cypress open",
+    "pretest:e2e:run": "yarn build",
+    "test:e2e:dev": "start-server-and-test start:cli http://localhost:3000 cy:open",
+    "test:e2e": "is-ci \"test:e2e:run\" \"test:e2e:dev\"",
+    "test:e2e:run": "start-server-and-test serve http://localhost:3000 cy:run",
+    "lint": "eslint --fix --ext .js,.ts,.tsx ./src --ignore-path .gitignore",
+    "serve": "serve --no-clipboard --single --listen 3000 build",
+    "generate": "plop",
+    "validate-types": "tsc --project tsconfig.json --pretty --noEmit",
+    "validate": "yarn validate-types && yarn lint && yarn test"
   },
   "dependencies": {
-    "@craco/craco": "^7.1.0",
-    "@craco/types": "^7.1.0",
-    "case": "^1.6.3",
-    "classnames": "^2.3.2",
-    "clsx": "^2.0.0",
-    "ejs": "^3.1.9",
-    "i18next": "^23.7.11",
-    "lens-ui": "^5.0.7",
-    "localforage": "^1.10.0",
-    "lodash-es": "^4.17.21",
-    "query-string": "^8.1.0",
-    "react": "^18.2.0",
+    "@headlessui/react": "^1.7.18",
+    "@tailwindcss/typography": "^0.5.10",
+    "@hookform/resolvers": "^3.3.4",
+    "@testing-library/jest-dom": "^6.3.0",
+    "@testing-library/user-event": "^14.5.2",
+    "@testing-library/react": "^14.1.2",
+    "@types/jest": "^29.5.11",
+    "@types/react": "^18.2.48",
+    "@types/node": "^20.11.7",
+    "@types/react-dom": "^18.2.18",
+    "@vitejs/plugin-react": "^4.2.1",
+    "dayjs": "^1.11.10",
+    "axios": "^1.6.7",
+    "clsx": "^2.1.0",
+    "history": "^5.3.0",
+    "lodash": "^4.17.21",
+    "intersection-observer": "^0.12.2",
+    "jsonwebtoken": "^9.0.2",
     "react-dom": "^18.2.0",
-    "react-i18next": "^13.5.0",
-    "react-router": "^6.21.0",
-    "react-router-dom": "^6.21.0",
-    "seamless-immutable": "^7.1.4",
-    "ts-jest": "^29.1.1",
+    "marked": "^11.1.1",
+    "react": "^18.2.0",
+    "react-hook-form": "^7.49.3",
+    "react-error-boundary": "^4.0.12",
+    "react-helmet-async": "^2.0.4",
+    "react-icons": "^5.0.1",
+    "react-router-dom": "^6.21.3",
+    "vite": "^5.0.12",
+    "type-fest": "^4.10.1",
     "typescript": "^5.3.3",
-    "use-debounce": "^10.0.0",
-    "uuid": "^9.0.1",
-    "web-vitals": "^3.5.0"
+    "vite-tsconfig-paths": "^4.3.1",
+    "web-vitals": "^3.5.2",
+    "zustand": "^4.5.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^18.4.3",
-    "@commitlint/config-conventional": "^18.4.3",
-    "@namics/stylelint-bem": "^9.0.0",
-    "@swc/helpers": "^0.5.3",
-    "@testing-library/jest-dom": "^6.1.5",
-    "@testing-library/react": "^14.1.2",
-    "@testing-library/user-event": "^14.5.1",
-    "@types/classnames": "^2.3.0",
-    "@types/ejs": "^3.1.5",
-    "@types/jest": "^29.5.11",
-    "@types/lodash-es": "^4.17.12",
-    "@types/node": "^20.10.5",
-    "@types/react": "^18.2.45",
-    "@types/react-dom": "^18.2.18",
-    "@types/react-i18next": "^8.1.0",
-    "@types/react-router-dom": "^5.3.3",
-    "@types/seamless-immutable": "^7.1.19",
-    "@types/uuid": "^9.0.7",
-    "@typescript-eslint/eslint-plugin": "^6.15.0",
-    "@typescript-eslint/parser": "^6.15.0",
-    "commander": "^11.1.0",
-    "craco-swc": "^0.5.1",
+    "@mswjs/data": "^0.16.1",
+    "@testing-library/cypress": "^10.0.1",
+    "@testing-library/react-hooks": "^8.0.1",
+    "@types/dompurify": "^3.0.5",
+    "@types/jsonwebtoken": "^9.0.5",
+    "@types/lodash": "^4.14.202",
+    "@types/marked": "^5.0.2",
+    "@typescript-eslint/eslint-plugin": "^6.19.1",
+    "@typescript-eslint/parser": "^6.19.1",
+    "autoprefixer": "^10",
+    "browserslist-to-esbuild": "^2.1.1",
     "cross-env": "^7.0.3",
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-stylelint": "^20.0.0",
+    "cypress": "^13.6.3",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-cypress": "^2.15.1",
     "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jest-dom": "^5.1.0",
     "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-prettier": "^5.1.3",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "http-server": "^14.1.1",
-    "husky": "^8.0.3",
+    "eslint-plugin-testing-library": "^6.2.0",
+    "husky": "^9.0.6",
+    "identity-obj-proxy": "^3.0.0",
+    "is-ci": "^3.0.1",
+    "is-ci-cli": "^2.2.0",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
-    "jest-silent-reporter": "^0.5.0",
-    "jest-useragent-mock": "^0.1.1",
     "lint-staged": "^15.2.0",
-    "react-app-alias": "^2.2.2",
-    "react-scripts": "^5.0.1",
-    "sass": "^1.69.5",
+    "msw": "^2.1.5",
+    "npm-run-all": "^4.1.5",
+    "plop": "^4.0.1",
+    "postcss": "^8",
+    "prettier": "^3.2.4",
+    "react-test-renderer": "^18.2.0",
+    "sass": "^1.70.0",
+    "serve": "^14.2.1",
     "start-server-and-test": "^2.0.3",
-    "stylelint": "^16.0.2",
-    "stylelint-config-standard-scss": "^12.0.0",
-    "stylelint-order": "^6.0.4",
-    "stylelint-scss": "^6.0.0",
-    "ts-node": "^10.9.2"
+    "tailwindcss": "^3.4.1",
+    "ts-jest": "^29.1.2",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths-webpack-plugin": "^4.1.0"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
+  "eslintConfig": {
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
     ]
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
+  "lint-staged": {
+    "*.+(ts|tsx)": [
+      "yarn lint"
+    ]
   },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
+  "jest": {
+    "roots": [
+      "<rootDir>/src"
+    ],
+    "preset": "ts-jest",
+    "setupFilesAfterEnv": [
+      "./src/setupTests.ts"
+    ],
+    "testEnvironment": "jest-environment-jsdom",
+    "testMatch": [
+      "**/?(*.)+(spec).+(ts|tsx|js)"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "ts-jest",
+      "^.+\\.ts$": "ts-jest"
+    },
+    "transformIgnorePatterns": [
+      "/node_modules/(?!lodash-es)"
+    ],
+    "moduleNameMapper": {
+      "^@/(.+)": "<rootDir>/src/$1",
+      "\\.(css|less|scss|sass)$": "identity-obj-proxy"
+    },
+    "moduleDirectories": [
+      "node_modules",
+      "src"
+    ],
+    "globals": {
+      "ts-jest": {
+        "tsconfig": "tsconfig.json"
+      }
     }
   }
 }

@@ -1,212 +1,122 @@
 {
-  "parser": "@typescript-eslint/parser",
-  "extends": [
-    "stylelint",
-    "plugin:@typescript-eslint/recommended",
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "eslint-config-airbnb",
-    "plugin:import/errors",
-    "plugin:import/warnings",
-    "plugin:import/typescript"
-  ],
+  "root": true,
   "env": {
-    "es6": true,
     "node": true,
-    "browser": true,
-    "jest": true
+    "es6": true
   },
-  "plugins": [
-    "react",
-    "react-hooks",
-    "import"
-  ],
   "parserOptions": {
-    "ecmaVersion": 2018,
-    "sourceType": "module",
-    "ecmaFeatures": {
-      "jsx": true
-    }
+    "ecmaVersion": 8,
+    "sourceType": "module"
   },
-  "rules": {
-    "no-empty-pattern": "off",
-    "node/no-missing-import": "off",
-    "n/no-missing-import": "off",
-    "import/no-unresolved": "off",
-    "react/react-in-jsx-scope": "off",
-    "@typescript-eslint/naming-convention": [
-      "error",
-      {
-        "selector": "interface",
-        "format": [
-          "PascalCase"
-        ],
-        "leadingUnderscore": "forbid",
-        "trailingUnderscore": "forbid"
-      },
-      {
-        "selector": "typeAlias",
-        "format": [
-          "PascalCase"
-        ],
-        "leadingUnderscore": "forbid",
-        "trailingUnderscore": "forbid"
-      },
-      {
-        "selector": "enum",
-        "format": [
-          "PascalCase"
-        ],
-        "leadingUnderscore": "forbid",
-        "trailingUnderscore": "forbid",
-        "suffix": [
-          "Enum"
-        ]
-      }
-    ],
-    "@typescript-eslint/ban-types": [
-      "error",
-      {
-        "types": {
-          "object": {
-            "message": "Avoid the object type, as it is currently hard to use due to not being able to assert that keys exist",
-            "fixWith": "{}"
-          }
+  "ignorePatterns": [
+    "node_modules/*"
+  ],
+  "extends": [
+    "eslint:recommended"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "**/*.ts",
+        "**/*.cjs",
+        "**/*.tsx"
+      ],
+      "parser": "@typescript-eslint/parser",
+      "settings": {
+        "react": {
+          "version": "detect"
         },
-        "extendDefaults": false
-      }
-    ],
-    "no-shadow": "off",
-    "no-restricted-exports": "off",
-    "no-use-before-define": "off",
-    "import/no-relative-parent-imports": "error",
-    "jsx-a11y/tabindex-no-positive": "off",
-    "react/require-default-props": "off",
-    "react/prop-types": "off",
-    "class-methods-use-this": "off",
-    "@typescript-eslint/semi": "error",
-    "@typescript-eslint/member-delimiter-style": "error",
-    "@typescript-eslint/explicit-module-boundary-types": "off",
-    "indent": "off",
-    "react/button-has-type": "off",
-    "react/jsx-one-expression-per-line": "off",
-    "@typescript-eslint/no-empty-function": "off",
-    "import/extensions": "off",
-    "jsx-a11y/label-has-associated-control": "off",
-    "@typescript-eslint/indent": [
-      "warn",
-      2
-    ],
-    "linebreak-style": "off",
-    "import/no-extraneous-dependencies": [
-      "error",
-      {
-        "devDependencies": [
-          "**/*.stories.*",
-          "**/.storybook/**/*.*",
-          "**/*.test.*",
-          "**/*.spec.*"
-        ],
-        "peerDependencies": true
-      }
-    ],
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn",
-    "no-template-curly-in-string": "off",
-    "@typescript-eslint/no-non-null-assertion": "error",
-    "@typescript-eslint/no-empty-interface": "warn",
-    "no-useless-escape": "off",
-    "max-len": "off",
-    "no-plusplus": "off",
-    "no-param-reassign": "off",
-    "@typescript-eslint/triple-slash-reference": "off",
-    "@typescript-eslint/explicit-function-return-type": "off",
-    "spaced-comment": "off",
-    "no-underscore-dangle": "off",
-    "no-confusing-arrow": "off",
-    "global-require": "off",
-    "@typescript-eslint/no-explicit-any": "off",
-    "jsx-a11y/anchor-is-valid": "off",
-    "jsx-a11y/no-autofocus": "off",
-    "jsx-a11y/no-noninteractive-tabindex": "off",
-    "jsx-a11y/no-noninteractive-element-interactions": "off",
-    "jsx-a11y/click-events-have-key-events": "off",
-    "jsx-a11y/label-has-for": "off",
-    "jsx-a11y/no-static-element-interactions": "off",
-    "react/no-unused-prop-types": [
-      1
-    ],
-    "import/prefer-default-export": "off",
-    "arrow-parens": "error",
-    "no-extra-bind": "error",
-    "no-irregular-whitespace": "error",
-    "no-unreachable": "error",
-    "react/jsx-filename-extension": [
-      1,
-      {
-        "extensions": [
-          ".ts",
-          ".tsx",
-          ".js",
-          ".scss"
-        ]
-      }
-    ],
-    "react/sort-comp": [
-      1,
-      {
-        "order": [
-          "static-methods",
-          "lifecycle",
-          "rendering",
-          "everything-else"
-        ],
-        "groups": {
-          "lifecycle": [
-            "displayName",
-            "propTypes",
-            "contextTypes",
-            "childContextTypes",
-            "mixins",
-            "statics",
-            "defaultProps",
-            "constructor",
-            "getDefaultProps",
-            "state",
-            "getInitialState",
-            "getChildContext",
-            "getDerivedStateFromProps",
-            "componentWillMount",
-            "UNSAFE_componentWillMount",
-            "componentDidMount",
-            "componentWillReceiveProps",
-            "UNSAFE_componentWillReceiveProps",
-            "shouldComponentUpdate",
-            "componentWillUpdate",
-            "UNSAFE_componentWillUpdate",
-            "getSnapshotBeforeUpdate",
-            "componentDidUpdate",
-            "componentDidCatch",
-            "componentWillUnmount"
-          ],
-          "rendering": [
-            "/^render.+$/",
-            "render"
-          ]
+        "import/resolver": {
+          "typescript": {}
         }
+      },
+      "env": {
+        "browser": true,
+        "node": true,
+        "es6": true
+      },
+      "extends": [
+        "eslint:recommended",
+        "plugin:import/warnings",
+        "plugin:import/errors",
+        "plugin:import/typescript",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:react-hooks/recommended",
+        "plugin:react/recommended",
+        "plugin:testing-library/react",
+        "plugin:jsx-a11y/recommended",
+        "plugin:jest-dom/recommended"
+      ],
+      "rules": {
+        "jsx-a11y/click-events-have-key-events": "off",
+        "jsx-a11y/no-noninteractive-element-interactions": "off",
+        "semi": [
+          "error",
+          "always"
+        ],
+        "jsx-quotes": [
+          "error",
+          "prefer-double"
+        ],
+        "comma-dangle": [
+          "error",
+          "always-multiline"
+        ],
+        "testing-library/no-node-access": "off",
+        "testing-library/no-container": "off",
+        "testing-library/prefer-screen-queries": "off",
+        "no-empty-pattern": "off",
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": [
+              "@/features/*/*"
+            ]
+          }
+        ],
+        "linebreak-style": "off",
+        "react/prop-types": "off",
+        "import/order": [
+          "error",
+          {
+            "groups": [
+              "builtin",
+              "external",
+              "internal",
+              "parent",
+              "sibling",
+              "index",
+              "object"
+            ],
+            "newlines-between": "always",
+            "alphabetize": {
+              "order": "asc",
+              "caseInsensitive": true
+            }
+          }
+        ],
+        "import/default": "off",
+        "import/no-named-as-default-member": "off",
+        "import/no-named-as-default": "off",
+        "react/react-in-jsx-scope": "off",
+        "jsx-a11y/anchor-is-valid": "off",
+        "@typescript-eslint/no-unused-vars": [
+          "error"
+        ],
+        "@typescript-eslint/explicit-function-return-type": [
+          "off"
+        ],
+        "@typescript-eslint/explicit-module-boundary-types": [
+          "off"
+        ],
+        "@typescript-eslint/no-empty-function": [
+          "off"
+        ],
+        "@typescript-eslint/no-explicit-any": [
+          "off"
+        ],
+        "@typescript-eslint/no-var-requires": "off"
       }
-    ]
-  },
-  "globals": {
-    "LocalFileSystem": true,
-    "fetchMock": true,
-    "page": true,
-    "browser": true,
-    "cy": true
-  },
-  "settings": {
-    "react": {
-      "version": "detect"
     }
-  }
+  ]
 }

@@ -1,0 +1,5 @@
+export { default } from './{{ kebabCase name }}';
+export type { {{ pascalCase name }}Props } from './{{ kebabCase name }}.types';
+{{#if wantRoutes}}
+export { {{ camelCase name }}Routes } from './{{ kebabCase name }}.routes';
+{{/if}}

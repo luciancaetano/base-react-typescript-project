@@ -1,55 +1,22 @@
 # Fast and scalable React Typescript Starter
-## Features
-- [x] React
-- [x] Typescript
-- [x] scalable
+This is an opinionated starter for react projects with typescript.
 
 # important package.json scripts
-- `dev` starts the development server
+- `start` starts the development server
 - `build` compiles the application
 - `lint` runs the linter
-- `stylelint` runs the style linter
 - `test` runs the tests
+- `validate` runs type checking, linting and testing
+- `cy:run` runs the cypress tests
+- `generate` runs the code generator
 
 ## Presentation
 This project is a collection of all the experience practiced with react and other frameworks like angular, vue, etc.
 
-## Paths and alias
-The paths and alias are configured in the `tsconfig.json` file.
-
-| Path |  Alias | Description  |
-|---|---|---|
-| `src/app`  | -  | Application entry point  |
-| `src/locale`  | - | Internationalization files  |
-| `src/styles`  | `@styles/*`  | Global styles  |
-| `src/app/components/elements`  | `@components/elements/*`  | Generic and simple components like buttons, inputs, etc.  |
-| `src/app/components/partials`  | `@components/partials/*`  | More Complex ui related components  |
-| `src/app/components/views`  | `@components/views/*`  | View or Screens  |
-| `src/app/components/layouts`  | `@components/layouts/*`  | Components used to organize the application's layout  |
-| `src/app/types`  | `@app/types/*`  | Global types  |
-| `src/app/hooks`  | `@hooks/*`  | Custom hooks  |
-| `src/app/utils`  | `@utils/*`  | Custom utilities  |
-| `src/app/config`  | `@config/*`  | Configuration files for the application  |
-| `src/media`  | `@media/*`  | Media files such as images, videos, etc.  |
-
-# Codegen
-Just run the command for more information
+# Code Generation
+Just run the following command to generate a component or a feature:
 ```bash
-./codegen -h # for *nix
-codegen -h # for windows
-```
-```sh
-Usage: codegen [options] <type> <name>
-
-Create a new component
-
-Arguments:
-  type             Type of component to create [element, partial, view, layout]
-  name             Name of component to create
-
-Options:
-  -d, --dir <dir>  Directory to create component in
-  -h, --help       display help for command
+yarn generate
 ```
 ### Generated Component Code Structure
 
@@ -65,7 +32,7 @@ Options:
 │   │   │   │   ├── [name].view-model.ts
 │   │   │   │   └── index.ts
 ```
-- `[type]` is the type of component, it can be `element`, `partial`, `view` or `layout`.
+- `[type]` is the type of component, it can be `element`, `provider`, `pages` or `layout`.
 - `[name]` is the name of the component.
 - `[name].tsx` is the component file, or component view.
 - `[name].spec.tsx` is the component test file.
@@ -73,3 +40,35 @@ Options:
 - `[name].types.ts` is the component types file.
 - `[name].view-model.ts` is the component view model file.
 - `index.ts` is the component index file, the component is exported as default and the component types are exported as named export.
+
+
+### Generated Features Folder Structure
+We can organize the features as we want, but the recommended structure is the following:
+The command `yarn generate` will create the feature folder structure automatically with the following structure:
+
+```bash
+├── src
+│   ├── features
+│   │   ├── [name]
+│   │   │   ├── index.tsx
+│   │   │   ├── components
+│   │   │   │   ├── elements
+│   │   │   │   ├── providers
+│   │   │   │   ├── pages
+│   │   │   │   └── layouts
+│   │   │   ├── hooks
+│   │   │   ├── types
+│   │   │   ├── utils
+│   │   │   ├── config
+```
+- `[name]` is the name of the feature.
+- `index.tsx` is the feature route file.
+- `components` is the folder that contains all the components of the feature.
+  - `elements` is the folder that contains all the generic and simple components like buttons, inputs, etc.
+  - `providers` is the folder that contains all the more complex ui related components.
+  - `pages` is the folder that contains all the views or screens.
+  - `layouts` is the folder that contains all the components used to organize the application's layout.
+- `hooks` is the folder that contains all the hooks of the feature.
+- `types` is the folder that contains all the types of the feature.
+- `utils` is the folder that contains all the utilities of the feature.
+- `config` is the folder that contains all the configuration files of the feature.

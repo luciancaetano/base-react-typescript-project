@@ -1,37 +1,37 @@
 {
-    "compilerOptions": {
-        "baseUrl": ".",
-        "paths": {
-            "@components/partials/*": [
-                "src/app/components/partials/*"
-            ],
-            "@config/*": [
-                "src/app/config/*"
-            ],
-            "@app/types/*": [
-                "src/app/types/*"
-            ],
-            "@media/*": [
-                "src/media/*"
-            ],
-            "@styles/*": [
-                "src/styles/*"
-            ],
-            "@hooks/*": [
-                "src/app/hooks/*"
-            ],
-            "@components/elements/*": [
-                "src/app/components/elements/*"
-            ],
-            "@components/layouts/*": [
-                "src/app/components/layouts/*"
-            ],
-            "@components/pages/*": [
-                "src/app/components/pages/*"
-            ],
-            "@utils/*": [
-                "src/app/utils/*"
-            ]
-        }
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@feature/*": [
+        "./src/app/features/*"
+      ],
+      "@components/*": [
+        "./src/app/components/*"
+      ],
+      "@config/*": [
+        "./src/app/config/*"
+      ],
+      "@features/*": [
+        "./src/app/features/*"
+      ],
+      "@hooks/*": [
+        "./src/app/hooks/*"
+      ],
+      "@lib/*": [
+        "./src/app/lib/*"
+      ],
+      "@providers/*": [
+        "./src/app/providers/*"
+      ],
+      "@store/*": [
+        "./src/app/store/*"
+      ],
+      "@app/types/*": [
+        "./src/app/types/*"
+      ],
+      "@utils/*": [
+        "./src/app/utils/*"
+      ],
     }
+  }
 }
