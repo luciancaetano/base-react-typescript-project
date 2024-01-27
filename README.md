@@ -26,7 +26,7 @@ This is an opinionated starter for react projects with typescript.
 # Additional Documentation
 - [🚀 Getting Started](./docs/getting-started.md)
 - [📦 Store](./docs/store.md)
-- [License](./LICENCE.md)
+- [⚖️ License](./LICENCE.md)
 
 # Typescript Path Aliases
 This project uses typescript path aliases to make the imports more readable and to avoid the use of relative paths.
