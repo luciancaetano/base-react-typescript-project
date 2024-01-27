@@ -8,7 +8,7 @@ type IconProps =
     | { endIcon?: undefined; startIcon?: undefined };
 
 export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & IconProps & ITestableProps & {
-    variant?: keyof typeof variants;
-    size?: keyof typeof sizes;
-    isLoading?: boolean;
+  variant?: keyof typeof variants;
+  size?: keyof typeof sizes;
+  isLoading?: boolean;
 }

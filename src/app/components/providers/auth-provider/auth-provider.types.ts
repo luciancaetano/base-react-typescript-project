@@ -1,18 +1,18 @@
 import React from 'react';
 
 export interface AuthProviderProps extends React.PropsWithChildren<object> {
-    className?: string;
+  className?: string;
 }
 
 export interface AuthProviderStore {
-    isAuthenticated: boolean;
-    user: string;
+  isAuthenticated: boolean;
+  user: string;
 }
 
 export interface AuthProviderContextType {
-    isAuthenticated: boolean;
-    user: string;
+  isAuthenticated: boolean;
+  user: string;
 
-    authenticate: (user: string) => void;
-    signout: () => void;
+  authenticate: (user: string) => void;
+  signout: () => void;
 }

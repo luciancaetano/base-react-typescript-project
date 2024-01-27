@@ -1,11 +1,11 @@
 export interface TranslationNamespaceContextType {
-    id: string;
+  id: string;
 }
 
 export type SupportedLanguages = 'pt-BR' | 'en';
 
 export type I18NResource = {
-    [laguage in SupportedLanguages]: {
-        [key: string]: string;
-    };
+  [laguage in SupportedLanguages]: {
+    [key: string]: string;
+  };
 };

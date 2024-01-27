@@ -4,5 +4,5 @@
  * In HTML will be added data-testid attribute with value from testingId property
  */
 export interface ITestableProps {
-    testingID?: string; // for testing purposes in html is added data-testid attribute
+  testingID?: string; // for testing purposes in html is added data-testid attribute
 }

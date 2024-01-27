@@ -10,7 +10,20 @@ import { HiOutlineTrash } from 'react-icons/hi2';
 function HomePage(props: HomePageProps) {
   const { className, testingID } = props;
 
-  const { addTodo, handleInputChange, removeTodo, todoItems, todoText, toggleTodo, handleLogin, isAuthenticated, signout, changeLanguage, language, t } = useHomePageViewModel(props);
+  const {
+    addTodo,
+    handleInputChange,
+    removeTodo,
+    todoItems,
+    todoText,
+    toggleTodo,
+    handleLogin,
+    isAuthenticated,
+    signout,
+    changeLanguage,
+    language,
+    t,
+  } = useHomePageViewModel(props);
 
   return (
     <div className={clsx('home-page', styles.homePage, 'bg-gradient-to-r from-purple-500 to-indigo-600', 'text-white', 'p-8', 'rounded-lg', 'h-full', className)} data-testid={testingID}>

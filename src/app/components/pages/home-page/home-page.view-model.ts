@@ -4,65 +4,65 @@ import { useTranslation } from '@lib/i18n';
 import { useCallback, useMemo, useState } from 'react';
 
 function useHomePageViewModel({ }: HomePageProps) {
-    const { isAuthenticated, authenticate, signout } = useAuth();
-    const [todoItems, setTodoItems] = useState<TodoItem[]>([]);
-    const [todoText, setTodoText] = useState<string>('');
+  const { isAuthenticated, authenticate, signout } = useAuth();
+  const [todoItems, setTodoItems] = useState<TodoItem[]>([]);
+  const [todoText, setTodoText] = useState<string>('');
 
-    const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
 
-    const language = useMemo(() => i18n.language, [i18n.language]);
+  const language = useMemo(() => i18n.language, [i18n.language]);
 
-    const addTodo = useCallback(() => {
-        setTodoItems((items) => [...items, {
-            id: items.length + 1,
-            text: todoText,
-            completed: false,
-        }]);
-        setTodoText('');
-    }, [todoText]);
+  const addTodo = useCallback(() => {
+    setTodoItems((items) => [...items, {
+      id: items.length + 1,
+      text: todoText,
+      completed: false,
+    }]);
+    setTodoText('');
+  }, [todoText]);
 
-    const removeTodo = useCallback((id: number) => () => {
-        setTodoItems((items) => items.filter((item) => item.id !== id));
-    }, []);
+  const removeTodo = useCallback((id: number) => () => {
+    setTodoItems((items) => items.filter((item) => item.id !== id));
+  }, []);
 
-    const toggleTodo = useCallback((id: number) => () => {
-        setTodoItems((items) => items.map((item) => {
-            if (item.id === id) {
-                return {
-                    ...item,
-                    completed: !item.completed,
-                };
-            }
-            return item;
-        }));
-    }, []);
+  const toggleTodo = useCallback((id: number) => () => {
+    setTodoItems((items) => items.map((item) => {
+      if (item.id === id) {
+        return {
+          ...item,
+          completed: !item.completed,
+        };
+      }
+      return item;
+    }));
+  }, []);
 
-    const handleInputChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
-        setTodoText(event.target.value);
-    }, []);
+  const handleInputChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
+    setTodoText(event.target.value);
+  }, []);
 
-    const handleLogin = useCallback(() => {
-        authenticate('test');
-    }, [authenticate]);
+  const handleLogin = useCallback(() => {
+    authenticate('test');
+  }, [authenticate]);
 
-    const changeLanguage = useCallback((language: string) => () => {
-        i18n.changeLanguage(language);
-    }, [i18n]);
+  const changeLanguage = useCallback((language: string) => () => {
+    i18n.changeLanguage(language);
+  }, [i18n]);
 
-    return {
-        todoItems,
-        todoText,
-        addTodo,
-        removeTodo,
-        toggleTodo,
-        handleInputChange,
-        handleLogin,
-        isAuthenticated,
-        signout,
-        t,
-        language,
-        changeLanguage,
-    };
+  return {
+    todoItems,
+    todoText,
+    addTodo,
+    removeTodo,
+    toggleTodo,
+    handleInputChange,
+    handleLogin,
+    isAuthenticated,
+    signout,
+    t,
+    language,
+    changeLanguage,
+  };
 }
 
 export default useHomePageViewModel;

@@ -11,10 +11,10 @@ import { FallbackNs, UseTranslationOptions, UseTranslationResponse, useTranslati
  * @returns {UseTranslationResponse<FallbackNs<any>, KPrefix>} - The translation response.
  */
 export function useTranslation<
-    KPrefix extends KeyPrefix<FallbackNs<any>> = undefined,
+  KPrefix extends KeyPrefix<FallbackNs<any>> = undefined,
 >(
-    options?: UseTranslationOptions<KPrefix>,
+  options?: UseTranslationOptions<KPrefix>,
 ): UseTranslationResponse<FallbackNs<any>, KPrefix> {
-    const { id } = useTranslationNamespaceContext();
-    return useTranslationFromLib(id, options);
+  const { id } = useTranslationNamespaceContext();
+  return useTranslationFromLib(id, options);
 }

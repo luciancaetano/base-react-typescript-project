@@ -35,6 +35,15 @@
         "node": true,
         "es6": true
       },
+      "plugins": [
+        "@stylistic/ts",
+        "react-hooks",
+        "react",
+        "jsx-a11y",
+        "import",
+        "testing-library",
+        "jest-dom"
+      ],
       "extends": [
         "eslint:recommended",
         "plugin:import/warnings",
@@ -48,6 +57,12 @@
         "plugin:jest-dom/recommended"
       ],
       "rules": {
+        "no-trailing-spaces": "error",
+        "@stylistic/ts/indent": [
+          "error",
+          2
+        ],
+        "id-length": "off",
         "no-multiple-empty-lines": [
           "error",
           {

@@ -1,4 +1,4 @@
 
 export default {
-    redirectToIfNotAuthenticated: '/login',
+  redirectToIfNotAuthenticated: '/login',
 };

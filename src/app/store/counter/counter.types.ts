@@ -1,5 +1,5 @@
 export interface CounterState {
-    count: number;
-    increment: () => void;
-    decrement: () => void;
+  count: number;
+  increment: () => void;
+  decrement: () => void;
 }
