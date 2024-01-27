@@ -1,8 +1,8 @@
-import React from 'react';
 
 import AuthProviderContextProvider from './auth-provider.context';
 import useAuthProviderModel from './auth-provider.model';
 import { AuthProviderProps } from './auth-provider.types';
+import React from 'react';
 
 function AuthProvider(props: AuthProviderProps) {
   const { children } = props;

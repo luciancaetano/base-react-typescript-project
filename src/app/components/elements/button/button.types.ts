@@ -1,8 +1,8 @@
+import { sizes, variants } from './button.constants';
+import { ITestableProps } from '@app/types/testing';
 import React from 'react';
 
-import { ITestableProps } from '@app/types/testing';
 
-import { sizes, variants } from './button.constants';
 
 type IconProps =
     | { startIcon: React.ReactElement; endIcon?: never }

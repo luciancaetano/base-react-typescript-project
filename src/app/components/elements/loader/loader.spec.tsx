@@ -1,6 +1,6 @@
+import Loader from './index';
 import { render } from '@testing-library/react';
 
-import Loader from './index';
 
 describe('Loader Component', () => {
     it('should render', () => {

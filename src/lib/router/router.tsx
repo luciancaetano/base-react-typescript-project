@@ -1,7 +1,7 @@
+import { RouterProps } from './router.types';
 import React from 'react';
 import { useRoutes } from 'react-router-dom';
 
-import { RouterProps } from './router.types';
 
 
 function Router(props: RouterProps) {

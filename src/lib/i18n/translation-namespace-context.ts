@@ -1,6 +1,6 @@
+import { TranslationNamespaceContextType } from "./types";
 import { createContext, useContext } from "react";
 
-import { TranslationNamespaceContextType } from "./types";
 
 export const TranslationNamespaceContext = createContext<TranslationNamespaceContextType>({
     id: "",

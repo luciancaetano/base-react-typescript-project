@@ -1,12 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { TranslationNamespaceContext } from "./translation-namespace-context";
+import { I18NResource } from "./types";
+import Loader from "@components/elements/loader";
+import useUUID from "@hooks/use-uuid";
 import { ComponentType, useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-import Loader from "@components/elements/loader";
-import useUUID from "@hooks/use-uuid";
-
-import { TranslationNamespaceContext } from "./translation-namespace-context";
-import { I18NResource } from "./types";
 
 type ExtractProps<T> = T extends ComponentType<infer P> ? P : never;
 

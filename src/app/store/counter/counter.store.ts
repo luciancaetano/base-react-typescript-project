@@ -1,6 +1,6 @@
+import { CounterState } from './counter.types';
 import { create } from 'zustand';
 
-import { CounterState } from './counter.types';
 
 
 const useCounter = create<CounterState>((set) => ({

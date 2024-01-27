@@ -1,8 +1,8 @@
+import styles from './main-layout.module.scss';
+import { MainLayoutProps } from './main-layout.types';
 import clsx from 'clsx';
 import React from 'react';
 
-import styles from './main-layout.module.scss';
-import { MainLayoutProps } from './main-layout.types';
 
 function MainLayout(props: MainLayoutProps) {
   const { children, className, testingID } = props;

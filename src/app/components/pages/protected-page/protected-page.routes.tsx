@@ -1,10 +1,10 @@
+import ProtectedPage from "./protected-page";
+import { AuthenticatedRoute } from "@lib/router";
 import { RouteObject } from "react-router";
 
 
 
-import { AuthenticatedRoute } from "@lib/router";
 
-import ProtectedPage from "./protected-page";
 
 export const protectedPageRoutes: RouteObject[] = [
     {

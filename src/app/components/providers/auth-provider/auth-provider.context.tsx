@@ -1,6 +1,6 @@
+import { AuthProviderContextType } from './auth-provider.types';
 import { createContext, useContext, PropsWithChildren } from 'react';
 
-import { AuthProviderContextType } from './auth-provider.types';
 
 const AuthProviderContext = createContext<AuthProviderContextType | undefined>(undefined);
 

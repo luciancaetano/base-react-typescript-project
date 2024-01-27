@@ -1,6 +1,6 @@
+import { AuthProviderProps, AuthProviderStore } from './auth-provider.types';
 import { useCallback, useState } from 'react';
 
-import { AuthProviderProps, AuthProviderStore } from './auth-provider.types';
 
 function useAuthProviderModel({ }: AuthProviderProps) {
     const [store, setStore] = useState<AuthProviderStore>({

@@ -1,8 +1,8 @@
 
+import appRoutes from "./routes";
 import AppProvider from "@components/providers/app-provider";
 import Router from "@lib/router";
 
-import appRoutes from "./routes";
 
 
 function App() {

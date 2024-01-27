@@ -1,10 +1,10 @@
-import clsx from 'clsx';
-import React from 'react';
 
 
 import { sizes, variants } from './button.constants';
 import styles from './button.module.scss';
 import { ButtonProps } from './button.types';
+import clsx from 'clsx';
+import React from 'react';
 
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(

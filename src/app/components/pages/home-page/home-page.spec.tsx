@@ -1,9 +1,9 @@
+import HomePage from './index';
+import AuthProvider from '@components/providers/auth-provider';
 import { render } from '@testing-library/react';
 import React from 'react';
 
-import AuthProvider from '@components/providers/auth-provider';
 
-import HomePage from './index';
 
 const wrapper = ({ children }: React.PropsWithChildren<object>) => (
     <AuthProvider>

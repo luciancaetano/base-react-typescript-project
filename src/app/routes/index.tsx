@@ -1,8 +1,8 @@
-import { Navigate, Outlet, RouteObject } from 'react-router-dom';
 
 import MainLayout from '@components/layouts/main-layout';
 import { homePageRoutes } from '@components/pages/home-page';
 import { protectedPageRoutes } from '@components/pages/protected-page';
+import { Navigate, Outlet, RouteObject } from 'react-router-dom';
 
 export default [
   {

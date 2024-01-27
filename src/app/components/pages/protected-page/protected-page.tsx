@@ -1,11 +1,11 @@
-import clsx from 'clsx';
-import React from 'react';
 
-import Button from '@components/elements/button';
 
 import styles from './protected-page.module.scss';
 import { ProtectedPageProps } from './protected-page.types';
 import useProtectedPageViewModel from './protected-page.view-model';
+import Button from '@components/elements/button';
+import clsx from 'clsx';
+import React from 'react';
 
 function ProtectedPage(props: ProtectedPageProps) {
   const { children, className, testingID } = props;

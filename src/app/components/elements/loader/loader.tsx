@@ -1,8 +1,8 @@
+import styles from './loader.module.scss';
+import { LoaderProps } from './loader.types';
 import clsx from 'clsx';
 import React from 'react';
 
-import styles from './loader.module.scss';
-import { LoaderProps } from './loader.types';
 
 function Loader(props: LoaderProps) {
   const { className, testingID } = props;

@@ -1,6 +1,6 @@
+import { ITestableProps } from '@app/types/testing';
 import React from 'react';
 
-import { ITestableProps } from '@app/types/testing';
 
 
 export interface HomePageProps extends ITestableProps {

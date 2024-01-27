@@ -1,13 +1,12 @@
+import styles from './home-page.module.scss';
+import { HomePageProps } from './home-page.types';
+import useHomePageViewModel from './home-page.view-model';
+import Button from '@components/elements/button';
+import { withResourceBundle } from '@lib/i18n';
 import clsx from 'clsx';
 import React from 'react';
 import { HiOutlineTrash } from 'react-icons/hi2';
 
-import Button from '@components/elements/button';
-import { withResourceBundle } from '@lib/i18n';
-
-import styles from './home-page.module.scss';
-import { HomePageProps } from './home-page.types';
-import useHomePageViewModel from './home-page.view-model';
 
 
 function HomePage(props: HomePageProps) {

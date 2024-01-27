@@ -1,7 +1,7 @@
+import AuthProvider, { useAuth } from './index';
 import { renderHook, act } from '@testing-library/react-hooks';
 import { PropsWithChildren } from 'react';
 
-import AuthProvider, { useAuth } from './index';
 
 describe('AuthProvider Component and useAuth hook', () => {
     it('should initialize with default value', () => {
