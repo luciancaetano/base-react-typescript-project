@@ -17,9 +17,6 @@
       "@lib/*": [
         "./src/app/lib/*"
       ],
-      "@providers/*": [
-        "./src/app/providers/*"
-      ],
       "@store/*": [
         "./src/app/store/*"
       ],

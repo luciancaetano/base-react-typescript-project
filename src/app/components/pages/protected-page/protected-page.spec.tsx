@@ -1,9 +1,8 @@
 import { render } from '@testing-library/react';
-import React from 'react';
 
 import AuthProvider from '@components/providers/auth-provider';
 
-import HomePage from './index';
+import ProtectedPage from './index';
 
 const wrapper = ({ children }: React.PropsWithChildren<object>) => (
     <AuthProvider>
@@ -11,10 +10,10 @@ const wrapper = ({ children }: React.PropsWithChildren<object>) => (
     </AuthProvider>
 );
 
-describe('HomePage Component', () => {
+describe('ProtectedPage Component', () => {
     it('should render', () => {
         const { container } = render(
-            <HomePage />,
+            <ProtectedPage />,
             { wrapper },
         );
         expect(container).toBeTruthy();
@@ -22,9 +21,11 @@ describe('HomePage Component', () => {
 
     it('should render with children', () => {
         const { getByText } = render(
-            <HomePage>
-                <div>Test</div>
-            </HomePage>,
+            (
+                <ProtectedPage>
+                    <div>Test</div>
+                </ProtectedPage>
+            ),
             { wrapper },
         );
 
@@ -32,7 +33,7 @@ describe('HomePage Component', () => {
     });
 
     it('should render with children and className', () => {
-        const { container } = render(<HomePage className="test">Test</HomePage>, { wrapper });
+        const { container } = render(<ProtectedPage className="test">Test</ProtectedPage>, { wrapper });
 
         expect(container.querySelector('.test')).toBeTruthy();
     });

@@ -8,11 +8,9 @@ function MainLayout(props: MainLayoutProps) {
   const { children, className, testingID } = props;
 
   return (
-    <div className={clsx('main-layout', 'container mx-auto', styles.mainLayout, className)} data-testid={testingID}>
-      <div className="flex flex-row flex-wrap py-4">
-        <main role="main" className="w-full sm:w-2/3 md:w-3/4 pt-1 px-2">
-          {children}
-        </main>
+    <div className={clsx('main-layout', 'flex min-h-screen bg-gray-100 w-full h-full', styles.mainLayout, className)} data-testid={testingID}>
+      <div className="p-8 w-full h-full min-h-screen">
+        {children}
       </div>
     </div>
   );

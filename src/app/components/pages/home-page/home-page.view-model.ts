@@ -1,8 +1,11 @@
 import { useCallback, useState } from 'react';
 
+import { useAuth } from '@components/providers/auth-provider';
+
 import { HomePageProps, TodoItem } from './home-page.types';
 
 function useHomePageViewModel({ }: HomePageProps) {
+    const { isAuthenticated, authenticate, signout } = useAuth();
     const [todoItems, setTodoItems] = useState<TodoItem[]>([]);
     const [todoText, setTodoText] = useState<string>('');
 
@@ -35,6 +38,10 @@ function useHomePageViewModel({ }: HomePageProps) {
         setTodoText(event.target.value);
     }, []);
 
+    const handleLogin = useCallback(() => {
+        authenticate('test');
+    }, [authenticate]);
+
     return {
         todoItems,
         todoText,
@@ -42,6 +49,9 @@ function useHomePageViewModel({ }: HomePageProps) {
         removeTodo,
         toggleTodo,
         handleInputChange,
+        handleLogin,
+        isAuthenticated,
+        signout,
     };
 }
 
