@@ -128,9 +128,15 @@
       }
     ]
   },
+  "husky": {
+    "hooks": {
+       "pre-commit": "lint-staged"
+    }
+ },
   "lint-staged": {
-    "*.+(ts|tsx)": [
-      "yarn lint"
+    "*.+(ts|tsx|js)": [
+      "yarn lint",
+      "git add"
     ]
   }
 }
