@@ -120,38 +120,5 @@
     "*.+(ts|tsx)": [
       "yarn lint"
     ]
-  },
-  "jest": {
-    "roots": [
-      "<rootDir>/src"
-    ],
-    "preset": "ts-jest",
-    "setupFilesAfterEnv": [
-      "./src/setupTests.ts"
-    ],
-    "testEnvironment": "jest-environment-jsdom",
-    "testMatch": [
-      "**/?(*.)+(spec).+(ts|tsx|js)"
-    ],
-    "transform": {
-      "^.+\\.(ts|tsx)$": "ts-jest",
-      "^.+\\.ts$": "ts-jest"
-    },
-    "transformIgnorePatterns": [
-      "/node_modules/(?!lodash-es)"
-    ],
-    "moduleNameMapper": {
-      "^@/(.+)": "<rootDir>/src/$1",
-      "\\.(css|less|scss|sass)$": "identity-obj-proxy"
-    },
-    "moduleDirectories": [
-      "node_modules",
-      "src"
-    ],
-    "globals": {
-      "ts-jest": {
-        "tsconfig": "tsconfig.json"
-      }
-    }
   }
 }
