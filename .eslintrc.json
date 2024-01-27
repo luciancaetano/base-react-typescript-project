@@ -35,15 +35,6 @@
         "node": true,
         "es6": true
       },
-      "plugins": [
-        "@stylistic/ts",
-        "react-hooks",
-        "react",
-        "jsx-a11y",
-        "import",
-        "testing-library",
-        "jest-dom"
-      ],
       "extends": [
         "eslint:recommended",
         "plugin:import/warnings",
@@ -57,8 +48,18 @@
         "plugin:jest-dom/recommended"
       ],
       "rules": {
+        "object-curly-spacing": [
+          "error",
+          "always"
+        ],
+        "@typescript-eslint/object-curly-spacing": [
+          "error",
+          "always"
+        ],
+        "space-before-blocks": "error",
         "no-trailing-spaces": "error",
-        "@stylistic/ts/indent": [
+        "indent": "off",
+        "@typescript-eslint/indent": [
           "error",
           2
         ],
