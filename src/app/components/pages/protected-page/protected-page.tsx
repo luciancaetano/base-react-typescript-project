@@ -1,5 +1,4 @@
 
-
 import styles from './protected-page.module.scss';
 import { ProtectedPageProps } from './protected-page.types';
 import useProtectedPageViewModel from './protected-page.view-model';

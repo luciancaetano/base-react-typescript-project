@@ -3,7 +3,6 @@ import { LoaderProps } from './loader.types';
 import clsx from 'clsx';
 import React from 'react';
 
-
 function Loader(props: LoaderProps) {
   const { className, testingID } = props;
 

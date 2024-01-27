@@ -7,11 +7,8 @@ import clsx from 'clsx';
 import React from 'react';
 import { HiOutlineTrash } from 'react-icons/hi2';
 
-
-
 function HomePage(props: HomePageProps) {
   const { className, testingID } = props;
-
 
   const { addTodo, handleInputChange, removeTodo, todoItems, todoText, toggleTodo, handleLogin, isAuthenticated, signout, changeLanguage, language, t } = useHomePageViewModel(props);
 

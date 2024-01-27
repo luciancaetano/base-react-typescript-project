@@ -2,8 +2,6 @@ import ProtectedPage from './index';
 import AuthProvider from '@components/providers/auth-provider';
 import { render } from '@testing-library/react';
 
-
-
 const wrapper = ({ children }: React.PropsWithChildren<object>) => (
     <AuthProvider>
         {children}

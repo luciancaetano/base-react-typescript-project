@@ -1,7 +1,6 @@
 import Button from './index';
 import { render } from '@testing-library/react';
 
-
 describe('Button Component', () => {
     it('should render', () => {
         const { container } = render(

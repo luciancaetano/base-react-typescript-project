@@ -3,7 +3,6 @@ import { useAuth } from '@components/providers/auth-provider';
 import authConfig from '@config/auth.config';
 import { Outlet, Navigate } from 'react-router-dom';
 
-
 function AuthenticatedRoute(props: AuthenticatedRouteProps) {
   const { } = props;
 

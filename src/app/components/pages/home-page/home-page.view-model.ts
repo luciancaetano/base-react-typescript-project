@@ -3,8 +3,6 @@ import { useAuth } from '@components/providers/auth-provider';
 import { useTranslation } from '@lib/i18n';
 import { useCallback, useMemo, useState } from 'react';
 
-
-
 function useHomePageViewModel({ }: HomePageProps) {
     const { isAuthenticated, authenticate, signout } = useAuth();
     const [todoItems, setTodoItems] = useState<TodoItem[]>([]);

@@ -3,8 +3,6 @@ import { useTranslationNamespaceContext } from "./translation-namespace-context"
 import { KeyPrefix } from "i18next";
 import { FallbackNs, UseTranslationOptions, UseTranslationResponse, useTranslation as useTranslationFromLib } from "react-i18next";
 
-
-
 /**
  * Custom hook for translating text using i18next.
  *

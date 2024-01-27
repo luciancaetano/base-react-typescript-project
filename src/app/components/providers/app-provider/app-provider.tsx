@@ -7,7 +7,6 @@ import { ErrorBoundary } from 'react-error-boundary';
 import { HelmetProvider } from 'react-helmet-async';
 import { HashRouter as Router } from 'react-router-dom';
 
-
 function AppProvider(props: AppProviderProps) {
   const { children } = props;
 

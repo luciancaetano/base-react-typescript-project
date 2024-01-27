@@ -48,6 +48,12 @@
         "plugin:jest-dom/recommended"
       ],
       "rules": {
+        "no-multiple-empty-lines": [
+          "error",
+          {
+            "max": 1
+          }
+        ],
         "@typescript-eslint/no-explicit-any": "error",
         "jsx-a11y/click-events-have-key-events": "off",
         "jsx-a11y/no-noninteractive-element-interactions": "off",

@@ -1,7 +1,6 @@
 import { AuthProviderContextType } from './auth-provider.types';
 import { createContext, useContext, PropsWithChildren } from 'react';
 
-
 const AuthProviderContext = createContext<AuthProviderContextType | undefined>(undefined);
 
 export const useAuth = () => {
@@ -12,7 +11,6 @@ export const useAuth = () => {
     }
     return context;
 };
-
 
 export default function AuthProviderContextProvider({ value, children }: PropsWithChildren<{ value: AuthProviderContextType }>) {
     return (

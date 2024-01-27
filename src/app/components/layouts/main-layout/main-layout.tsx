@@ -3,7 +3,6 @@ import { MainLayoutProps } from './main-layout.types';
 import clsx from 'clsx';
 import React from 'react';
 
-
 function MainLayout(props: MainLayoutProps) {
   const { children, className, testingID } = props;
 

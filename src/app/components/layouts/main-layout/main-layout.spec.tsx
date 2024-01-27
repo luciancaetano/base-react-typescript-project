@@ -1,7 +1,6 @@
 import MainLayout from './index';
 import { render } from '@testing-library/react';
 
-
 describe('MainLayout Component', () => {
     it('should render', () => {
         const { container } = render(
