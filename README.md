@@ -10,6 +10,24 @@ This is an opinionated starter for react projects with typescript.
 - `cy:run` runs the cypress tests
 - `generate` runs the code generator
 
+# Features
+- [React](https://reactjs.org/)
+- [Typescript](https://www.typescriptlang.org/)
+- [Zustand](https://github.com/pmndrs/zustand)
+- [React Router](https://reactrouter.com/)
+- [React Hook Form](https://react-hook-form.com/)
+- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
+- [Cypress](https://www.cypress.io/)
+- [Jest](https://jestjs.io/)
+- [ESLint](https://eslint.org/)
+- [Prettier](https://prettier.io/)
+- [Husky](https://typicode.github.io/husky/#/)
+
+# Additional Documentation
+- [🚀 Getting Started](./docs/getting-started.md)
+- [📦 Store](./docs/store.md)
+- [License](./LICENCE.md)
+
 # Typescript Path Aliases
 This project uses typescript path aliases to make the imports more readable and to avoid the use of relative paths.
 

@@ -1,8 +1,17 @@
 {
-  "name": "lk-base-react-typescript-project-react-with-vite",
+  "name": "base-react-typescript-project",
+  "description": "A base react typescript project",
   "version": "0.1.0",
   "private": true,
   "type": "module",
+  "author": {
+    "name": "Lucian Caetano"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/luciancaetano/base-react-typescript-project.git"
+  },
   "scripts": {
     "start": "vite",
     "build": "tsc && vite build",
