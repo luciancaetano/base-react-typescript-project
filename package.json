@@ -29,7 +29,7 @@
     "test:e2e": "is-ci \"test:e2e:run\" \"test:e2e:dev\"",
     "test:e2e:run": "start-server-and-test serve http://localhost:3000 cy:run",
     "lint": "eslint --fix --ext .js,.ts,.tsx ./src --ignore-path .gitignore",
-    "serve": "serve --no-clipboard --single --listen 3000 build",
+    "serve": "serve --no-clipboard --single --listen 3000 dist",
     "generate": "plop",
     "validate-types": "tsc --project tsconfig.json --pretty --noEmit",
     "validate": "yarn validate-types && yarn lint && yarn test"
@@ -52,6 +52,7 @@
     "dayjs": "^1.11.10",
     "history": "^5.3.0",
     "i18next": "^23.7.20",
+    "i18next-browser-languagedetector": "^7.2.0",
     "intersection-observer": "^0.12.2",
     "jsonwebtoken": "^9.0.2",
     "lodash": "^4.17.21",

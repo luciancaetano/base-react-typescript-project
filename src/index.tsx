@@ -1,6 +1,7 @@
 /// <reference types="vite/client" />
 import './index.css';
 
+import '@lib/i18n/configure';
 import App from './app';
 import reportWebVitals from './reportWebVitals';
 import * as React from 'react';

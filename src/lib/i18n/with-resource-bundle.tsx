@@ -3,8 +3,8 @@ import { TranslationNamespaceContext } from "./translation-namespace-context";
 import { I18NResource } from "./types";
 import Loader from "@components/elements/loader";
 import useUUID from "@hooks/use-uuid";
-import { ComponentType, useEffect, useRef, useState } from "react";
-import { useTranslation } from "react-i18next";
+import i18n from "i18next";
+import { ComponentType, useEffect, useMemo, useRef, useState } from "react";
 
 type ExtractProps<T> = T extends ComponentType<infer P> ? P : never;
 
@@ -29,55 +29,48 @@ function withResourceBundle<T>(
   resourceBundle: (() => Promise<{ default: I18NResource }>) | I18NResource,
 ) {
   const Component = (props: ExtractProps<typeof WrappedComponent>) => {
-    const { i18n } = useTranslation();
     const namespace = useUUID();
-    const [resource, setResource] = useState<I18NResource | null>(null);
     const loading = useRef(false);
+    const done = useRef(false);
     const [viewLoading, setViewLoading] = useState(true);
 
     useEffect(() => {
       if (typeof resourceBundle === "function") {
-        if (!loading.current && !resource) {
+        if (!loading.current && !done.current) {
           loading.current = true;
           setViewLoading(true);
           resourceBundle().then((bundle) => {
-            setResource(bundle.default);
+
+            Object.entries(bundle.default).forEach(([language, bundle]) => {
+              i18n.addResourceBundle(language, namespace, bundle, true, true);
+            });
+
             loading.current = false;
             setViewLoading(false);
+            done.current = true;
           }).catch((error) => {
             console.error(error);
             loading.current = false;
             setViewLoading(false);
+            done.current = true;
           });
         }
       } else {
-        setResource(resourceBundle);
-      }
-
-    }, [resource]);
-
-    useEffect(() => {
-      if (resource) {
-        Object.entries(resource).forEach(([language, bundle]) => {
-          i18n.addResourceBundle(language, namespace, bundle);
+        Object.entries(resourceBundle).forEach(([language, bundle]) => {
+          i18n.addResourceBundle(language, namespace, bundle, true, true);
         });
       }
 
-      return () => {
-        if (resource) {
-          Object.entries(resource).forEach(([language]) => {
-            i18n.removeResourceBundle(language, namespace);
-          });
-        }
-      };
-    }, [i18n, namespace, resource]);
+    }, [namespace]);
+
+    const trueLoaded = useMemo(() => !viewLoading && !loading.current && done.current, [viewLoading]);
 
     return (
       <TranslationNamespaceContext.Provider value={{ id: namespace }}>
-        {!viewLoading && (
+        {trueLoaded && (
           <WrappedComponent {...props as any} />
         )}
-        {viewLoading && (
+        {!trueLoaded && (
           <Loader />
         )}
       </TranslationNamespaceContext.Provider>
