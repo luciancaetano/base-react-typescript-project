@@ -1,8 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { ComponentType, useEffect, useId, useRef, useState } from "react";
+import { ComponentType, useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import Loader from "@components/elements/loader";
+import useUUID from "@hooks/use-uuid";
 
 import { TranslationNamespaceContext } from "./translation-namespace-context";
 import { I18NResource } from "./types";
@@ -15,7 +16,7 @@ function withResourceBundle<T>(
 ) {
     const Component = (props: ExtractProps<typeof WrappedComponent>) => {
         const { i18n } = useTranslation();
-        const namespace = useId();
+        const namespace = useUUID();
         const [resource, setResource] = useState<I18NResource | null>(null);
         const loading = useRef(false);
         const [viewLoading, setViewLoading] = useState(true);
