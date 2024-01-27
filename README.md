@@ -14,6 +14,8 @@ This is an opinionated starter for react projects with typescript.
 - [React](https://reactjs.org/)
 - [Typescript](https://www.typescriptlang.org/)
 - [Zustand](https://github.com/pmndrs/zustand)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Headless UI](https://headlessui.dev/)
 - [React Router](https://reactrouter.com/)
 - [React Hook Form](https://react-hook-form.com/)
 - [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
