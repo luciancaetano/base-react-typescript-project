@@ -13,17 +13,12 @@ function applySuffix(name = '', type = '') {
     return name + '-page';
   }
 
-  if (type.toLowerCase().trim().endsWith('provider')) {
-    return name + '-provider';
-  }
-
   return name;
 }
 
 const componentTypePathsMap = {
   element: 'elements',
   layout: 'layouts',
-  provider: 'providers',
   page: 'pages',
 };
 
@@ -38,7 +33,7 @@ module.exports = {
       type: 'list',
       name: 'componentType',
       message: 'Select Component Type',
-      choices: ['element', 'layout', 'provider', 'page'],
+      choices: ['element', 'layout', 'page'],
     },
     {
       type: 'input',
