@@ -2,11 +2,13 @@ import { HomePageProps, TodoItem } from './home-page.types';
 import { useAuth } from '@components/providers/auth-provider';
 import { useTranslation } from '@lib/i18n';
 import { useCallback, useMemo, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function useHomePageViewModel({ }: HomePageProps) {
-  const { isAuthenticated, authenticate, signout } = useAuth();
+  const { isAuthenticated } = useAuth();
   const [todoItems, setTodoItems] = useState<TodoItem[]>([]);
   const [todoText, setTodoText] = useState<string>('');
+  const navigate = useNavigate();
 
   const { t, i18n } = useTranslation();
 
@@ -41,13 +43,13 @@ function useHomePageViewModel({ }: HomePageProps) {
     setTodoText(event.target.value);
   }, []);
 
-  const handleLogin = useCallback(() => {
-    authenticate('test');
-  }, [authenticate]);
-
   const changeLanguage = useCallback((language: string) => () => {
     i18n.changeLanguage(language);
   }, [i18n]);
+
+  const gotoLogin = useCallback(() => {
+    navigate('/login');
+  }, [navigate]);
 
   return {
     todoItems,
@@ -56,12 +58,11 @@ function useHomePageViewModel({ }: HomePageProps) {
     removeTodo,
     toggleTodo,
     handleInputChange,
-    handleLogin,
     isAuthenticated,
-    signout,
     t,
     language,
     changeLanguage,
+    gotoLogin,
   };
 }
 

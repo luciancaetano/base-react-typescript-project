@@ -8,7 +8,7 @@ function MainLayout(props: MainLayoutProps) {
 
   return (
     <div className={clsx('main-layout', 'flex min-h-screen bg-gray-100 w-full h-full', styles.mainLayout, className)} data-testid={testingID}>
-      <div className="p-8 w-full h-full min-h-screen">
+      <div className="p-0 w-full h-full min-h-screen">
         {children}
       </div>
     </div>
