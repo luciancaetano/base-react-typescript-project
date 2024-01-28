@@ -48,6 +48,10 @@
         "plugin:jest-dom/recommended"
       ],
       "rules": {
+        "quotes": [
+          "error",
+          "single"
+        ],
         "object-curly-spacing": [
           "error",
           "always"
