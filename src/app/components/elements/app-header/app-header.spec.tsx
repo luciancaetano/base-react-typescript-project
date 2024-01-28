@@ -1,5 +1,5 @@
 import AppHeader from './index';
-import { render } from '@testing-library/react';
+import { render } from '@lib/tests';
 
 describe('AppHeader Component', () => {
   it('should render', () => {
@@ -7,17 +7,8 @@ describe('AppHeader Component', () => {
       <AppHeader />);
     expect(container).toBeTruthy();
   });
-
-  it('should render with children', () => {
-    const { getByText } = render(<AppHeader>
-      <div>Test</div>
-    </AppHeader>);
-
-    expect(getByText('Test')).toBeInTheDocument();
-  });
-
   it('should render with children and className', () => {
-    const { container } = render(<AppHeader className="test">Test</AppHeader>);
+    const { container } = render(<AppHeader className="test"></AppHeader>);
 
     expect(container.querySelector('.test')).toBeTruthy();
   });

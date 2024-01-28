@@ -7,16 +7,16 @@ import {{pascalCase name}}, { use{{pascalCase name}} } from './index';
 
 describe('use{{pascalCase name}} hook', () => {
 it('should initialize with default value', () => {
-const wrapper = ({ children }: PropsWithChildren<object>) => <{{pascalCase name}}>{children}</{{pascalCase name}}>;
-    const { result } = renderHook(() => use{{pascalCase name}}(), { wrapper });
+
+    const { result } = renderHook(() => use{{pascalCase name}}());
 
     expect(result.current.value).toBe(0); // replace 0 with your expected default value
     });
 
     // Assuming use{{pascalCase name}} has an increment function
     it('should increment value', () => {
-    const wrapper = ({ children }: PropsWithChildren<object>) => <{{pascalCase name}}>{children}</{{pascalCase name}}>;
-        const { result } = renderHook(() => use{{pascalCase name}}(), { wrapper });
+    
+        const { result } = renderHook(() => use{{pascalCase name}}());
 
         act(() => {
         result.current.increment(); // replace increment with your actual function name
@@ -27,9 +27,7 @@ const wrapper = ({ children }: PropsWithChildren<object>) => <{{pascalCase name}
 
         // Assuming use{{pascalCase name}} has a decrement function
         it('should decrement value', () => {
-        const wrapper = ({ children }: PropsWithChildren<object>) => <{{pascalCase name}}>{children}</{{pascalCase
-                name}}>;
-            const { result } = renderHook(() => use{{pascalCase name}}(), { wrapper });
+            const { result } = renderHook(() => use{{pascalCase name}}());
 
             act(() => {
             result.current.decrement(); // replace decrement with your actual function name

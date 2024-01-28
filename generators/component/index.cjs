@@ -90,7 +90,7 @@ module.exports = {
       {
         type: 'add',
         path: basePath + '/{{kebabCase name}}/{{kebabCase name}}.types.ts',
-        templateFile: 'generators/component/Component.types.ts.hbs',
+        templateFile: !isPage ? 'generators/component/Component.types.ts.hbs' : 'generators/component/Page.types.ts.hbs',
       },
       {
         type: 'add',
@@ -100,7 +100,7 @@ module.exports = {
       {
         type: 'add',
         path: basePath + '/{{kebabCase name}}/{{kebabCase name}}.spec.tsx',
-        templateFile: 'generators/component/Component.spec.tsx.hbs',
+        templateFile: !isPage ? 'generators/component/Component.spec.tsx.hbs' : 'generators/component/Page.spec.tsx.hbs',
       },
     ];
 

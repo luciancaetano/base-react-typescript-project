@@ -1,18 +1,14 @@
-import AuthProvider, { useAuth } from './index';
+import { useAuth } from './index';
 import { renderHook, act } from '@testing-library/react-hooks';
-import { PropsWithChildren } from 'react';
-
 describe('AuthProvider Component and useAuth hook', () => {
   it('should initialize with default value', () => {
-    const wrapper = ({ children }: PropsWithChildren<object>) => <AuthProvider>{children}</AuthProvider>;
-    const { result } = renderHook(() => useAuth(), { wrapper });
+    const { result } = renderHook(() => useAuth());
 
     expect(result.current).toBeDefined();
   });
 
   it('should login', () => {
-    const wrapper = ({ children }: PropsWithChildren<object>) => <AuthProvider>{children}</AuthProvider>;
-    const { result } = renderHook(() => useAuth(), { wrapper });
+    const { result } = renderHook(() => useAuth());
 
     act(() => {
       result.current.authenticate('user');
@@ -22,8 +18,7 @@ describe('AuthProvider Component and useAuth hook', () => {
   });
 
   it('should logout', () => {
-    const wrapper = ({ children }: PropsWithChildren<object>) => <AuthProvider>{children}</AuthProvider>;
-    const { result } = renderHook(() => useAuth(), { wrapper });
+    const { result } = renderHook(() => useAuth());
 
     act(() => {
       result.current.signout();
@@ -33,8 +28,7 @@ describe('AuthProvider Component and useAuth hook', () => {
   });
 
   it('should validate name', () => {
-    const wrapper = ({ children }: PropsWithChildren<object>) => <AuthProvider>{children}</AuthProvider>;
-    const { result } = renderHook(() => useAuth(), { wrapper });
+    const { result } = renderHook(() => useAuth());
 
     act(() => {
       result.current.authenticate('user');

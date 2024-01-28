@@ -1,5 +1,5 @@
 import Button from './index';
-import { render } from '@testing-library/react';
+import { render } from '@lib/tests';
 
 describe('Button Component', () => {
   it('should render', () => {

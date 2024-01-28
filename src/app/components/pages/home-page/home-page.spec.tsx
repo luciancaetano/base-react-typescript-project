@@ -1,25 +1,16 @@
 import HomePage from './index';
-import AuthProvider from '@components/providers/auth-provider';
-import { render } from '@testing-library/react';
-import React from 'react';
-
-const wrapper = ({ children }: React.PropsWithChildren<object>) => (
-  <AuthProvider>
-    {children}
-  </AuthProvider>
-);
+import { render } from '@lib/tests';
 
 describe('HomePage Component', () => {
   it('should render', () => {
     const { container } = render(
       <HomePage />,
-      { wrapper },
     );
     expect(container).toBeTruthy();
   });
 
   it('should render with children and className', () => {
-    const { container } = render(<HomePage className="test"></HomePage>, { wrapper });
+    const { container } = render(<HomePage className="test"></HomePage>);
 
     expect(container.querySelector('.test')).toBeTruthy();
   });

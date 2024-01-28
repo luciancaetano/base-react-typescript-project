@@ -6,14 +6,6 @@ export interface HomePageProps extends ITestableProps {
   styles?: React.CSSProperties;
 }
 
-export interface HomePageStore {
-  count: number;
-  increment: () => void;
-  decrement: () => void;
-  incBy: (amount: number) => void;
-  decBy: (amount: number) => void;
-}
-
 export interface TodoItem {
   id: number;
   text: string;

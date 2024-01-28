@@ -1,5 +1,5 @@
 import LoginPage from './index';
-import { render } from '@testing-library/react';
+import { render } from '@lib/tests';
 
 describe('LoginPage Component', () => {
   it('should render', () => {
@@ -8,16 +8,8 @@ describe('LoginPage Component', () => {
     expect(container).toBeTruthy();
   });
 
-  it('should render with children', () => {
-    const { getByText } = render(<LoginPage>
-      <div>Test</div>
-    </LoginPage>);
-
-    expect(getByText('Test')).toBeInTheDocument();
-  });
-
   it('should render with children and className', () => {
-    const { container } = render(<LoginPage className="test">Test</LoginPage>);
+    const { container } = render(<LoginPage className="test"></LoginPage>);
 
     expect(container.querySelector('.test')).toBeTruthy();
   });
