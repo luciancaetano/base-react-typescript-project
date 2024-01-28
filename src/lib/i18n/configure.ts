@@ -10,7 +10,6 @@ i18n
     debug: true,
     resources: {
     },
-    lng: "en",
     defaultNS: "translation",
     fallbackLng: "en",
     interpolation: {
