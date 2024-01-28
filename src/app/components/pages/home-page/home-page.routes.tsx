@@ -1,5 +1,5 @@
-import HomePage from "./home-page";
-import { RouteObject } from "react-router";
+import HomePage from './home-page';
+import { RouteObject } from 'react-router';
 
 export const homePageRoutes: RouteObject[] = [
   {

@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { TranslationNamespaceContext } from "./translation-namespace-context";
-import { I18NResource } from "./types";
-import Loader from "@components/elements/loader";
-import useUUID from "@hooks/use-uuid";
-import i18n from "i18next";
-import { ComponentType, useEffect, useMemo, useRef, useState } from "react";
+import { TranslationNamespaceContext } from './translation-namespace-context';
+import { I18NResource } from './types';
+import Loader from '@components/elements/loader';
+import useUUID from '@hooks/use-uuid';
+import i18n from 'i18next';
+import { ComponentType, useEffect, useMemo, useRef, useState } from 'react';
 
 type ExtractProps<T> = T extends ComponentType<infer P> ? P : never;
 
@@ -35,7 +35,7 @@ function withResourceBundle<T>(
     const [viewLoading, setViewLoading] = useState(true);
 
     useEffect(() => {
-      if (typeof resourceBundle === "function") {
+      if (typeof resourceBundle === 'function') {
         if (!loading.current && !done.current) {
           loading.current = true;
           setViewLoading(true);

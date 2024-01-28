@@ -5,5 +5,5 @@ import { I18NResource } from '@lib/i18n';
 
 export default {
   en,
-  "pt-BR": ptBR,
+  'pt-BR': ptBR,
 } as I18NResource;
