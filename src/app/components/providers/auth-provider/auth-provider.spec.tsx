@@ -1,5 +1,5 @@
 import { useAuth } from './index';
-import { renderHook, act } from '@testing-library/react-hooks';
+import { renderHook, act } from '@lib/tests';
 describe('AuthProvider Component and useAuth hook', () => {
   it('should initialize with default value', () => {
     const { result } = renderHook(() => useAuth());
@@ -8,7 +8,7 @@ describe('AuthProvider Component and useAuth hook', () => {
   });
 
   it('should login', () => {
-    const { result } = renderHook(() => useAuth());
+    const { result } = renderHook(() => useAuth(), {});
 
     act(() => {
       result.current.authenticate('user');
