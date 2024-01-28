@@ -39,7 +39,7 @@ This project uses typescript path aliases to make the imports more readable and 
 | `@components/*`      | `./src/app/components/*`      | Path for reusable components            |
 | `@config/*`          | `./src/app/config/*`           | Path for configuration files           |
 | `@hooks/*`           | `./src/app/hooks/*`            | Path for custom React hooks            |
-| `@lib/*`             | `./src/app/lib/*`              | Path for shared utility libraries      |
+| `@lib/*`             | `./src/lib/*`              | Path for shared utility libraries      |
 | `@providers/*`       | `./src/app/providers/*`        | Path for provider modules              |
 | `@store/*`           | `./src/app/store/*`            | Path for store                         |
 | `@app/types/*`       | `./src/app/types/*`            | Path for TypeScript types/interfaces   |
