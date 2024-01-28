@@ -52,12 +52,6 @@ module.exports = {
     },
     {
       type: 'confirm',
-      name: 'wantRoutes',
-      message: 'Do you want routes?',
-      default: true,
-    },
-    {
-      type: 'confirm',
       name: 'wantI18n',
       message: 'Do you want i18n?',
       default: true,
@@ -86,12 +80,12 @@ module.exports = {
       {
         type: 'add',
         path: basePath + '/{{kebabCase name}}/index.ts',
-        templateFile: 'generators/component/index.ts.hbs',
+        templateFile: !isPage ? 'generators/component/Component.index.ts.hbs' : 'generators/component/Page.index.ts.hbs',
       },
       {
         type: 'add',
         path: basePath + '/{{kebabCase name}}/{{kebabCase name}}.tsx',
-        templateFile: isPage ? 'generators/component/Component.page.tsx.hbs' :'generators/component/Component.tsx.hbs',
+        templateFile: isPage ? 'generators/component/Page.tsx.hbs' :'generators/component/Component.tsx.hbs',
       },
       {
         type: 'add',
@@ -110,7 +104,7 @@ module.exports = {
       },
     ];
 
-    if (result.wantRoutes) {
+    if (isPage) {
       actions.push({
         type: 'add',
         path: basePath + '/{{kebabCase name}}/{{kebabCase name}}.routes.tsx',
@@ -122,7 +116,7 @@ module.exports = {
       actions.push({
         type: 'add',
         path: basePath + '/{{kebabCase name}}/{{kebabCase name}}.module.scss',
-        templateFile: 'generators/component/Component.module.scss.hbs',
+        templateFile: !isPage ? 'generators/component/Component.module.scss.hbs' : 'generators/component/Page.module.scss.hbs',
       });
     }
 
