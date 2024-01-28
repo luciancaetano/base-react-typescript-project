@@ -12,7 +12,7 @@ i18n
     resources: {
     },
     defaultNS: 'translation',
-    fallbackLng: 'en',
+    fallbackLng: appConfig.i18next.fallbackLng,
     interpolation: {
       escapeValue: false,
     },
