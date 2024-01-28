@@ -2,6 +2,7 @@ import styles from './home-page.module.scss';
 import { HomePageProps } from './home-page.types';
 import useHomePageViewModel from './home-page.view-model';
 import Button from '@components/elements/button';
+import Page from '@components/elements/page';
 import { withResourceBundle } from '@lib/i18n';
 import clsx from 'clsx';
 import React from 'react';
@@ -25,7 +26,7 @@ function HomePage(props: HomePageProps) {
   } = useHomePageViewModel(props);
 
   return (
-    <div className={clsx('home-page', styles.homePage, 'bg-gradient-to-r from-purple-500 to-indigo-600', 'text-white', 'p-8', 'rounded-lg', 'h-full min-h-screen', className)} data-testid={testingID}>
+    <Page className={clsx('home-page', styles.homePage, 'bg-gradient-to-r from-purple-500 to-indigo-600', className)} testingID={testingID}>
       <div className="bg-white p-8 rounded-lg shadow-xl mt-16 mx-auto max-w-2xl">
         <h1 className="text-4xl font-bold mb-6 text-center text-purple-700">✨ {t('title')} ✨</h1>
         <div className="flex mb-6">
@@ -81,7 +82,7 @@ function HomePage(props: HomePageProps) {
           </div>
         </div>
       </div>
-    </div>
+    </Page>
   );
 }
 

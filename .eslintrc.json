@@ -48,6 +48,7 @@
         "plugin:jest-dom/recommended"
       ],
       "rules": {
+        "react/jsx-tag-spacing": "error",
         "quotes": [
           "error",
           "single"

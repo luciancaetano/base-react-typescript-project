@@ -1,5 +1,6 @@
 import styles from './main-layout.module.scss';
 import { MainLayoutProps } from './main-layout.types';
+import AppHeader from '@components/elements/app-header';
 import clsx from 'clsx';
 import React from 'react';
 
@@ -7,9 +8,12 @@ function MainLayout(props: MainLayoutProps) {
   const { children, className, testingID } = props;
 
   return (
-    <div className={clsx('main-layout', 'flex min-h-screen bg-gray-100 w-full h-full', styles.mainLayout, className)} data-testid={testingID}>
-      <div className="p-0 w-full h-full min-h-screen">
-        {children}
+    <div className={clsx('main-layout', 'flex h-screen bg-gray-100', styles.mainLayout, className)} data-testid={testingID}>
+      <div className="flex flex-1 flex-col overflow-hidden">
+        <AppHeader />
+        <main className="flex flex-1 flex-col overflow-x-hidden overflow-y-auto bg-gray-200">
+          {children}
+        </main>
       </div>
     </div>
   );

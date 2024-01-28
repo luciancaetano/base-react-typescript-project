@@ -1,7 +1,7 @@
 import { ITestableProps } from '@app/types/testing';
 import React from 'react';
 
-export interface MainLayoutProps extends React.PropsWithChildren<object>, ITestableProps {
+export interface PageProps extends React.PropsWithChildren<object>, ITestableProps, React.HTMLAttributes<HTMLDivElement> {
   className?: string;
   styles?: React.CSSProperties;
 }

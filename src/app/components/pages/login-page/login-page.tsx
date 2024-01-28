@@ -1,6 +1,7 @@
 import styles from './login-page.module.scss';
 import { LoginPageProps } from './login-page.types';
 import useLoginPageViewModel from './login-page.view-model';
+import Page from '@components/elements/page';
 import { withResourceBundle } from '@lib/i18n';
 import clsx from 'clsx';
 import React from 'react';
@@ -11,7 +12,7 @@ function LoginPage(props: LoginPageProps) {
   const { t, errors, handleSubmit, onSubmit, register } = useLoginPageViewModel(props);
 
   return (
-    <div className={clsx('login-page', 'h-full min-h-screen flex items-center justify-center', styles.loginPage, className)} data-testid={testingID}>
+    <Page className={clsx('login-page', 'flex items-center justify-center', styles.loginPage, className)} testingID={testingID}>
       <div className="bg-white p-8 rounded shadow-md w-96">
         <h1 className="text-2xl font-bold mb-6">{t('title')}</h1>
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -35,7 +36,7 @@ function LoginPage(props: LoginPageProps) {
           <button type="submit" className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 focus:outline-none">{t('loginButton')}</button>
         </form>
       </div>
-    </div>
+    </Page>
   );
 }
 

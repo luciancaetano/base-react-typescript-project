@@ -23,7 +23,7 @@ const componentTypePathsMap = {
 };
 
 /**
- * 
+ *
  * @type {import('plop').PlopGenerator}
  */
 module.exports = {
@@ -80,6 +80,8 @@ module.exports = {
 
     const wantI18n = result.wantI18n;
 
+    const isPage = result.componentType === 'page';
+
     const actions = [
       {
         type: 'add',
@@ -89,7 +91,7 @@ module.exports = {
       {
         type: 'add',
         path: basePath + '/{{kebabCase name}}/{{kebabCase name}}.tsx',
-        templateFile: 'generators/component/Component.tsx.hbs',
+        templateFile: isPage ? 'generators/component/Component.page.tsx.hbs' :'generators/component/Component.tsx.hbs',
       },
       {
         type: 'add',
@@ -130,7 +132,6 @@ module.exports = {
         path: basePath + '/{{kebabCase name}}/translations/index.ts',
         templateFile: 'generators/component/translations/index.ts.hbs',
       });
-
 
       actions.push({
         type: 'add',

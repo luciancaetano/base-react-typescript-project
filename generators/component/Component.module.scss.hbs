@@ -1,3 +1,7 @@
-.{{kebabCase name}} {
-display: flex;
+{{#if componentType === 'page'}}
+#{{kebabCase name}} {
 }
+{{else}}
+.{{kebabCase name}} {
+}
+{{/if}}

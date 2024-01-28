@@ -1,0 +1,28 @@
+import React from 'react';
+import clsx from 'clsx';
+{{#if wantI18n}}
+import { withResourceBundle } from '@lib/i18n';
+{{/if}}
+import { {{ pascalCase name }}Props } from './{{ kebabCase name }}.types';
+import styles from './{{ kebabCase name }}.module.scss';
+import use{{pascalCase name}}ViewModel from './{{ kebabCase name }}.view-model';
+import Page from '@components/elements/page';
+function {{ pascalCase name }}(props: {{ pascalCase name }}Props) {
+const { children, className, testingID } = props;
+
+const { counter, handleIncClick } = use{{pascalCase name}}ViewModel(props);
+
+return (
+<Page className={clsx('{{ kebabCase name }}', styles.{{ camelCase name }}, className)} testingID={testingID}>
+  {children}
+  <div>{counter}</div>
+  <button onClick={handleIncClick}>Increment</button>
+</Page>
+);
+}
+
+{{#if wantI18n}}
+export default React.memo(withResourceBundle( {{ pascalCase name }} , () => import('./translations')));
+{{else}}
+export default React.memo({{ pascalCase name }});
+{{/if}}

@@ -5,11 +5,3 @@ export interface ProtectedPageProps extends React.PropsWithChildren<object>, ITe
   className?: string;
   styles?: React.CSSProperties;
 }
-
-export interface ProtectedPageStore {
-  count: number;
-  increment: () => void;
-  decrement: () => void;
-  incBy: (amount: number) => void;
-  decBy: (amount: number) => void;
-}

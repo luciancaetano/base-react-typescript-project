@@ -3,6 +3,7 @@ import styles from './protected-page.module.scss';
 import { ProtectedPageProps } from './protected-page.types';
 import useProtectedPageViewModel from './protected-page.view-model';
 import Button from '@components/elements/button';
+import Page from '@components/elements/page';
 import { withResourceBundle } from '@lib/i18n';
 import clsx from 'clsx';
 import React from 'react';
@@ -13,7 +14,7 @@ function ProtectedPage(props: ProtectedPageProps) {
   const { counter, handleIncClick, signout, t, goBackToHome } = useProtectedPageViewModel(props);
 
   return (
-    <div className={clsx('protected-page', styles.protectedPage, className, 'bg-gradient-to-r from-purple-500 to-indigo-600', 'p-8', 'rounded-lg', 'h-full min-h-screen')} data-testid={testingID}>
+    <Page className={clsx('protected-page', styles.protectedPage, className, 'bg-gradient-to-r from-purple-500 to-indigo-600')} testingID={testingID}>
       <div className="bg-white p-8 rounded-lg shadow-xl mt-16 mx-auto max-w-2xl">
         <div className="text-4xl font-bold mb-4">{t('counter')}: {counter}</div>
         <button
@@ -33,7 +34,7 @@ function ProtectedPage(props: ProtectedPageProps) {
           {t('goBackToHome')}
         </Button>
       </div>
-    </div>
+    </Page>
   );
 }
 
