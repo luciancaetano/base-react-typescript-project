@@ -1,6 +1,6 @@
+import AppHeader from './components/app-header';
 import styles from './main-layout.module.scss';
 import { MainLayoutProps } from './main-layout.types';
-import AppHeader from '@components/elements/app-header';
 import clsx from 'clsx';
 import React from 'react';
 
