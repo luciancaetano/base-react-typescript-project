@@ -7,7 +7,7 @@ This guide will walk you through the process of cloning this repository without 
 First, clone the repository without the origin. To do this, use the `git clone` command with the `--no-hardlinks` option:
 
 ```bash
-git clone --no-hardlinks <repository-url> <new-directory>
+git clone --no-hardlinks https://github.com/luciancaetano/base-react-typescript-project.git <new-directory>
 ```
 
 Replace `<repository-url>` with the URL of this repository and `<new-directory>` with the name of the new directory where you want to clone the repository.
