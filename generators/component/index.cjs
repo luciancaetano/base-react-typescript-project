@@ -68,7 +68,7 @@ module.exports = {
     const basePath =
       !result.feature || result.feature === 'APP'
         ? `src/app/components/${componentTypePathsMap[result.componentType]}`
-        : `'src/app/features/{{feature}}/components/${componentTypePathsMap[result.componentType]}`;
+        : `src/app/features/{{feature}}/components/${componentTypePathsMap[result.componentType]}`;
 
     const useStyles = result.componentType === 'element' || result.componentType === 'layout' || result.componentType === 'page';
 
