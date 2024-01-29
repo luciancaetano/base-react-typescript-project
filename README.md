@@ -51,7 +51,7 @@ Just run the following command to generate a component or a feature:
 ```bash
 yarn generate
 ```
-### Generated Component Code Structure
+### Component Code Structure
 
 ```bash
 ├── src
@@ -74,10 +74,46 @@ yarn generate
 - `[name].view-model.ts` is the component view model file.
 - `index.ts` is the component index file, the component is exported as default and the component types are exported as named export.
 
+#### `@components/elements` purpose
 
-### Generated Features Folder Structure
-We can organize the features as we want, but the recommended structure is the following:
-The command `yarn generate` will create the feature folder structure automatically with the following structure:
+The `components/elements` directory serves as a dedicated space within your project's source code to house fundamental and reusable UI elements.
+These elements encompass components that are generic, presenting no specific business logic but rather providing essential building blocks for the user interface.
+
+#### `@components/providers` purpose
+
+The `components/providers` directory serves as a dedicated location for implementing data providers or context providers within your project.
+Providers in this directory may include those responsible for managing data, state, or any context-related functionalities.
+Unlike the components/elements directory, providers in components/providers are allowed to contain business logic,
+making them a central hub for managing and supplying data throughout your application.
+
+#### `@components/pages` purpose
+
+The `components/pages` directory serves as the designated location for organizing components that represent individual pages or screens in your application.
+Pages encapsulate the structure and behavior of specific views, often corresponding to distinct user interfaces or features.
+Additionally, this directory may also house the routing logic associated with these pages.
+
+#### About `components/[ComponentName]/components`
+
+The `components/[ComponentName]/components` directory is designated for housing components that are exclusive to a particular parent component.
+These subcomponents are tightly coupled with the parent entity and are not intended for broader reuse across the application.
+Placing such components in a dedicated directory helps maintain a clear and organized structure within the codebase.
+
+### Why us this structure ?
+
+The provided structure is designed to offer several advantages that contribute to the overall efficiency, maintainability, and scalability of a project.
+Here are key reasons to use this structure:
+- Modularity and Organization
+- Clear Separation of Concerns
+- Reusability and Scalability
+- Testability and Quality Assurance
+- Flexibility and Technology Agnosticism
+- Documentation through Structure
+- Enhanced Maintenance and Readability
+
+### Features Folder Structure
+The @features directory is intended for organizing and structuring the different functionalities or main modules of your application. Each subdirectory within @features represents a specific feature, and the internal structure of these directories is designed to promote modularity and clarity.
+
+The command `yarn generate feature` will create the feature folder structure automatically with the following structure:
 
 ```bash
 ├── src
