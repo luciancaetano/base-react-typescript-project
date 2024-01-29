@@ -8,13 +8,12 @@ import styles from './{{ kebabCase name }}.module.scss';
 import use{{pascalCase name}}ViewModel from './{{ kebabCase name }}.view-model';
 import Page from '@components/elements/page';
 function {{ pascalCase name }}(props: {{ pascalCase name }}Props) {
-const { children, className, testingID } = props;
+const { className, testingID } = props;
 
 const { counter, handleIncClick } = use{{pascalCase name}}ViewModel(props);
 
 return (
 <Page className={clsx('{{ kebabCase name }}', styles.{{ camelCase name }}, className)} testingID={testingID}>
-  {children}
   <div>{counter}</div>
   <button onClick={handleIncClick}>Increment</button>
 </Page>
