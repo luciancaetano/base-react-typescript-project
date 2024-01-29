@@ -22,7 +22,8 @@ module.exports = {
     },
   ],
   actions: () => {
-    const basePath = `src/app/features/{{kebabCase name}}`;
+    const basePath = 'src/app/features/{{kebabCase name}}';
+
     const actions = [
       {
         type: 'add',

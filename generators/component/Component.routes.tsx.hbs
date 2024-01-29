@@ -1,10 +1,17 @@
+import React from 'react';
+import Loader from '@components/elements/loader';
 import { RouteObject } from "react-router";
 
-import {{pascalCase name}} from "./{{ kebabCase name }}";
+const {{pascalCase name}} = React.lazy(() => import('./{{ kebabCase name }}'));
 
 export const {{ camelCase name }}Routes: RouteObject[] = [
 {
 path: '/{{ kebabCase name }}',
-element:<{{pascalCase name}} />,
+element:
+(
+    <Suspense fallback={<Loader />}>
+    <{{pascalCase name}} />
+    </Suspense>
+)
 },
 ];

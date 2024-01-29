@@ -1,6 +1,9 @@
-import ProtectedPage from './protected-page';
+import Loader from '@components/elements/loader';
 import { AuthenticatedRoute } from '@lib/router';
+import React, { Suspense } from 'react';
 import { RouteObject } from 'react-router';
+
+const ProtectedPage = React.lazy(() => import('./protected-page'));
 
 export const protectedPageRoutes: RouteObject[] = [
   {
@@ -9,7 +12,11 @@ export const protectedPageRoutes: RouteObject[] = [
     children: [
       {
         path: '/protected-page',
-        element: <ProtectedPage />,
+        element: (
+          <Suspense fallback={<Loader />}>
+            <ProtectedPage />
+          </Suspense>
+        ),
       },
     ],
   },
