@@ -9,7 +9,7 @@ export default [
   {
     path: '/',
     element: <MainLayout><Outlet /></MainLayout >,
-    children: [...homePageRoutes, ...protectedPageRoutes, ...loginPageRoutes],
+    children: [ ...homePageRoutes, ...protectedPageRoutes, ...loginPageRoutes ],
   },
   {
     path: '/login',

@@ -14,7 +14,7 @@ function useAppHeaderViewModel({ }: AppHeaderProps) {
       return '';
     }
 
-    const [first, last] = user.split(' ');
+    const [ first, last ] = user.split(' ');
 
     if(!first) {
       return '';
@@ -25,11 +25,11 @@ function useAppHeaderViewModel({ }: AppHeaderProps) {
     }
 
     return `${first[0]}${last[0]}`;
-  }, [user]);
+  }, [ user ]);
 
   const handleGoToHomeClick = useCallback(() => {
     navigate('/');
-  }, [navigate]);
+  }, [ navigate ]);
 
   return {
     isAuthenticated,

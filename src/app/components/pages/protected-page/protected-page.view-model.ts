@@ -5,7 +5,7 @@ import { useCallback, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function useProtectedPageViewModel({ }: ProtectedPageProps) {
-  const [counter, setCounter] = useState(0);
+  const [ counter, setCounter ] = useState(0);
   const { signout } = useAuth();
   const navigate = useNavigate();
 
@@ -17,7 +17,7 @@ function useProtectedPageViewModel({ }: ProtectedPageProps) {
 
   const goBackToHome = useCallback(() => {
     navigate('/');
-  }, [navigate]);
+  }, [ navigate ]);
 
   return {
     handleIncClick,

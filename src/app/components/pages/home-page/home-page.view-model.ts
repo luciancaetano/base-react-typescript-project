@@ -6,22 +6,22 @@ import { useNavigate } from 'react-router-dom';
 
 function useHomePageViewModel({ }: HomePageProps) {
   const { isAuthenticated } = useAuth();
-  const [todoItems, setTodoItems] = useState<TodoItem[]>([]);
-  const [todoText, setTodoText] = useState<string>('');
+  const [ todoItems, setTodoItems ] = useState<TodoItem[]>([]);
+  const [ todoText, setTodoText ] = useState<string>('');
   const navigate = useNavigate();
 
   const { t, i18n } = useTranslation();
 
-  const language = useMemo(() => i18n.language, [i18n.language]);
+  const language = useMemo(() => i18n.language, [ i18n.language ]);
 
   const addTodo = useCallback(() => {
-    setTodoItems((items) => [...items, {
+    setTodoItems((items) => [ ...items, {
       id: items.length + 1,
       text: todoText,
       completed: false,
-    }]);
+    } ]);
     setTodoText('');
-  }, [todoText]);
+  }, [ todoText ]);
 
   const removeTodo = useCallback((id: number) => () => {
     setTodoItems((items) => items.filter((item) => item.id !== id));
@@ -45,11 +45,11 @@ function useHomePageViewModel({ }: HomePageProps) {
 
   const changeLanguage = useCallback((language: string) => () => {
     i18n.changeLanguage(language);
-  }, [i18n]);
+  }, [ i18n ]);
 
   const gotoLogin = useCallback(() => {
     navigate('/login');
-  }, [navigate]);
+  }, [ navigate ]);
 
   return {
     todoItems,

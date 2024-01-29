@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 function useAuthProviderModel({ }: AuthProviderProps) {
   const initalizedState = useRef<boolean>(false);
 
-  const [store, setStore] = useState<AuthProviderStore>({
+  const [ store, setStore ] = useState<AuthProviderStore>({
     isAuthenticated: false,
     user: '',
   });
@@ -34,7 +34,7 @@ function useAuthProviderModel({ }: AuthProviderProps) {
         authenticate(user);
       }
     }
-  }, [authenticate]);
+  }, [ authenticate ]);
 
   return {
     store,

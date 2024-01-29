@@ -18,7 +18,7 @@ function useLoginPageViewModel({ }: LoginPageProps) {
   const onSubmit = useCallback<SubmitHandler<LoginPageFormInput>>((data) => {
     authenticate(data.username);
     navigate('/');
-  }, [authenticate, navigate]);
+  }, [ authenticate, navigate ]);
 
   return {
     t,

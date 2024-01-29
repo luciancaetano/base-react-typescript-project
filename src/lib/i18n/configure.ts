@@ -16,7 +16,7 @@ i18n
     interpolation: {
       escapeValue: false,
     },
-    supportedLngs: ['en', 'pt-BR'],
+    supportedLngs: [ 'en', 'pt-BR' ],
     react: {
       useSuspense: true,
     },

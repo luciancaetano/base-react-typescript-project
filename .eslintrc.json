@@ -48,6 +48,23 @@
         "plugin:jest-dom/recommended"
       ],
       "rules": {
+        "space-before-function-paren": [
+          "error",
+          "never"
+        ],
+        "react/jsx-curly-spacing": [
+          "error",
+          {
+            "when": "never",
+            "children": true
+          }
+        ],
+        "@typescript-eslint/type-annotation-spacing": "error",
+        "array-bracket-spacing": [
+          "error",
+          "always"
+        ],
+        "no-multi-spaces": "error",
         "react/jsx-tag-spacing": ["error", {
           "closingSlash": "never",
           "beforeSelfClosing": "always",

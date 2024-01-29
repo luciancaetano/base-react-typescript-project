@@ -32,7 +32,7 @@ function withResourceBundle<T>(
     const namespace = useUUID();
     const loading = useRef(false);
     const done = useRef(false);
-    const [viewLoading, setViewLoading] = useState(true);
+    const [ viewLoading, setViewLoading ] = useState(true);
 
     useEffect(() => {
       if (typeof resourceBundle === 'function') {
@@ -41,7 +41,7 @@ function withResourceBundle<T>(
           setViewLoading(true);
           resourceBundle().then((bundle) => {
 
-            Object.entries(bundle.default).forEach(([language, bundle]) => {
+            Object.entries(bundle.default).forEach(([ language, bundle ]) => {
               i18n.addResourceBundle(language, namespace, bundle, true, true);
             });
 
@@ -56,14 +56,14 @@ function withResourceBundle<T>(
           });
         }
       } else {
-        Object.entries(resourceBundle).forEach(([language, bundle]) => {
+        Object.entries(resourceBundle).forEach(([ language, bundle ]) => {
           i18n.addResourceBundle(language, namespace, bundle, true, true);
         });
       }
 
-    }, [namespace]);
+    }, [ namespace ]);
 
-    const trueLoaded = useMemo(() => !viewLoading && !loading.current && done.current, [viewLoading]);
+    const trueLoaded = useMemo(() => !viewLoading && !loading.current && done.current, [ viewLoading ]);
 
     return (
       <TranslationNamespaceContext.Provider value={{ id: namespace }}>
