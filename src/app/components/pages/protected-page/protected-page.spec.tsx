@@ -1,4 +1,4 @@
-import ProtectedPage from './index';
+import ProtectedPage from './protected-page';
 import { render } from '@lib/tests';
 
 describe('ProtectedPage Component', () => {

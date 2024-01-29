@@ -1,4 +1,4 @@
-import LoginPage from './index';
+import LoginPage from './login-page';
 import { render } from '@lib/tests';
 
 describe('LoginPage Component', () => {

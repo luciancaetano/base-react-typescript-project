@@ -1,4 +1,4 @@
-import HomePage from './index';
+import HomePage from './home-page';
 import { render } from '@lib/tests';
 
 describe('HomePage Component', () => {
