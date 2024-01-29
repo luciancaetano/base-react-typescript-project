@@ -48,7 +48,17 @@
         "plugin:jest-dom/recommended"
       ],
       "rules": {
-        "react/jsx-tag-spacing": "error",
+        "react/jsx-tag-spacing": ["error", {
+          "closingSlash": "never",
+          "beforeSelfClosing": "always",
+          "afterOpening": "never"
+        }],
+        "react/jsx-closing-bracket-location": ["error", "tag-aligned"],
+        "react/jsx-first-prop-new-line": [
+          "error",
+          "multiline"
+        ],
+        "react/jsx-indent": ["error", 2],
         "quotes": [
           "error",
           "single"

@@ -8,7 +8,7 @@ function ErrorFallback(props: FallbackProps) {
         <p className="text-2xl mb-8">Something went wrong.</p>
 
         <p className="text-lg mb-8">
-                    Don&apos;t panic, it happens to the best of us. The page you are looking for might be in another galaxy.
+          Don&apos;t panic, it happens to the best of us. The page you are looking for might be in another galaxy.
         </p>
 
         <div className="bg-gray-800 p-4 rounded-lg shadow-lg m-8 max-w-full">

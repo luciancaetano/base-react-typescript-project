@@ -21,7 +21,7 @@ function AppHeader(props: AppHeaderProps) {
           >
             <HiOutlineHome className="inline-block mr-2" />
             <span>
-            MyApp
+              MyApp
             </span>
           </h1>
         </div>
