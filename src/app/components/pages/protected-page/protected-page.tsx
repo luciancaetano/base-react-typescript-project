@@ -23,7 +23,7 @@ function ProtectedPage(props: ProtectedPageProps) {
         >
           {t('increment')}
         </button>
-        <hr className="my-6 border-t border-white" />
+        <hr className="my-6 border-t border-white"/>
         <div className="text-2xl font-bold mb-4">
           {t('protectedPage')}
         </div>

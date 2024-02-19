@@ -19,7 +19,7 @@ function AppHeader(props: AppHeaderProps) {
             className="text-xl font-bold text-blue-600 hover:text-blue-500 cursor-pointer"
             onClick={handleGoToHomeClick}
           >
-            <HiOutlineHome className="inline-block mr-2" />
+            <HiOutlineHome className="inline-block mr-2"/>
             <span>
               MyApp
             </span>

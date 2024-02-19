@@ -68,10 +68,10 @@ function withResourceBundle<T>(
     return (
       <TranslationNamespaceContext.Provider value={{ id: namespace }}>
         {trueLoaded && (
-          <WrappedComponent {...props as any} />
+          <WrappedComponent {...props as any}/>
         )}
         {!trueLoaded && (
-          <Loader />
+          <Loader/>
         )}
       </TranslationNamespaceContext.Provider>
     );

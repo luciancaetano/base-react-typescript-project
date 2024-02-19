@@ -13,8 +13,8 @@ export const protectedPageRoutes: RouteObject[] = [
       {
         path: '/protected-page',
         element: (
-          <Suspense fallback={<Loader />}>
-            <ProtectedPage />
+          <Suspense fallback={<Loader/>}>
+            <ProtectedPage/>
           </Suspense>
         ),
       },

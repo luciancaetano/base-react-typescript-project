@@ -8,8 +8,8 @@ export const loginPageRoutes: RouteObject[] = [
   {
     path: '/login',
     element:(
-      <Suspense fallback={<Loader />}>
-        <LoginPage />
+      <Suspense fallback={<Loader/>}>
+        <LoginPage/>
       </Suspense>
     ),
   },

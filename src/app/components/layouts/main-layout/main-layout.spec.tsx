@@ -4,7 +4,7 @@ import { render } from '@lib/tests';
 describe('MainLayout Component', () => {
   it('should render', () => {
     const { container } = render(
-      <MainLayout />);
+      <MainLayout/>);
     expect(container).toBeTruthy();
   });
 

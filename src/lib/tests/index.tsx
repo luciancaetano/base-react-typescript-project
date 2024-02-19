@@ -23,7 +23,7 @@ export function withAppWrapper<T>(
 ): ComponentType<T> {
   return (props: T) => (
     <AppProvider>
-      <WrappedComponent {...props as any} />
+      <WrappedComponent {...props as any}/>
     </AppProvider>
   );
 }

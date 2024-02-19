@@ -4,7 +4,7 @@ import { render } from '@lib/tests';
 describe('HomePage Component', () => {
   it('should render', () => {
     const { container } = render(
-      <HomePage />,
+      <HomePage/>,
     );
     expect(container).toBeTruthy();
   });

@@ -6,7 +6,7 @@ import Router from '@lib/router';
 function App() {
   return (
     <AppProvider>
-      <Router routes={appRoutes} />
+      <Router routes={appRoutes}/>
     </AppProvider>
   );
 }

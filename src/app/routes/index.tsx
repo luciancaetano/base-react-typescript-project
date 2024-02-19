@@ -8,12 +8,12 @@ import { Navigate, Outlet, RouteObject } from 'react-router-dom';
 export default [
   {
     path: '/',
-    element: <MainLayout><Outlet /></MainLayout >,
+    element: <MainLayout><Outlet/></MainLayout>,
     children: [ ...homePageRoutes, ...protectedPageRoutes, ...loginPageRoutes ],
   },
   {
     path: '/login',
-    element: <Navigate to="/" />,
+    element: <Navigate to="/"/>,
   },
   {
     path: '*',

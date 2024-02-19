@@ -4,7 +4,7 @@ import { render } from '@lib/tests';
 describe('Page Component', () => {
   it('should render', () => {
     const { container } = render(
-      <Page />);
+      <Page/>);
     expect(container).toBeTruthy();
   });
 

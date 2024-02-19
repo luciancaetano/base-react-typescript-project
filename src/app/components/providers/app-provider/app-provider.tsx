@@ -13,7 +13,7 @@ function AppProvider(props: AppProviderProps) {
   return (
     <React.Suspense
       fallback={
-        <Loader />
+        <Loader/>
       }
     >
       <ErrorBoundary FallbackComponent={ErrorFallback}>

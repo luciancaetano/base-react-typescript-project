@@ -53,7 +53,7 @@ function HomePage(props: HomePageProps) {
             >
               <span className="text-lg">{todo.text}</span>
               <button className="text-red-500 hover:text-red-700 focus:outline-none" onClick={removeTodo(todo.id)}>
-                <HiOutlineTrash />
+                <HiOutlineTrash/>
               </button>
             </li>
           ))}

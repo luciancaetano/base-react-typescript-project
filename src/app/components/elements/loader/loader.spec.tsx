@@ -4,7 +4,7 @@ import { render } from '@lib/tests';
 describe('Loader Component', () => {
   it('should render', () => {
     const { container } = render(
-      <Loader />);
+      <Loader/>);
     expect(container).toBeTruthy();
   });
 

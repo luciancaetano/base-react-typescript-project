@@ -4,7 +4,7 @@ import { render } from '@lib/tests';
 describe('ProtectedPage Component', () => {
   it('should render', () => {
     const { container } = render(
-      <ProtectedPage />,
+      <ProtectedPage/>,
     );
     expect(container).toBeTruthy();
   });

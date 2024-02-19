@@ -35,6 +35,16 @@
         "node": true,
         "es6": true
       },
+      "plugins": [
+        "react",
+        "react-hooks",
+        "jsx-a11y",
+        "import",
+        "testing-library",
+        "jest-dom",
+        "no-relative-import-paths",
+        "@typescript-eslint"
+      ],
       "extends": [
         "eslint:recommended",
         "plugin:import/warnings",
@@ -48,6 +58,42 @@
         "plugin:jest-dom/recommended"
       ],
       "rules": {
+        "eol-last": ["error", "always"],
+        "no-relative-import-paths/no-relative-import-paths": [
+          "error",
+          {
+            "allowSameFolder": true,
+            "rootDir": "src"
+          }
+        ],
+        "quote-props": [
+          "error",
+          "as-needed",
+          {
+            "keywords": false,
+            "unnecessary": true
+          }
+        ],
+        "quotes": [
+          "error",
+          "single",
+          {
+            "avoidEscape": true
+          }
+        ],
+        "react/jsx-equals-spacing": [
+          "error",
+          "never"
+        ],
+        "react/jsx-tag-spacing": [
+          "error",
+          {
+            "closingSlash": "never",
+            "beforeSelfClosing": "never",
+            "afterOpening": "never",
+            "beforeClosing": "never"
+          }
+        ],
         "space-before-function-paren": [
           "error",
           "never"
@@ -65,20 +111,17 @@
           "always"
         ],
         "no-multi-spaces": "error",
-        "react/jsx-tag-spacing": ["error", {
-          "closingSlash": "never",
-          "beforeSelfClosing": "always",
-          "afterOpening": "never"
-        }],
-        "react/jsx-closing-bracket-location": ["error", "tag-aligned"],
+        "react/jsx-closing-bracket-location": [
+          "error",
+          "tag-aligned"
+        ],
         "react/jsx-first-prop-new-line": [
           "error",
           "multiline"
         ],
-        "react/jsx-indent": ["error", 2],
-        "quotes": [
+        "react/jsx-indent": [
           "error",
-          "single"
+          2
         ],
         "object-curly-spacing": [
           "error",
@@ -162,5 +205,8 @@
         "@typescript-eslint/no-var-requires": "off"
       }
     }
-  ]
+  ],
+  "globals": {
+    "process": true
+  }
 }

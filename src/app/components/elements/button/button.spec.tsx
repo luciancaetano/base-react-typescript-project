@@ -4,7 +4,7 @@ import { render } from '@lib/tests';
 describe('Button Component', () => {
   it('should render', () => {
     const { container } = render(
-      <Button />);
+      <Button/>);
     expect(container).toBeTruthy();
   });
 

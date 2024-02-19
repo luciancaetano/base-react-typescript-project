@@ -4,7 +4,7 @@ import { render } from '@lib/tests';
 describe('AppHeader Component', () => {
   it('should render', () => {
     const { container } = render(
-      <AppHeader />);
+      <AppHeader/>);
     expect(container).toBeTruthy();
   });
   it('should render with children and className', () => {

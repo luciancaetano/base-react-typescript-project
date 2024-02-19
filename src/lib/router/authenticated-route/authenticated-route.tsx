@@ -9,10 +9,10 @@ function AuthenticatedRoute(props: AuthenticatedRouteProps) {
   const auth = useAuth();
 
   if (!auth.isAuthenticated) {
-    return <Navigate to={authConfig.redirectToIfNotAuthenticated} />;
+    return <Navigate to={authConfig.redirectToIfNotAuthenticated}/>;
   }
 
-  return <Outlet />;
+  return <Outlet/>;
 }
 
 export default AuthenticatedRoute;
