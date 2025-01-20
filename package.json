@@ -61,8 +61,6 @@
     "jsonwebtoken": "^9.0.2",
     "lodash": "^4.17.21",
     "marked": "^15.0.6",
-    "primeicons": "^7.0.0",
-    "primereact": "^10.9.1",
     "quill": "^2.0.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

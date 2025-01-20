@@ -66,4 +66,5 @@ export default abstract class APIClient {
   protected get tenantID() {
     return localStorage.getItem('current-tenant-id') ?? null;
   }
+  
 }

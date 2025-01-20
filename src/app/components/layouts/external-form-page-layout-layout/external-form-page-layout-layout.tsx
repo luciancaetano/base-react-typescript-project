@@ -1,8 +1,6 @@
 import styles from './external-form-page-layout-layout.module.scss';
 import { ExternalFormPageLayoutLayoutProps } from './external-form-page-layout-layout.types';
 import useExternalFormPageLayoutLayoutViewModel from './external-form-page-layout-layout.view-model';
-import bg from '@assets/images/bg.svg';
-import logo from '@assets/images/logo.svg';
 import DarkModeSwitch from '@components/elements/dark-mode-switch';
 import Page from '@components/elements/page';
 import clsx from 'clsx';
@@ -24,15 +22,10 @@ function ExternalFormPageLayoutLayout(props: ExternalFormPageLayoutLayoutProps) 
       style={style}
       data-testid={testingID}
     >
-      <div className="relative hidden bg-gray-100 dark:bg-gray-800 lg:col-span-7 lg:block xl:col-span-8 2xl:col-span-9 overflow-hidden">
-        <img src={bg} className="object-cover h-full" alt="auth"/>
-      </div>
-
-      <div className="col-span-12 lg:col-span-5 xl:col-span-4 2xl:col-span-3 bg-white dark:bg-dark">
-        <div className="flex flex-col items-stretch p-8 lg:p-16">
+      <div className="col-span-12 bg-white dark:bg-dark">
+        <div className="flex flex-col items-stretch p-12 lg:p-16">
           <div className="flex items-center justify-between">
-            <div className="inline"><img src={logo} alt="logo-light" className="inline h-10"/></div>
-
+            <div className="inline">Logo</div>
             <DarkModeSwitch/>
           </div>
 

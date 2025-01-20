@@ -1,18 +1,16 @@
 import styles from './login-page.module.scss';
 import { LoginPageProps } from './login-page.types';
 import useLoginPageViewModel from './login-page.view-model';
-import Input from '@components/elements/input';
 import ExternalFormPageLayoutLayout from '@components/layouts/external-form-page-layout-layout';
 import { withResourceBundle } from '@lib/i18n';
 import clsx from 'clsx';
-import { Button } from 'primereact/button';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 function LoginPage(props: LoginPageProps) {
   const { className, testingID } = props;
 
-  const { t, errors, handleSubmit, onSubmit, register, isError, isPending, error } = useLoginPageViewModel(props);
+  const { t, handleSubmit, onSubmit, register, isError, isPending, error } = useLoginPageViewModel(props);
 
   return (
     <ExternalFormPageLayoutLayout
@@ -26,35 +24,34 @@ function LoginPage(props: LoginPageProps) {
     >
       <form className="mt-2 space-y-2" onSubmit={handleSubmit(onSubmit)}>
         <div className="w-full">
-          <Input
+          <input
             type="text"
             id="email"
             className="w-full"
-            label={t('email')}
+            placeholder={t('email')}
             {...register('email', { required: true })}
-            error={errors.email && t('emailRequired')}
           />
         </div>
 
         <div className="w-full">
-          <Input
+          <input
             type="password"
             id="password"
             className="w-full"
-            label={t('password')}
+            placeholder={t('password')}
             {...register('password', { required: true })}
-            error={errors.password && t('passwordRequired')}
           />
         </div>
 
         <div className="flex items-start">
           <NavLink to="/password-recovery" className="text-sm text-primary hover:underline ml-auto cursor-pointer">{t('forgotPassword')}</NavLink>
         </div>
-        <Button
+        <button
           className="w-full text-center"
-          type="submit" label={t('login')}
-          icon={<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" fontSize="32" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4m-5-4l5-5l-5-5m5 5H3"></path></svg>}
-        />
+          type="submit"
+        >
+          {t('login')}
+        </button>
 
         <p className="mt-4 text-center text-sm text-base-content/80 md:mt-6">
           {t('registerQuestionText')}&nbsp;

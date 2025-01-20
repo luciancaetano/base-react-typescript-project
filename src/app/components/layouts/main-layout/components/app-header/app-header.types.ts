@@ -4,6 +4,4 @@ import React from 'react';
 export interface AppHeaderProps extends ITestableProps, React.PropsWithChildren {
   className?: string;
   styles?: React.CSSProperties;
-  sidebarOpen: boolean;
-  setSidebarOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }

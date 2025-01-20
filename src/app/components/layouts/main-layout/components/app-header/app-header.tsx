@@ -1,7 +1,6 @@
 import styles from './app-header.module.scss';
 import { AppHeaderProps } from './app-header.types';
 import useAppHeaderViewModel from './app-header.view-model';
-import logoIcon from '@assets/images/logo.svg';
 import DarkModeSwitch from '@components/elements/dark-mode-switch';
 import UserDropdown from '@components/elements/user-dropdown';
 import { withResourceBundle } from '@lib/i18n';
@@ -34,7 +33,7 @@ function AppHeader(props: AppHeaderProps) {
             </svg>
           </button>
           <Link className="block flex-shrink-0 lg:hidden" to="/">
-            <img src={logoIcon} alt="Logo"/>
+            LOGO
           </Link>
         </div>
 
