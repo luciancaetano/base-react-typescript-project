@@ -10,10 +10,10 @@ import React from 'react';
 function AuthProvider(props: AuthProviderProps) {
   const { children } = props;
 
-  const { authenticate, signout, store: { isAuthenticated, user } } = useAuthProviderModel(props);
+  const { authenticate, signout, store } = useAuthProviderModel(props);
 
   return (
-    <AuthProviderContextProvider value={{ authenticate, signout, isAuthenticated, user }}>
+    <AuthProviderContextProvider value={{ authenticate, signout, ...store }}>
       {children}
     </AuthProviderContextProvider>
   );

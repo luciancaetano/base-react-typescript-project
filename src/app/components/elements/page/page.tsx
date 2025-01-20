@@ -10,7 +10,7 @@ const Page = React.forwardRef<HTMLDivElement, PageProps>((props, ref) => {
     <div
       {...rest}
       ref={ref}
-      className={clsx('page', 'bg-gray-100', 'h-full', styles.page, className)}
+      className={clsx('page', '', 'flex flex-1 flex-col w-full', styles.page, className)}
       data-testid={testingID}
     >
       {children}

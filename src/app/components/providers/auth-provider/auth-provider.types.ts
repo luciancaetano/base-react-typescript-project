@@ -1,3 +1,4 @@
+import { ITenant, IUser } from '@app/types/auth';
 import React from 'react';
 
 /**
@@ -12,7 +13,9 @@ export interface AuthProviderProps extends React.PropsWithChildren<object> {
  */
 export interface AuthProviderStore {
   isAuthenticated: boolean;
-  user: string;
+  user?: IUser;
+  token?: string;
+  tenants?: ITenant[];
 }
 
 /**
@@ -20,13 +23,14 @@ export interface AuthProviderStore {
  */
 export interface AuthProviderContextType {
   isAuthenticated: boolean;
-  user: string;
-
+  user?: IUser;
+  token?: string;
+  tenants?: ITenant[];
   /**
    * Authenticates the user.
    * @param user The user to authenticate.
    */
-  authenticate: (user: string) => void;
+  authenticate: (token: string, user: IUser, tenants?: ITenant[]) => void;
 
   /**
    * Signs out the user.

@@ -4,7 +4,6 @@ import Loader from '@components/elements/loader';
 import AuthProvider from '@components/providers/auth-provider';
 import React from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
-import { HelmetProvider } from 'react-helmet-async';
 import { HashRouter as Router } from 'react-router-dom';
 
 function AppProvider(props: AppProviderProps) {
@@ -17,11 +16,9 @@ function AppProvider(props: AppProviderProps) {
       }
     >
       <ErrorBoundary FallbackComponent={ErrorFallback}>
-        <HelmetProvider>
-          <AuthProvider>
-            <Router>{children}</Router>
-          </AuthProvider>
-        </HelmetProvider>
+        <AuthProvider>
+          <Router>{children}</Router>
+        </AuthProvider>
       </ErrorBoundary>
     </React.Suspense>
   );

@@ -2,8 +2,11 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@feature/*": [
+      "@features/*": [
         "./src/app/features/*"
+      ],
+      "@http/api": [
+        "./src/http/api/index.ts"
       ],
       "@components/*": [
         "./src/app/components/*"
@@ -28,6 +31,9 @@
       ],
       "@assets/*": [
         "./src/assets/*"
+      ],
+      "@api/*": [
+        "./src/app/http/api/*"
       ]
     }
   }

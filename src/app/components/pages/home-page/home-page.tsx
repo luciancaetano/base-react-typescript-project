@@ -1,7 +1,7 @@
 import styles from './home-page.module.scss';
 import { HomePageProps } from './home-page.types';
 import useHomePageViewModel from './home-page.view-model';
-import Button from '@components/elements/button';
+import AppHeaderContent from '@components/elements/app-header-content';
 import Page from '@components/elements/page';
 import { withResourceBundle } from '@lib/i18n';
 import clsx from 'clsx';
@@ -26,7 +26,10 @@ function HomePage(props: HomePageProps) {
   } = useHomePageViewModel(props);
 
   return (
-    <Page className={clsx('home-page', styles.homePage, 'bg-gradient-to-r from-purple-500 to-indigo-600', className)} testingID={testingID}>
+    <Page className={clsx('home-page', styles.homePage, className)} testingID={testingID}>
+      <AppHeaderContent>
+        App Header Home Page
+      </AppHeaderContent>
       <div className="bg-white p-8 rounded-lg shadow-xl mt-16 mx-auto max-w-2xl">
         <h1 className="text-4xl font-bold mb-6 text-center text-purple-700">✨ {t('title')} ✨</h1>
         <div className="flex mb-6">
@@ -62,9 +65,9 @@ function HomePage(props: HomePageProps) {
       <div className="bg-white p-8 rounded-lg shadow-xl mt-8 mx-auto max-w-2xl">
         {isAuthenticated && <div className="text-green-500 text-lg font-bold mb-4">🔐 Authenticated 🔐</div>}
         {!isAuthenticated && (
-          <Button className="bg-purple-700 hover:bg-purple-800 text-white font-bold py-3 px-6 rounded focus:outline-none focus:shadow-outline-purple" onClick={gotoLogin}>
+          <button className="bg-purple-700 hover:bg-purple-800 text-white font-bold py-3 px-6 rounded focus:outline-none focus:shadow-outline-purple" onClick={gotoLogin}>
             {t('login')}
-          </Button>
+          </button>
         )}
         <a href="/#/protected-page" className="block text-center text-purple-700 mt-4 underline hover:text-purple-800">
           {t('goToProtectedPage')}

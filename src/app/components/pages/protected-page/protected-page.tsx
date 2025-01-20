@@ -2,7 +2,6 @@
 import styles from './protected-page.module.scss';
 import { ProtectedPageProps } from './protected-page.types';
 import useProtectedPageViewModel from './protected-page.view-model';
-import Button from '@components/elements/button';
 import Page from '@components/elements/page';
 import { withResourceBundle } from '@lib/i18n';
 import clsx from 'clsx';
@@ -27,12 +26,12 @@ function ProtectedPage(props: ProtectedPageProps) {
         <div className="text-2xl font-bold mb-4">
           {t('protectedPage')}
         </div>
-        <Button onClick={signout} className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-md focus:outline-none focus:shadow-outline-red active:bg-red-800 transition duration-300">
+        <button onClick={signout} className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-md focus:outline-none focus:shadow-outline-red active:bg-red-800 transition duration-300">
           {t('signout')}
-        </Button>
-        <Button onClick={goBackToHome} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md focus:outline-none focus:shadow-outline-blue active:bg-blue-800 transition duration-300">
+        </button>
+        <button onClick={goBackToHome} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md focus:outline-none focus:shadow-outline-blue active:bg-blue-800 transition duration-300">
           {t('goBackToHome')}
-        </Button>
+        </button>
       </div>
     </Page>
   );

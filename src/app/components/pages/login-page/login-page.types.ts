@@ -7,5 +7,6 @@ export interface LoginPageProps extends ITestableProps {
 }
 
 export interface LoginPageFormInput {
-  username: string;
+  email: string;
+  password: string;
 }
