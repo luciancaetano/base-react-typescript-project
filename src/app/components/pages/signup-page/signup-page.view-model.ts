@@ -15,7 +15,7 @@ function useLoginPageViewModel({ }: SignupPageProps) {
 
   const { isPending, isError, isSuccess, mutate, ...mutation } = useMutation({
     mutationFn: async(formData: SignupPageFormInput) => {
-      const result = await authApi.signup(formData.name, formData.email, formData.password, formData.passwordConfirmation, formData.clinicName, formData.contactPhone, formData.clinicAddress, formData.professionType);
+      const result = await authApi.signup(formData.name, formData.email, formData.password, formData.passwordConfirmation, formData.contactPhone);
 
       if(result.status !== 'success' || !result.data || !result.data.token || !result.data.user) {
         throw new Error('Invalid server response');

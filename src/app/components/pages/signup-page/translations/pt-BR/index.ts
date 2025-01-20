@@ -5,8 +5,6 @@ export default {
   submit: 'Criar conta',
   passwordConfirmation: 'Confirme a sua senha',
   contactPhone: 'Telefone de Contato',
-  dividerClinic: 'Informações de Sua Clínica',
-  clinicName: 'Nome da Clínica',
   professionType: 'Especialidade',
   back: 'Voltar',
 };

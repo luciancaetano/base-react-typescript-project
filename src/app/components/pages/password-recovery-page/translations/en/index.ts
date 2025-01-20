@@ -1,5 +1,5 @@
 export default {
-  title: 'Sign in to LocusClinic',
+  title: 'Sign in',
   email: 'Your email',
   emailRequired: 'Email is required',
   password: 'Your password',

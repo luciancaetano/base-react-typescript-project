@@ -12,7 +12,4 @@ export interface SignupPageFormInput {
   password: string;
   passwordConfirmation: string;
   contactPhone: string;
-  clinicName: string;
-  clinicAddress: string;
-  professionType?: string;
 }

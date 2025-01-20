@@ -67,25 +67,6 @@ function SignupPage(props: SignupPageProps) {
           placeholder={t('contactPhone')}
         />
 
-        <div className="py-3 flex items-center text-sm text-gray-800 after:flex-1 after:border-t after:border-gray-200 after:ms-6 dark:text-white dark:after:border-neutral-600">{t('dividerClinic')}</div>
-
-        <Input
-          type="text"
-          icon={(<FaHome className="h-4 w-4 opacity-70"/> )}
-          {...register('clinicName', { required: true })}
-          error={errors.clinicName?.message && t(errors.clinicName?.message)}
-          placeholder={t('clinicName')}
-          required
-        />
-
-        <Input
-          type="text"
-          icon={(<FaDotCircle className="h-4 w-4 opacity-70"/> )}
-          {...register('professionType', { required: false })}
-          error={errors.professionType?.message && t(errors.professionType?.message)}
-          placeholder={t('professionType')}
-        />
-
         <button type="submit" className="btn btn-primary text-gray-50 !mt-4 sm:mt-8">{t('submit')}</button>
         <NavLink to={'/login'} className="ml-4 btn btn-error text-gray-50 !mt-4 sm:mt-8">{t('back')}</NavLink>
       </form>
