@@ -126,7 +126,8 @@
     "tailwindcss": "^4.1.5",
     "ts-jest": "^29.3.2",
     "ts-node": "^10.9.2",
-    "tsconfig-paths-webpack-plugin": "^4.2.0"
+    "tsconfig-paths-webpack-plugin": "^4.2.0",
+    "vite-vitals": "^1.0.2"
   },
   "eslintConfig": {
     "overrides": [

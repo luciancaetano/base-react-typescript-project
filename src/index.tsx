@@ -3,7 +3,6 @@ import './index.css';
 import '@fontsource/roboto';
 import '@lib/i18n/configure';
 import App from './app';
-import reportWebVitals from './reportWebVitals';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import * as React from 'react';
@@ -20,5 +19,3 @@ root.render(
     </QueryClientProvider>
   </React.StrictMode>,
 );
-
-reportWebVitals();
