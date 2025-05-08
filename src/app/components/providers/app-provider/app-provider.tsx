@@ -1,6 +1,5 @@
 import { AppProviderProps } from './app-provider.types';
 import ErrorFallback from './components/error-fallback';
-import Loader from '@components/elements/loader';
 import AuthProvider from '@components/providers/auth-provider';
 import React from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
@@ -12,7 +11,7 @@ function AppProvider(props: AppProviderProps) {
   return (
     <React.Suspense
       fallback={
-        <Loader/>
+        <p>Loading...</p>
       }
     >
       <ErrorBoundary FallbackComponent={ErrorFallback}>

@@ -1,5 +1,5 @@
 import { AuthProviderProps, AuthProviderStore } from './auth-provider.types';
-import { ITenant, IUser } from '@app/types/auth';
+import { IUser } from '@app/types/auth';
 import { useCallback, useEffect, useRef, useState } from 'react';
 
 function getSaveAuthData(): AuthProviderStore {
@@ -20,7 +20,6 @@ function getSaveAuthData(): AuthProviderStore {
         isAuthenticated: true,
         token,
         user: usr,
-        tenants,
       };
     }
 
@@ -42,23 +41,18 @@ function getSaveAuthData(): AuthProviderStore {
 
 function useAuthProviderModel({ }: AuthProviderProps) {
   const initalizedState = useRef<boolean>(false);
-  const [ currentTenantID, setCurrentTenantID ] = useState<string | null>(null);
 
   const [ store, setStore ] = useState<AuthProviderStore>(getSaveAuthData());
 
-  const authenticate = useCallback((token: string, user: IUser, tenants?: ITenant[]) => {
+  const authenticate = useCallback((token: string, user: IUser) => {
     setStore({
       isAuthenticated: true,
       user,
       token,
-      tenants,
     });
 
     localStorage.setItem('user', JSON.stringify(user));
-    localStorage.setItem('tenants', JSON.stringify(tenants));
     localStorage.setItem('token', token);
-
-    setCurrentTenantID(user.defaultTenantId ?? tenants?.[0].id ?? null);
   }, []);
 
   const signout = useCallback(() => {
@@ -89,10 +83,8 @@ function useAuthProviderModel({ }: AuthProviderProps) {
             isAuthenticated: true,
             token,
             user: usr,
-            tenants,
           });
 
-          setCurrentTenantID(usr.defaultTenantId ?? tenants?.[0].id ?? null);
         }
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       } catch(e) {
@@ -104,19 +96,10 @@ function useAuthProviderModel({ }: AuthProviderProps) {
     }
   }, [ authenticate ]);
 
-  useEffect(() => {
-    if(currentTenantID) {
-      localStorage.setItem('current-tenant-id', currentTenantID);
-    } else {
-      localStorage.removeItem('current-tenant-id');
-    }
-  }, [ currentTenantID ]);
-
   return {
     store,
     authenticate,
     signout,
-    currentTenantID,
   };
 }
 

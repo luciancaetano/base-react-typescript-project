@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { TranslationNamespaceContext } from './translation-namespace-context';
 import { I18NResource } from './types';
-import Loader from '@components/elements/loader';
 import useUUID from '@hooks/use-uuid';
 import i18n from 'i18next';
 import { ComponentType, useEffect, useMemo, useRef, useState } from 'react';
@@ -71,7 +70,7 @@ function withResourceBundle<T>(
           <WrappedComponent {...props as any}/>
         )}
         {!trueLoaded && (
-          <Loader/>
+          <p>Loading...</p>
         )}
       </TranslationNamespaceContext.Provider>
     );

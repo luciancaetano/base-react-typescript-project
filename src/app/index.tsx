@@ -1,5 +1,5 @@
 
-import appRoutes from './routes/app';
+import appRoutes from './routes';
 import AppProvider from '@components/providers/app-provider';
 import Router from '@lib/router';
 

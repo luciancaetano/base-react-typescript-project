@@ -4,6 +4,5 @@
     "source.fixAll.eslint": "always"
   },
   "conventionalCommits.scopes": [
-    "patient-feature"
   ]
 }

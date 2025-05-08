@@ -11,7 +11,11 @@ describe('AuthProvider Component and useAuth hook', () => {
     const { result } = renderHook(() => useAuth(), {});
 
     act(() => {
-      result.current.authenticate('user');
+      result.current.authenticate('token', {
+        email: 'user@email.com',
+        id: '1',
+        name: 'User',
+      });
     });
 
     expect(result.current.isAuthenticated).toBe(true);
@@ -31,7 +35,11 @@ describe('AuthProvider Component and useAuth hook', () => {
     const { result } = renderHook(() => useAuth());
 
     act(() => {
-      result.current.authenticate('user');
+      result.current.authenticate('token', {
+        email: 'user@email.com',
+        id: '1',
+        name: 'User',
+      });
     });
 
     expect(result.current.user).toBe('user');

@@ -1,4 +1,3 @@
-import Loader from '@components/elements/loader';
 import React, { Suspense } from 'react';
 import { RouteObject } from 'react-router';
 
@@ -8,7 +7,7 @@ export const homePageRoutes: RouteObject[] = [
   {
     path: '/',
     element: (
-      <Suspense fallback={<Loader/>}>
+      <Suspense fallback={<p>Loading...</p>}>
         <HomePage/>
       </Suspense>
     ),

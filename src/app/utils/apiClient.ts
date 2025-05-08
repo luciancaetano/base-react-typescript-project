@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-wrapper-object-types */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import axios, { AxiosRequestConfig, AxiosResponse, Method } from 'axios';
+import axios, { AxiosRequestConfig, AxiosResponse, Method, AxiosInstance } from 'axios';
 export { AxiosError } from 'axios';
 
 export interface IApiRequestConfig {
@@ -15,7 +15,7 @@ export interface IApiRequestConfig {
 }
 
 export default abstract class APIClient {
-  private client: axios.AxiosInstance;
+  private client: AxiosInstance;
 
   constructor() {
     this.client = axios.create({
@@ -66,5 +66,5 @@ export default abstract class APIClient {
   protected get tenantID() {
     return localStorage.getItem('current-tenant-id') ?? null;
   }
-  
+
 }
