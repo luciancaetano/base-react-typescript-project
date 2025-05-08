@@ -67,7 +67,7 @@ module.exports = {
       },
       {
         type: 'add',
-        path: basePath + '/index.tsx',
+        path: basePath + '/routes/index.tsx',
         templateFile: 'generators/feature/feature.routes.tsx.hbs',
       },
     ];
